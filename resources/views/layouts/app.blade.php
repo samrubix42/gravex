@@ -1,18 +1,38 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
 
-        <title>{{ $title ?? config('app.name') }}</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <title>{{ $title ?? config('app.name') }}</title>
+    <link
+  href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css"
+  rel="stylesheet"
+/>
 
-        @livewireStyles
-    </head>
-    <body>
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+
+    @livewireStyles
+
+</head>
+
+<body>
+
+    <livewire:include.header />
+
+
+    <!-- Main Content -->
+    <main class="flex-1 ">
+
         {{ $slot }}
 
-        @livewireScripts
-    </body>
+    </main>
+
+    <livewire:include.footer />
+
+
+    @livewireScripts
+
+</body>
 </html>
