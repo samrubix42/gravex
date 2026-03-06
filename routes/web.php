@@ -11,5 +11,5 @@ Route::get('clear-cache',function(){
     Artisan::call('view:clear');
     Artisan::call('route:clear');
     return redirect()->back();
-})
+});
 
