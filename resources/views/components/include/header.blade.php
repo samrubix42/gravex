@@ -8,7 +8,7 @@ new class extends Component
 };
 ?>
 
-<div x-data="{ open:false, services:false }" class="relative">
+<div x-cloak x-data="{ open:false, services:false }" class="relative">
 
 <!-- HEADER -->
 <header class="fixed top-0 left-0 w-full bg-white/80 backdrop-blur-md border-b border-border z-50">
