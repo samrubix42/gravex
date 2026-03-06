@@ -17,7 +17,7 @@ new class extends Component
 
 <!-- Logo -->
 <a href="/" class="flex items-center">
-    <img src="/logo.png" alt="Grevx" class="h-9">
+    <img src="/logo.png" alt="Grevx" class="h-32">
 </a>
 
 
