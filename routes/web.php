@@ -7,6 +7,7 @@ Route::livewire('/', 'pages::home.home')->name('home');
 
 Route::prefix('admin')->group(function () {
     Route::livewire('/', 'admin::dashboard.dashboard')->name('admin.dashboard');
+    Route::livewire('/testimonials', 'admin::testimonial.testimonial-list')->name('admin.testimonial');
 });
 
 Route::get('clear-cache', function () {
