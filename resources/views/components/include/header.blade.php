@@ -27,7 +27,7 @@ new class extends Component
             <!-- Desktop Navigation -->
             <nav class="hidden md:flex items-center gap-12 text-base font-semibold">
 
-                <a href="#" class="relative text-text-secondary hover:text-primary transition group">
+                <a href="#" class="relative text-zinc-700 hover:text-primary transition group">
 
                     Home
 
@@ -35,7 +35,7 @@ new class extends Component
 
                 </a>
 
-                <a href="#" class="relative text-text-secondary hover:text-primary transition group">
+                <a href="#" class="relative text-zinc-700 hover:text-primary transition group">
 
                     About
 
@@ -43,7 +43,7 @@ new class extends Component
 
                 </a>
 
-                <a href="#" class="relative text-text-secondary hover:text-primary transition group">
+                <a href="#" class="relative text-zinc-700 hover:text-primary transition group">
 
                     Services
 
@@ -51,7 +51,7 @@ new class extends Component
 
                 </a>
 
-                <a href="#" class="relative text-text-secondary hover:text-primary transition group">
+                <a href="#" class="relative text-zinc-700 hover:text-primary transition group">
 
                     Projects
 
@@ -59,7 +59,7 @@ new class extends Component
 
                 </a>
 
-                <a href="#" class="relative text-text-secondary hover:text-primary transition group">
+                <a href="#" class="relative text-zinc-700 hover:text-primary transition group">
 
                     Contact
 
@@ -74,8 +74,8 @@ new class extends Component
             <div class="hidden md:block">
 
                 <a href="#"
-                   class="px-6 py-2.5 text-sm font-semibold text-white rounded-xl bg-secondary hover:bg-accent transition shadow-sm">
-                    Start Project
+                   class="px-6 py-3 text-sm font-semibold text-white rounded-md bg-secondary hover:bg-accent transition shadow-sm">
+                    Get Started
                 </a>
 
             </div>
@@ -86,7 +86,7 @@ new class extends Component
                 @click="open = true"
                 class="md:hidden text-2xl text-primary hover:text-secondary transition"
             >
-                <i class="ri-grid-fill"></i>
+                <i class="ri-menu-3-fill"></i>
             </button>
 
         </div>
@@ -148,7 +148,7 @@ new class extends Component
             <!-- CTA -->
             <a
                 href="#"
-                class="mt-6 px-10 py-3 bg-secondary text-white rounded-xl hover:bg-accent transition"
+                class="mt-6 px-10 py-3 bg-secondary text-white rounded-md hover:bg-accent transition"
             >
                 Start Project
             </a>

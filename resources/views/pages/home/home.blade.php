@@ -10,261 +10,302 @@ new class extends Component
 
 <div>
 
-    <section
+   <section
         x-data="{ show:false }"
-        x-init="setTimeout(()=>show=true,200)"
-        class="pt-28 md:pt-32 pb-20 bg-background">
+            x-init="setTimeout(()=>show=true,200)"
+            class="relative pt-28 md:pt-32 pb-24 bg-blue-50/20 overflow-hidden">
 
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 grid md:grid-cols-2 gap-14 items-center">
-
-
-            <!-- LEFT CONTENT -->
-            <div
-                x-show="show"
-                x-transition:enter="transition ease-out duration-700"
-                x-transition:enter-start="opacity-0 translate-y-6"
-                x-transition:enter-end="opacity-100 translate-y-0"
-                class="text-center md:text-left">
-
-                <!-- Brand Label -->
-                <p class="text-sm font-semibold text-secondary tracking-wide">
-                    GREVX CONSULTING
-                </p>
-
-                <!-- Heading -->
-                <h1 class="mt-4 text-4xl sm:text-5xl font-bold leading-tight text-text-primary">
-
-                    Strategic Consulting
-                    <br class="hidden sm:block">
-
-                    for Modern Businesses
-
-                </h1>
-
-                <!-- Description -->
-                <p class="mt-6 text-lg text-text-secondary max-w-xl mx-auto md:mx-0">
-
-                    We help companies strengthen financial strategy,
-                    develop leadership capability and prepare for
-                    investor growth through practical consulting
-                    and corporate training programs.
-
-                </p>
-
-
-                <!-- SERVICES -->
-                <div class="flex flex-wrap justify-center md:justify-start gap-3 mt-6 text-sm">
-
-                    <span class="px-3 py-1 bg-muted rounded-md text-text-secondary">
-                        Accounting
-                    </span>
-
-                    <span class="px-3 py-1 bg-muted rounded-md text-text-secondary">
-                        Tax Filing
-                    </span>
-
-                    <span class="px-3 py-1 bg-muted rounded-md text-text-secondary">
-                        Corporate Training
-                    </span>
-
-                    <span class="px-3 py-1 bg-muted rounded-md text-text-secondary">
-                        Financial Modeling
-                    </span>
-
-                    <span class="px-3 py-1 bg-muted rounded-md text-text-secondary">
-                        Valuation
-                    </span>
-
-                </div>
-
-
-                <!-- CTA -->
-                <div class="flex flex-wrap justify-center md:justify-start gap-4 mt-8">
-
-                    <a href="#"
-                        class="px-6 py-3 bg-secondary text-white rounded-lg font-medium hover:bg-accent transition">
-
-                        Book a Consultation
-
-                    </a>
-
-                    <a href="#"
-                        class="px-6 py-3 border border-border rounded-lg text-text-primary hover:bg-muted transition">
-
-                        Learn More
-
-                    </a>
-
-                </div>
-
+            <!-- subtle background pattern -->
+            <div class="absolute inset-0 opacity-30 pointer-events-none">
+                <div class="absolute w-[500px] h-[500px] bg-secondary/10 rounded-full blur-3xl -top-40 -left-40"></div>
+                <div class="absolute w-[400px] h-[400px] bg-accent/10 rounded-full blur-3xl bottom-0 right-0"></div>
             </div>
 
 
-            <!-- RIGHT IMAGE -->
-            <div
-                x-show="show"
-                x-transition:enter="transition ease-out duration-700 delay-200"
-                x-transition:enter-start="opacity-0 translate-y-6"
-                x-transition:enter-end="opacity-100 translate-y-0"
-                class="flex justify-center md:justify-end">
+<div class="relative max-w-7xl mx-auto px-4 sm:px-6 grid md:grid-cols-2 gap-14 items-center">
 
-                <img
-                    src="/consulting-hero.png"
-                    alt="Business Consulting"
-                    class="w-[320px] sm:w-[420px] md:w-[480px] max-w-full">
 
-            </div>
+    <!-- LEFT CONTENT -->
+    <div
+        x-show="show"
+        x-transition:enter="transition ease-out duration-700"
+        x-transition:enter-start="opacity-0 translate-y-6"
+        x-transition:enter-end="opacity-100 translate-y-0"
+        class="text-center md:text-left">
 
+        <!-- Brand Label -->
+        <p class="text-sm font-semibold text-secondary tracking-wider">
+            GREVX CONSULTING
+        </p>
+
+        <!-- Heading -->
+        <h1 class="mt-4 text-4xl sm:text-5xl font-bold leading-tight text-text-primary">
+
+            Strategic Consulting
+            <br class="hidden sm:block">
+
+            <span class="text-secondary">
+                for Modern Businesses
+            </span>
+
+        </h1>
+
+        <!-- Description -->
+        <p class="mt-6 text-lg text-zinc-700 max-w-xl mx-auto md:mx-0">
+
+            We help companies strengthen financial strategy,
+            develop leadership capability and prepare for
+            investor growth through practical consulting
+            and corporate training programs.
+
+        </p>
+
+
+        <!-- SERVICES -->
+        <div class="flex flex-wrap justify-center md:justify-start gap-3 mt-7 text-sm">
+
+            <span class="px-3 py-1 bg-muted border border-border rounded-md text-zinc-700">
+                Accounting
+            </span>
+
+            <span class="px-3 py-1 bg-muted border border-border rounded-md text-zinc-700">
+                Tax Filing
+            </span>
+
+            <span class="px-3 py-1 bg-muted border border-border rounded-md text-zinc-700">
+                Corporate Training
+            </span>
+
+            <span class="px-3 py-1 bg-muted border border-border rounded-md text-zinc-700">
+                Financial Modeling
+            </span>
+
+            <span class="px-3 py-1 bg-muted border border-border rounded-md text-zinc-700">
+                Valuation
+            </span>
 
         </div>
 
-    </section>
-    <section class="py-20 bg-muted">
 
-        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        <!-- CTA -->
+        <div class="flex flex-wrap justify-center md:justify-start gap-4 mt-9">
 
-            <!-- Section Header -->
-            <div class="text-center max-w-2xl mx-auto">
+            <a href="#"
+                class="px-7 py-3 bg-secondary text-white rounded-md font-medium hover:bg-secondary/90 shadow-sm hover:shadow-md transition">
 
-                <h2 class="text-3xl md:text-4xl font-bold text-text-primary">
-                    Our Consulting Services
-                </h2>
+                Book a Consultation
 
-                <p class="mt-4 text-text-secondary">
-                    We support businesses with financial expertise,
-                    leadership development and strategic advisory
-                    to help them grow with confidence.
-                </p>
+            </a>
 
-            </div>
+            <a href="#"
+                class="px-7 py-3 border border-border rounded-md text-text-primary hover:bg-muted transition">
 
+                Learn More
 
-            <!-- Services Grid -->
-            <div class="grid gap-6 mt-14 sm:grid-cols-2 lg:grid-cols-3">
-
-
-                <!-- Service Card -->
-                <div class="p-6 bg-white rounded-xl border border-border hover:shadow-md transition">
-
-                    <div class="w-11 h-11 flex items-center justify-center rounded-lg bg-secondary/10 text-secondary text-xl">
-                        <i class="ri-calculator-line"></i>
-                    </div>
-
-                    <h3 class="mt-4 text-lg font-semibold text-text-primary">
-                        Accounting & Compliance
-                    </h3>
-
-                    <p class="mt-2 text-sm text-text-secondary">
-                        Reliable accounting systems and financial compliance
-                        support for growing businesses.
-                    </p>
-
-                </div>
-
-
-
-                <!-- Card -->
-                <div class="p-6 bg-white rounded-xl border border-border hover:shadow-md transition">
-
-                    <div class="w-11 h-11 flex items-center justify-center rounded-lg bg-secondary/10 text-secondary text-xl">
-                        <i class="ri-file-text-line"></i>
-                    </div>
-
-                    <h3 class="mt-4 text-lg font-semibold text-text-primary">
-                        Tax Filing
-                    </h3>
-
-                    <p class="mt-2 text-sm text-text-secondary">
-                        Simplified tax planning and filing solutions
-                        designed for compliance and efficiency.
-                    </p>
-
-                </div>
-
-
-
-                <!-- Card -->
-                <div class="p-6 bg-white rounded-xl border border-border hover:shadow-md transition">
-
-                    <div class="w-11 h-11 flex items-center justify-center rounded-lg bg-secondary/10 text-secondary text-xl">
-                        <i class="ri-team-line"></i>
-                    </div>
-
-                    <h3 class="mt-4 text-lg font-semibold text-text-primary">
-                        Corporate Training
-                    </h3>
-
-                    <p class="mt-2 text-sm text-text-secondary">
-                        Leadership and communication programs designed
-                        to strengthen high-performing teams.
-                    </p>
-
-                </div>
-
-
-
-                <!-- Card -->
-                <div class="p-6 bg-white rounded-xl border border-border hover:shadow-md transition">
-
-                    <div class="w-11 h-11 flex items-center justify-center rounded-lg bg-secondary/10 text-secondary text-xl">
-                        <i class="ri-bar-chart-line"></i>
-                    </div>
-
-                    <h3 class="mt-4 text-lg font-semibold text-text-primary">
-                        Financial Modeling
-                    </h3>
-
-                    <p class="mt-2 text-sm text-text-secondary">
-                        Build robust financial models to guide
-                        business decisions and growth strategies.
-                    </p>
-
-                </div>
-
-
-
-                <!-- Card -->
-                <div class="p-6 bg-white rounded-xl border border-border hover:shadow-md transition">
-
-                    <div class="w-11 h-11 flex items-center justify-center rounded-lg bg-secondary/10 text-secondary text-xl">
-                        <i class="ri-line-chart-line"></i>
-                    </div>
-
-                    <h3 class="mt-4 text-lg font-semibold text-text-primary">
-                        Valuation
-                    </h3>
-
-                    <p class="mt-2 text-sm text-text-secondary">
-                        Accurate company valuation to support
-                        investment decisions and strategic planning.
-                    </p>
-
-                </div>
-
-
-
-                <!-- Card -->
-                <div class="p-6 bg-white rounded-xl border border-border hover:shadow-md transition">
-
-                    <div class="w-11 h-11 flex items-center justify-center rounded-lg bg-secondary/10 text-secondary text-xl">
-                        <i class="ri-handshake-line"></i>
-                    </div>
-
-                    <h3 class="mt-4 text-lg font-semibold text-text-primary">
-                        Investor Readiness
-                    </h3>
-
-                    <p class="mt-2 text-sm text-text-secondary">
-                        Prepare your company with financial clarity
-                        and strategy before approaching investors.
-                    </p>
-
-                </div>
-
-            </div>
+            </a>
 
         </div>
-    </section>
+
+    </div>
+
+
+    <!-- RIGHT IMAGE -->
+    <div
+        x-show="show"
+        x-transition:enter="transition ease-out duration-700 delay-200"
+        x-transition:enter-start="opacity-0 translate-y-6"
+        x-transition:enter-end="opacity-100 translate-y-0"
+        class="flex justify-center md:justify-end">
+
+        <div class="relative">
+
+            <!-- image -->
+            <img
+                src="/consulting-hero.png"
+                alt="Business Consulting"
+                class="w-[320px] sm:w-[420px] md:w-[480px] max-w-full relative z-10">
+
+            <!-- soft glow -->
+            <div class="absolute inset-0 bg-secondary/10 blur-3xl rounded-full -z-10"></div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+   <section class="py-24 bg-muted">
+
+<div class="max-w-7xl mx-auto px-4 sm:px-6">
+
+    <!-- Section Header -->
+    <div class="text-center max-w-2xl mx-auto">
+
+        <h2 class="text-3xl md:text-4xl font-bold text-text-primary">
+            Our Consulting <span class="text-[#37809F]">Services</span>
+        </h2>
+
+        <p class="mt-4 text-zinc-700">
+            We support businesses with financial expertise,
+            leadership development and strategic advisory
+            to help them grow with confidence.
+        </p>
+
+    </div>
+
+
+    <!-- Services Grid -->
+    <div class="grid gap-7 mt-16 sm:grid-cols-2 lg:grid-cols-3">
+
+
+        <!-- Service Card -->
+        <div class="group p-7 bg-surface rounded-xl border border-border transition hover:shadow-lg hover:-translate-y-1">
+
+            <div class="w-12 h-12 flex items-center justify-center rounded-lg bg-secondary/10 text-secondary text-xl transition group-hover:bg-secondary group-hover:text-white">
+                <i class="ri-calculator-line"></i>
+            </div>
+
+            <h3 class="mt-5 text-lg font-semibold text-text-primary relative inline-block">
+
+                Accounting & Compliance
+
+                <span class="block h-[2px] w-10 bg-secondary mt-2 transition-all duration-300 group-hover:w-full"></span>
+
+            </h3>
+
+            <p class="mt-3 text-sm text-zinc-700 leading-relaxed">
+                Reliable accounting systems and financial compliance
+                support for growing businesses.
+            </p>
+
+        </div>
+
+
+
+        <!-- Card -->
+        <div class="group p-7 bg-surface rounded-xl border border-border transition hover:shadow-lg hover:-translate-y-1">
+
+            <div class="w-12 h-12 flex items-center justify-center rounded-lg bg-secondary/10 text-secondary text-xl transition group-hover:bg-secondary group-hover:text-white">
+                <i class="ri-file-text-line"></i>
+            </div>
+
+            <h3 class="mt-5 text-lg font-semibold text-text-primary relative inline-block">
+
+                Tax Filing
+
+                <span class="block h-[2px] w-10 bg-secondary mt-2 transition-all duration-300 group-hover:w-full"></span>
+
+            </h3>
+
+            <p class="mt-3 text-sm text-zinc-700 leading-relaxed">
+                Simplified tax planning and filing solutions
+                designed for compliance and efficiency.
+            </p>
+
+        </div>
+
+
+
+        <!-- Card -->
+        <div class="group p-7 bg-surface rounded-xl border border-border transition hover:shadow-lg hover:-translate-y-1">
+
+            <div class="w-12 h-12 flex items-center justify-center rounded-lg bg-secondary/10 text-secondary text-xl transition group-hover:bg-secondary group-hover:text-white">
+                <i class="ri-team-line"></i>
+            </div>
+
+            <h3 class="mt-5 text-lg font-semibold text-text-primary relative inline-block">
+
+                Corporate Training
+
+                <span class="block h-[2px] w-10 bg-secondary mt-2 transition-all duration-300 group-hover:w-full"></span>
+
+            </h3>
+
+            <p class="mt-3 text-sm text-zinc-700 leading-relaxed">
+                Leadership and communication programs designed
+                to strengthen high-performing teams.
+            </p>
+
+        </div>
+
+
+
+        <!-- Card -->
+        <div class="group p-7 bg-surface rounded-xl border border-border transition hover:shadow-lg hover:-translate-y-1">
+
+            <div class="w-12 h-12 flex items-center justify-center rounded-lg bg-secondary/10 text-secondary text-xl transition group-hover:bg-secondary group-hover:text-white">
+                <i class="ri-bar-chart-line"></i>
+            </div>
+
+            <h3 class="mt-5 text-lg font-semibold text-text-primary relative inline-block">
+
+                Financial Modeling
+
+                <span class="block h-[2px] w-10 bg-secondary mt-2 transition-all duration-300 group-hover:w-full"></span>
+
+            </h3>
+
+            <p class="mt-3 text-sm text-zinc-700 leading-relaxed">
+                Build robust financial models to guide
+                business decisions and growth strategies.
+            </p>
+
+        </div>
+
+
+
+        <!-- Card -->
+        <div class="group p-7 bg-surface rounded-xl border border-border transition hover:shadow-lg hover:-translate-y-1">
+
+            <div class="w-12 h-12 flex items-center justify-center rounded-lg bg-secondary/10 text-secondary text-xl transition group-hover:bg-secondary group-hover:text-white">
+                <i class="ri-line-chart-line"></i>
+            </div>
+
+            <h3 class="mt-5 text-lg font-semibold text-text-primary relative inline-block">
+
+                Valuation
+
+                <span class="block h-[2px] w-10 bg-secondary mt-2 transition-all duration-300 group-hover:w-full"></span>
+
+            </h3>
+
+            <p class="mt-3 text-sm text-zinc-700 leading-relaxed">
+                Accurate company valuation to support
+                investment decisions and strategic planning.
+            </p>
+
+        </div>
+
+
+
+        <!-- Card -->
+        <div class="group p-7 bg-surface rounded-xl border border-border transition hover:shadow-lg hover:-translate-y-1">
+
+            <div class="w-12 h-12 flex items-center justify-center rounded-lg bg-secondary/10 text-secondary text-xl transition group-hover:bg-secondary group-hover:text-white">
+                <i class="ri-funds-line"></i>
+            </div>
+
+            <h3 class="mt-5 text-lg font-semibold text-text-primary relative inline-block">
+
+                Investor Readiness
+
+                <span class="block h-[2px] w-10 bg-secondary mt-2 transition-all duration-300 group-hover:w-full"></span>
+
+            </h3>
+
+            <p class="mt-3 text-sm text-zinc-700 leading-relaxed">
+                Prepare your company with financial clarity
+                and strategy before approaching investors.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
 
         <div class="py-20">
             <section
@@ -277,10 +318,10 @@ new class extends Component
                     <div class="text-center max-w-2xl mx-auto">
 
                         <h2 class="text-3xl md:text-4xl font-bold text-text-primary">
-                            Why Businesses Choose Grevx
+                            Why Businesses Choose <span class="text-[#37809F]">Grevx</span>
                         </h2>
 
-                        <p class="mt-4 text-text-secondary">
+                        <p class="mt-4 text-zinc-700">
                             We combine financial expertise, practical training and strategic advisory
                             to help organizations grow with clarity and confidence.
                         </p>
@@ -293,7 +334,7 @@ new class extends Component
 
                         <!-- Card -->
                         <div
-                            class="group p-6 bg-white border border-border rounded-xl transition hover:shadow-md hover:-translate-y-1">
+                            class="group p-6 bg-white border border-border rounded-md transition hover:shadow-md hover:-translate-y-1">
 
                             <div class="w-12 h-12 flex items-center justify-center rounded-lg 
             bg-secondary/10 text-secondary text-xl transition group-hover:bg-secondary group-hover:text-white">
@@ -306,7 +347,7 @@ new class extends Component
                                 Experienced Experts
                             </h3>
 
-                            <p class="mt-2 text-sm text-text-secondary leading-relaxed">
+                            <p class="mt-2 text-sm text-zinc-700 leading-relaxed">
                                 Our consultants bring real-world business
                                 and financial expertise to every engagement.
                             </p>
@@ -317,7 +358,7 @@ new class extends Component
 
                         <!-- Card -->
                         <div
-                            class="group p-6 bg-white border border-border rounded-xl transition hover:shadow-md hover:-translate-y-1">
+                            class="group p-6 bg-white border border-border rounded-md transition hover:shadow-md hover:-translate-y-1">
 
                             <div class="w-12 h-12 flex items-center justify-center rounded-lg 
             bg-secondary/10 text-secondary text-xl transition group-hover:bg-secondary group-hover:text-white">
@@ -330,7 +371,7 @@ new class extends Component
                                 Practical Solutions
                             </h3>
 
-                            <p class="mt-2 text-sm text-text-secondary leading-relaxed">
+                            <p class="mt-2 text-sm text-zinc-700 leading-relaxed">
                                 We focus on actionable strategies that
                                 businesses can implement immediately.
                             </p>
@@ -341,7 +382,7 @@ new class extends Component
 
                         <!-- Card -->
                         <div
-                            class="group p-6 bg-white border border-border rounded-xl transition hover:shadow-md hover:-translate-y-1">
+                            class="group p-6 bg-white border border-border rounded-md transition hover:shadow-md hover:-translate-y-1">
 
                             <div class="w-12 h-12 flex items-center justify-center rounded-lg 
             bg-secondary/10 text-secondary text-xl transition group-hover:bg-secondary group-hover:text-white">
@@ -354,7 +395,7 @@ new class extends Component
                                 Leadership Development
                             </h3>
 
-                            <p class="mt-2 text-sm text-text-secondary leading-relaxed">
+                            <p class="mt-2 text-sm text-zinc-700 leading-relaxed">
                                 Our training programs strengthen leadership,
                                 communication and team performance.
                             </p>
@@ -365,7 +406,7 @@ new class extends Component
 
                         <!-- Card -->
                         <div
-                            class="group p-6 bg-white border border-border rounded-xl transition hover:shadow-md hover:-translate-y-1">
+                            class="group p-6 bg-white border border-border rounded-md transition hover:shadow-md hover:-translate-y-1">
 
                             <div class="w-12 h-12 flex items-center justify-center rounded-lg 
             bg-secondary/10 text-secondary text-xl transition group-hover:bg-secondary group-hover:text-white">
@@ -378,7 +419,7 @@ new class extends Component
                                 Growth Focused
                             </h3>
 
-                            <p class="mt-2 text-sm text-text-secondary leading-relaxed">
+                            <p class="mt-2 text-sm text-zinc-700 leading-relaxed">
                                 Everything we do is designed to help your
                                 organization scale sustainably.
                             </p>
@@ -421,11 +462,11 @@ new class extends Component
 
                 <!-- Heading -->
                 <h2 class="text-3xl md:text-4xl font-bold text-text-primary">
-                    What Our Clients Say
+                    What Our <span class="text-[#37809F]">Clients</span> Say
                 </h2>
 
-                <p class="mt-3 text-text-secondary">
-                    Organizations trust Grevx Consulting for practical strategy and leadership development.
+                <p class="mt-3 text-zinc-700">
+                    Organizations trust <span class="text-[#37809F]">Grevx</span> Consulting for practical strategy and leadership development.
                 </p>
 
 
@@ -439,13 +480,13 @@ new class extends Component
                             x-transition:enter="transition ease-out duration-500"
                             x-transition:enter-start="opacity-0 translate-y-4"
                             x-transition:enter-end="opacity-100 translate-y-0"
-                            class="bg-white border border-border rounded-xl p-8 shadow-sm">
+                            class="bg-white border border-border rounded-md p-8 shadow-sm">
 
                             <div class="text-secondary text-3xl mb-4">
                                 <i class="ri-double-quotes-l"></i>
                             </div>
 
-                            <p class="text-lg text-text-secondary leading-relaxed">
+                            <p class="text-lg text-zinc-700 leading-relaxed">
                                 <span x-text="item.quote"></span>
                             </p>
 
@@ -453,7 +494,7 @@ new class extends Component
 
                                 <p class="font-semibold text-text-primary" x-text="item.name"></p>
 
-                                <p class="text-sm text-text-secondary" x-text="item.company"></p>
+                                <p class="text-sm text-zinc-700" x-text="item.company"></p>
 
                             </div>
 
@@ -502,11 +543,11 @@ new class extends Component
 
                     <!-- Heading -->
                     <h2 class="text-3xl md:text-4xl font-bold text-text-primary">
-                        Ready to Strengthen Your Business Strategy?
+                        Ready to Strengthen Your <span class="text-[#37809F]">Business Strategy?</span>
                     </h2>
 
                     <!-- Description -->
-                    <p class="mt-4 text-text-secondary max-w-2xl mx-auto">
+                    <p class="mt-4 text-zinc-700 max-w-2xl mx-auto">
                         Partner with Grevx Consulting to improve financial clarity,
                         develop stronger leadership teams, and prepare your organization
                         for long-term growth.
@@ -545,10 +586,10 @@ new class extends Component
     <div class="text-center">
 
         <h2 class="text-3xl md:text-4xl font-bold text-text-primary">
-            Frequently Asked Questions
+            Frequently Asked <span class="text-[#37809F]">Questions</span>
         </h2>
 
-        <p class="mt-3 text-text-secondary">
+        <p class="mt-3 text-zinc-700">
             Answers to common questions about Grevx Consulting services.
         </p>
 
@@ -559,7 +600,7 @@ new class extends Component
     <div class="mt-12 space-y-4" x-data="{active:null}">
 
         <!-- Item -->
-        <div class="border border-border rounded-xl bg-white">
+        <div class="border border-border rounded-md bg-white">
 
             <button
             @click="active === 1 ? active = null : active = 1"
@@ -578,7 +619,7 @@ new class extends Component
             <div
             x-show="active === 1"
             x-collapse
-            class="px-6 pb-6 text-text-secondary text-sm leading-relaxed">
+            class="px-6 pb-6 text-zinc-700 text-sm leading-relaxed">
 
                 Grevx Consulting provides accounting support, tax filing,
                 corporate training, financial modeling, valuation services,
@@ -589,7 +630,7 @@ new class extends Component
 
 
         <!-- Item -->
-        <div class="border border-border rounded-xl bg-white">
+        <div class="border border-border rounded-md bg-white">
 
             <button
             @click="active === 2 ? active = null : active = 2"
@@ -608,7 +649,7 @@ new class extends Component
             <div
             x-show="active === 2"
             x-collapse
-            class="px-6 pb-6 text-text-secondary text-sm leading-relaxed">
+            class="px-6 pb-6 text-zinc-700 text-sm leading-relaxed">
 
                 Our services are designed for startups, growing businesses,
                 corporate teams, HR leaders, and organizations preparing
@@ -619,7 +660,7 @@ new class extends Component
 
 
         <!-- Item -->
-        <div class="border border-border rounded-xl bg-white">
+        <div class="border border-border rounded-md bg-white">
 
             <button
             @click="active === 3 ? active = null : active = 3"
@@ -638,7 +679,7 @@ new class extends Component
             <div
             x-show="active === 3"
             x-collapse
-            class="px-6 pb-6 text-text-secondary text-sm leading-relaxed">
+            class="px-6 pb-6 text-zinc-700 text-sm leading-relaxed">
 
                 Grevx focuses on practical business solutions rather than
                 theoretical advice. Our consulting and training programs
@@ -650,7 +691,7 @@ new class extends Component
 
 
         <!-- Item -->
-        <div class="border border-border rounded-xl bg-white">
+        <div class="border border-border rounded-md bg-white">
 
             <button
             @click="active === 4 ? active = null : active = 4"
@@ -669,7 +710,7 @@ new class extends Component
             <div
             x-show="active === 4"
             x-collapse
-            class="px-6 pb-6 text-text-secondary text-sm leading-relaxed">
+            class="px-6 pb-6 text-zinc-700 text-sm leading-relaxed">
 
                 You can start by booking a consultation through our website
                 or contacting our team directly. We will understand your
