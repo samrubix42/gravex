@@ -8,153 +8,224 @@ new class extends Component
 };
 ?>
 
-<div x-data="{ open:false }">
+<div x-data="{ open:false, services:false }" class="relative">
 
-    <!-- Header -->
-    <header class="fixed top-0 left-0 w-full bg-white/80 backdrop-blur-lg border-b border-border z-50">
+<!-- HEADER -->
+<header class="fixed top-0 left-0 w-full bg-white/80 backdrop-blur-md border-b border-border z-50">
 
-        <div class="max-w-7xl mx-auto px-3 h-20 flex items-center justify-between">
+<div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
 
-            <!-- Logo -->
-            <a href="/" class="flex items-center gap-3">
-
-                <img src="/logo.png" alt="GREVX" class="w-40 h-auto">
-
-
-            </a>
+<!-- Logo -->
+<a href="/" class="flex items-center">
+    <img src="/logo.png" alt="Grevx" class="h-9">
+</a>
 
 
-            <!-- Desktop Navigation -->
-            <nav class="hidden md:flex items-center gap-12 text-base font-semibold">
+<!-- Desktop Navigation -->
+<nav class="hidden md:flex items-center gap-10 font-medium text-[15px]">
 
-                <a href="#" class="relative text-zinc-700 hover:text-primary transition group">
+<a href="/" class="text-text-secondary hover:text-primary transition">
+Home
+</a>
 
-                    Home
-
-                    <span class="absolute -bottom-2 left-0 w-0 h-[2px] bg-secondary transition-all duration-300 group-hover:w-full"></span>
-
-                </a>
-
-                <a href="#" class="relative text-zinc-700 hover:text-primary transition group">
-
-                    About
-
-                    <span class="absolute -bottom-2 left-0 w-0 h-[2px] bg-secondary transition-all duration-300 group-hover:w-full"></span>
-
-                </a>
-
-                <a href="#" class="relative text-zinc-700 hover:text-primary transition group">
-
-                    Services
-
-                    <span class="absolute -bottom-2 left-0 w-0 h-[2px] bg-secondary transition-all duration-300 group-hover:w-full"></span>
-
-                </a>
-
-                <a href="#" class="relative text-zinc-700 hover:text-primary transition group">
-
-                    Projects
-
-                    <span class="absolute -bottom-2 left-0 w-0 h-[2px] bg-secondary transition-all duration-300 group-hover:w-full"></span>
-
-                </a>
-
-                <a href="#" class="relative text-zinc-700 hover:text-primary transition group">
-
-                    Contact
-
-                    <span class="absolute -bottom-2 left-0 w-0 h-[2px] bg-secondary transition-all duration-300 group-hover:w-full"></span>
-
-                </a>
-
-            </nav>
+<a href="#" class="text-text-secondary hover:text-primary transition">
+About
+</a>
 
 
-            <!-- CTA -->
-            <div class="hidden md:block">
+<!-- Services Dropdown -->
+<div
+class="relative"
+@mouseenter="services=true"
+@mouseleave="services=false"
+>
 
-                <a href="#"
-                   class="px-6 py-3 text-sm font-semibold text-white rounded-md bg-secondary hover:bg-accent transition shadow-sm">
-                    Get Started
-                </a>
+<button class="flex items-center gap-1 text-text-secondary hover:text-primary transition">
 
-            </div>
+Services
 
+<i class="ri-arrow-down-s-line text-lg transition"
+:class="services ? 'rotate-180' : ''"></i>
 
-            <!-- Mobile Navigation Button -->
-            <button
-                @click="open = true"
-                class="md:hidden text-2xl text-primary hover:text-secondary transition"
-            >
-                <i class="ri-menu-3-fill"></i>
-            </button>
-
-        </div>
-
-    </header>
+</button>
 
 
+<!-- Dropdown -->
+<div
+x-show="services"
+x-transition:enter="transition ease-out duration-200"
+x-transition:enter-start="opacity-0 translate-y-2"
+x-transition:enter-end="opacity-100 translate-y-0"
+x-transition:leave="transition ease-in duration-150"
+x-transition:leave-start="opacity-100 translate-y-0"
+x-transition:leave-end="opacity-0 translate-y-2"
+class="absolute left-0 top-full mt-3 w-64 bg-white border border-border rounded-xl shadow-lg p-2"
+>
 
-    <!-- Mobile Navigation -->
+<a href="#" class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-muted transition">
+<i class="ri-calculator-line text-secondary"></i>
+Accounting & Compliance
+</a>
 
-    <div
-        x-show="open"
-        x-transition
-        class="fixed inset-0 bg-white z-[100] flex flex-col"
-    >
+<a href="#" class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-muted transition">
+<i class="ri-file-text-line text-secondary"></i>
+Tax Filing
+</a>
 
-        <!-- Top -->
-        <div class="flex items-center justify-between h-20 px-6 border-b border-border">
+<a href="#" class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-muted transition">
+<i class="ri-team-line text-secondary"></i>
+Corporate Training
+</a>
 
-            <span class="text-xl font-bold text-primary">
-                GREVX
-            </span>
+<a href="#" class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-muted transition">
+<i class="ri-bar-chart-line text-secondary"></i>
+Financial Modeling
+</a>
 
-            <button
-                @click="open=false"
-                class="text-2xl text-primary hover:text-secondary transition"
-            >
-                <i class="ri-close-line"></i>
-            </button>
+<a href="#" class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-muted transition">
+<i class="ri-line-chart-line text-secondary"></i>
+Valuation
+</a>
 
-        </div>
+</div>
 
-
-        <!-- Links -->
-
-        <div class="flex flex-col items-center justify-center flex-1 gap-10 text-2xl font-semibold">
-
-            <a href="#" @click="open=false" class="hover:text-secondary transition">
-                Home
-            </a>
-
-            <a href="#" @click="open=false" class="hover:text-secondary transition">
-                About
-            </a>
-
-            <a href="#" @click="open=false" class="hover:text-secondary transition">
-                Services
-            </a>
-
-            <a href="#" @click="open=false" class="hover:text-secondary transition">
-                Projects
-            </a>
-
-            <a href="#" @click="open=false" class="hover:text-secondary transition">
-                Contact
-            </a>
+</div>
 
 
-            <!-- CTA -->
-            <a
-                href="#"
-                class="mt-6 px-10 py-3 bg-secondary text-white rounded-md hover:bg-accent transition"
-            >
-                Start Project
-            </a>
+<a href="#" class="text-text-secondary hover:text-primary transition">
+Blog
+</a>
 
-        </div>
+<a href="#" class="text-text-secondary hover:text-primary transition">
+Contact
+</a>
 
-    </div>
+</nav>
 
-</div> 
+
+<!-- CTA -->
+<div class="hidden md:block">
+
+<a href="#"
+class="px-5 py-2.5 bg-secondary text-white rounded-lg font-medium hover:bg-secondary/90 transition">
+Get Started
+</a>
+
+</div>
+
+
+<!-- Mobile Menu Button -->
+<button
+@click="open=true"
+class="md:hidden text-2xl text-primary"
+>
+<i class="ri-menu-3-line"></i>
+</button>
+
+</div>
+
+</header>
+
+
+<!-- MOBILE MENU -->
+<div
+x-show="open"
+x-transition
+class="fixed inset-0 bg-white z-[100] flex flex-col"
+>
+
+<!-- Top -->
+<div class="flex items-center justify-between h-20 px-6 border-b border-border">
+
+<img src="/logo.png" class="h-8">
+
+<button @click="open=false" class="text-2xl text-primary">
+<i class="ri-close-line"></i>
+</button>
+
+</div>
+
+
+<!-- Links -->
+<div class="flex flex-col px-6 pt-10 space-y-6 text-lg font-medium">
+
+<a href="/" @click="open=false" class="text-text-secondary hover:text-primary transition">
+Home
+</a>
+
+<a href="#" @click="open=false" class="text-text-secondary hover:text-primary transition">
+About
+</a>
+
+
+<!-- Mobile Services Dropdown -->
+<div x-data="{ mobileServices:false }">
+
+<button
+@click="mobileServices=!mobileServices"
+class="flex items-center justify-between w-full text-text-secondary hover:text-primary transition"
+>
+
+<span>Services</span>
+
+<i class="ri-arrow-down-s-line transition"
+:class="mobileServices ? 'rotate-180' : ''"></i>
+
+</button>
+
+
+<div
+x-show="mobileServices"
+x-transition
+class="mt-3 pl-4 flex flex-col space-y-3 text-[16px]"
+>
+
+<a href="#" @click="open=false" class="hover:text-secondary">
+Accounting & Compliance
+</a>
+
+<a href="#" @click="open=false" class="hover:text-secondary">
+Tax Filing
+</a>
+
+<a href="#" @click="open=false" class="hover:text-secondary">
+Corporate Training
+</a>
+
+<a href="#" @click="open=false" class="hover:text-secondary">
+Financial Modeling
+</a>
+
+<a href="#" @click="open=false" class="hover:text-secondary">
+Valuation
+</a>
+
+</div>
+
+</div>
+
+
+<a href="#" @click="open=false" class="text-text-secondary hover:text-primary transition">
+Blog
+</a>
+
+<a href="#" @click="open=false" class="text-text-secondary hover:text-primary transition">
+Contact
+</a>
+
+
+<!-- CTA -->
+<a
+href="#"
+class="mt-6 inline-flex justify-center px-6 py-3 bg-secondary text-white rounded-lg font-medium hover:bg-secondary/90 transition"
+>
+
+Get Started
+
+</a>
+
+</div>
+
+</div>
+
+</div>

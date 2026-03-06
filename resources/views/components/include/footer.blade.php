@@ -33,17 +33,17 @@ new class extends Component
                 <div class="flex gap-3">
 
                     <a href="#"
-                       class="w-9 h-9 flex items-center justify-center rounded-md border border-border hover:bg-secondary hover:text-white transition">
+                        class="w-9 h-9 flex items-center justify-center rounded-md border border-border hover:bg-secondary hover:text-white transition">
                         <i class="ri-twitter-x-line"></i>
                     </a>
 
                     <a href="#"
-                       class="w-9 h-9 flex items-center justify-center rounded-md border border-border hover:bg-secondary hover:text-white transition">
+                        class="w-9 h-9 flex items-center justify-center rounded-md border border-border hover:bg-secondary hover:text-white transition">
                         <i class="ri-linkedin-line"></i>
                     </a>
 
                     <a href="#"
-                       class="w-9 h-9 flex items-center justify-center rounded-md border border-border hover:bg-secondary hover:text-white transition">
+                        class="w-9 h-9 flex items-center justify-center rounded-md border border-border hover:bg-secondary hover:text-white transition">
                         <i class="ri-github-line"></i>
                     </a>
 
@@ -75,7 +75,7 @@ new class extends Component
 
                     <li>
                         <a href="#" class="hover:text-secondary transition">
-                            Projects
+                            Blog
                         </a>
                     </li>
 
@@ -107,13 +107,13 @@ new class extends Component
 
                     <li>
                         <a href="#" class="hover:text-secondary transition">
-                            Cloud Engineering
+                            Consulting
                         </a>
                     </li>
 
                     <li>
                         <a href="#" class="hover:text-secondary transition">
-                            Software Development
+                            More Services
                         </a>
                     </li>
 
@@ -145,8 +145,7 @@ new class extends Component
                         type="email"
                         x-model="email"
                         placeholder="Enter your email"
-                        class="w-full px-3 py-2 text-sm outline-none text-text-primary placeholder-gray-400"
-                    >
+                        class="w-full px-3 py-2 text-sm outline-none text-text-primary placeholder-gray-400">
 
                     <button
                         class="px-4 py-2 bg-secondary hover:bg-accent transition text-white flex items-center justify-center">
