@@ -40,6 +40,7 @@
     </div>
 
     @livewireScripts
+    @include('components.include.toast')
 </body>
 
 </html>
