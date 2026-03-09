@@ -66,12 +66,12 @@ new #[Layout('layouts.admin')] class extends Component {
 };
 ?>
 
-<div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
 
-    <div class="mb-6 flex items-center justify-between">
+    <div class="mb-4 flex items-center justify-between">
         <div>
-            <h1 class="text-xl font-semibold text-slate-900">Create New Post</h1>
-            <p class="text-xs text-slate-500 mt-1">Fill in the details to publish a new blog post.</p>
+            <h1 class="text-lg font-semibold text-slate-900">Create New Post</h1>
+            <p class="text-[11px] text-slate-500 mt-0.5">Fill in the details to publish a new blog post.</p>
         </div>
         <a href="{{ route('admin.blog.list') }}" wire:navigate class="text-sm font-medium text-slate-600 hover:text-slate-900 flex items-center gap-1">
             <i class="ri-arrow-left-line"></i>
@@ -79,35 +79,35 @@ new #[Layout('layouts.admin')] class extends Component {
         </a>
     </div>
 
-    <form wire:submit.prevent="save" class="space-y-6">
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+    <form wire:submit.prevent="save" class="space-y-5">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-5">
 
             <!-- Left Column: Content -->
-            <div class="lg:col-span-2 space-y-6">
+            <div class="lg:col-span-2 space-y-5">
 
-                <div class="bg-white rounded-xl border border-slate-200 p-6 shadow-sm">
-                    <div class="space-y-4">
+                <div class="bg-white rounded-xl border border-slate-200 p-5 shadow-sm">
+                    <div class="space-y-3">
                         <div>
-                            <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Post Title</label>
+                            <label class="block text-[10px] font-bold text-slate-600 uppercase tracking-widest mb-1">Post Title</label>
                             <input
                                 wire:model.live="title"
                                 type="text"
                                 placeholder="e.g. How to Build Amazing Apps"
-                                class="w-full rounded-lg border border-slate-300 px-4 py-2.5 text-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 outline-none">
+                                class="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 outline-none">
                             @error('title') <span class="text-rose-500 text-xs mt-1 block">{{ $message }}</span> @enderror
                         </div>
 
                         <div>
-                            <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Slug</label>
+                            <label class="block text-[10px] font-bold text-slate-600 uppercase tracking-widest mb-1">Slug</label>
                             <input
                                 wire:model="slug"
                                 type="text"
-                                class="w-full rounded-lg border border-slate-300 bg-slate-50 px-4 py-2 text-sm focus:border-blue-500 outline-none">
+                                class="w-full rounded-lg border border-slate-300 bg-slate-50 px-3 py-2 text-sm focus:border-blue-500 outline-none">
                             @error('slug') <span class="text-rose-500 text-xs mt-1 block">{{ $message }}</span> @enderror
                         </div>
 
                         <div wire:ignore>
-                            <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Post Content</label>
+                            <label class="block text-[10px] font-bold text-slate-600 uppercase tracking-widest mb-1">Post Content</label>
                             <div
                                 x-data="{
                                     value: @entangle('content'),
@@ -140,12 +140,12 @@ new #[Layout('layouts.admin')] class extends Component {
                 </div>
 
                 <!-- SEO Section -->
-                <div class="bg-white rounded-xl border border-slate-200 p-6 shadow-sm">
-                    <h3 class="text-sm font-bold text-slate-800 mb-4 flex items-center gap-2">
+                <div class="bg-white rounded-xl border border-slate-200 p-5 shadow-sm">
+                    <h3 class="text-xs font-bold text-slate-800 mb-4 flex items-center gap-2">
                         <i class="ri-search-eye-line text-blue-500"></i>
                         Search Engine Optimization (SEO)
                     </h3>
-                    <div class="space-y-4">
+                    <div class="space-y-3">
                         <div>
                             <label class="block text-xs font-medium text-slate-600 mb-1">Meta Title</label>
                             <input wire:model="meta_title" type="text" placeholder="SEO Title" class="w-full rounded-md border border-slate-300 px-3 py-2 text-sm outline-none focus:border-blue-500">
@@ -164,13 +164,13 @@ new #[Layout('layouts.admin')] class extends Component {
             </div>
 
             <!-- Right Column: Settings -->
-            <div class="space-y-6">
+            <div class="space-y-5">
 
-                <div class="bg-white rounded-xl border border-slate-200 p-6 shadow-sm">
-                    <div class="space-y-6">
+                <div class="bg-white rounded-xl border border-slate-200 p-5 shadow-sm">
+                    <div class="space-y-5">
 
                         <div>
-                            <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Category</label>
+                            <label class="block text-[10px] font-bold text-slate-600 uppercase tracking-widest mb-1.5">Category</label>
                             <select
                                 wire:model="category_id"
                                 class="w-full rounded-lg border border-slate-300 px-3 py-2 text-sm focus:border-blue-500 outline-none">
@@ -183,8 +183,8 @@ new #[Layout('layouts.admin')] class extends Component {
                         </div>
 
                         <div>
-                            <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Featured Image</label>
-                            <div class="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-slate-300 border-dashed rounded-lg hover:border-blue-400 transition-colors">
+                            <label class="block text-[10px] font-bold text-slate-600 uppercase tracking-widest mb-1.5">Featured Image</label>
+                            <div class="mt-1 flex justify-center px-4 pt-4 pb-4 border-2 border-slate-300 border-dashed rounded-lg hover:border-blue-400 transition-colors">
                                 <div class="space-y-1 text-center">
                                     @if ($image)
                                     <div class="mb-2">
@@ -221,11 +221,11 @@ new #[Layout('layouts.admin')] class extends Component {
                 <div class="sticky top-24">
                     <button
                         type="submit"
-                        class="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-blue-600 px-6 py-3.5 text-sm font-bold text-white shadow-lg shadow-blue-200 hover:bg-blue-500 transition-all focus:ring-4 focus:ring-blue-100">
-                        <i class="ri-send-plane-fill text-lg"></i>
+                        class="w-full inline-flex items-center justify-center gap-2 rounded-lg bg-blue-600 px-4 py-2 text-sm font-bold text-white shadow-md shadow-blue-100 hover:bg-blue-500 transition-all focus:ring-2 focus:ring-blue-500/40">
+                        <i class="ri-send-plane-fill text-base"></i>
                         Publish Post
                     </button>
-                    <p class="text-center text-[10px] text-slate-400 mt-3 italic">
+                    <p class="text-center text-[10px] text-slate-400 mt-2 italic">
                         Everything looks good? Hit publish!
                     </p>
                 </div>

@@ -64,15 +64,15 @@ new #[Layout('layouts.admin')] class extends Component {
 };
 ?>
 
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
 
     <!-- Page Heading -->
-    <div class="mb-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+    <div class="mb-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
-            <h1 class="text-xl font-semibold text-slate-900">
+            <h1 class="text-lg font-semibold text-slate-900">
                 Blog Posts
             </h1>
-            <p class="mt-1 text-sm text-slate-500">
+            <p class="mt-0.5 text-[11px] text-slate-500">
                 Manage your articles, stories, and news updates.
             </p>
         </div>
