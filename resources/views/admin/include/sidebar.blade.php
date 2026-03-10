@@ -6,6 +6,15 @@ use Illuminate\Support\Facades\Auth;
 
 new class extends Component
 {
+    public function logout()
+    {
+        Auth::logout();
+        session()->invalidate();
+        session()->regenerateToken();
+
+        return redirect()->to(route('login'));
+    }
+
     public function render()
     {
         return view('admin.include.sidebar', [
@@ -162,13 +171,13 @@ flex flex-col"
         <div class="flex items-center gap-3 p-3 rounded-lg bg-slate-50">
 
             <div class="w-9 h-9 rounded-lg bg-blue-600 text-white flex items-center justify-center font-semibold">
-                ADMIN
+                {{ substr(Auth::user()->name ?? 'A', 0, 1) }}
             </div>
 
             <div class="flex-1 min-w-0">
 
                 <p class="text-sm font-semibold text-slate-800 truncate">
-                    ADMIN
+                    {{ Auth::user()->name ?? 'Admin' }}
                 </p>
 
                 <p class="text-[10px] uppercase text-slate-400 tracking-wider font-medium">
@@ -178,6 +187,7 @@ flex flex-col"
             </div>
 
             <button
+                wire:click="logout"
                 class="text-slate-400 hover:text-red-500 transition"
                 title="Logout">
                 <i class="ri-logout-circle-r-line text-xl"></i>
