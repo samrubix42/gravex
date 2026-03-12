@@ -8,6 +8,8 @@ Route::livewire('/blog', 'pages::blog.blog')->name('pages::blog');
 Route::livewire('/blog/{slug}', 'pages::blog.blog-view')->name('pages::blog-view');
 
 Route::livewire('/login', 'auth::login')->name('login')->middleware('guest');
+Route::livewire('/about','pages::about.about')->name('pages::about');
+Route::livewire('/contact','pages::contact.contact')->name('pages::contact');
 
 Route::prefix('admin')->middleware('auth')->group(function () {
     Route::livewire('/', 'admin::dashboard.dashboard')->name('admin.dashboard');

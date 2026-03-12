@@ -1,11 +1,11 @@
 <?php
 
+use App\Models\BlogCategory;
 use Livewire\Component;
-use App\Models\Post;
 use Livewire\Attributes\Title;
+use App\Models\Post;
 
-#[Title('Blog - Grevx Consulting')]
-new class extends Component
+new #[Title('Blog Details - Grevx Consulting')] class extends Component
 {
     public $post;
 
@@ -25,158 +25,379 @@ new class extends Component
             ->take(3)
             ->get();
 
+        $categories = BlogCategory::where('is_active', true)->get();
+
         return view('pages.blog.blog-view', [
-            'recentPosts' => $recentPosts
+            'recentPosts' => $recentPosts,
+            'categories' => $categories
         ]);
     }
 };
 ?>
 
 <div class="bg-white">
-    <!-- Progress Bar (Top) -->
-    <div class="fixed top-0 left-0 w-full h-1 z-50 pointer-events-none">
-        <div id="scroll-progress" class="h-full bg-secondary w-0 transition-all duration-150"></div>
-    </div>
 
-    <!-- Article Header -->
-    <header class="relative pt-32 pb-16 bg-blue-50/20 overflow-hidden text-center">
-        <div class="absolute inset-0 opacity-30 pointer-events-none">
-            <div class="absolute w-[500px] h-[500px] bg-secondary/10 rounded-full blur-3xl -top-40 -left-10"></div>
-        </div>
+<!-- Reading Progress Bar -->
+<div
+x-data="{ progress:0 }"
+x-init="window.addEventListener('scroll', () => {
+let h = document.documentElement;
+progress = (h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
+})"
+class="fixed top-0 left-0 w-full h-1 bg-zinc-200 z-50">
 
-        <div class="relative max-w-4xl mx-auto px-4 sm:px-6">
-            @if($post->category)
-            <a href="{{ route('pages::blog') }}?category={{ $post->category->id }}" class="inline-block px-4 py-1.5 bg-secondary/10 text-secondary text-xs font-bold uppercase tracking-widest rounded-full mb-6 hover:bg-secondary/20 transition">
-                {{ $post->category->name }}
-            </a>
-            @endif
+<div
+class="h-1 bg-secondary transition-all duration-200"
+:style="'width:' + progress + '%'">
+</div>
 
-            <h1 class="text-3xl md:text-5xl font-extrabold text-text-primary tracking-tight leading-[1.15]">
-                {{ $post->title }}
-            </h1>
+</div>
 
-            <div class="mt-8 flex items-center justify-center gap-6 text-sm text-zinc-500 font-medium">
-                <div class="flex items-center gap-2">
-                    <img src="https://ui-avatars.com/api/?name=Admin&background=0b1f33&color=fff" class="w-8 h-8 rounded-full border border-border" alt="Author">
-                    <span>Admin</span>
-                </div>
-                <div class="flex items-center gap-1.5">
-                    <i class="ri-calendar-line text-secondary"></i>
-                    <span>{{ $post->created_at->format('M d, Y') }}</span>
-                </div>
-                <div class="flex items-center gap-1.5">
-                    <i class="ri-time-line text-secondary"></i>
-                    <span>5 min read</span>
-                </div>
-            </div>
-        </div>
-    </header>
 
-    <!-- Article Content -->
-    <section class="pb-24">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6">
-            <!-- Main Featured Image -->
-            <div class="relative aspect-[21/9] rounded-3xl overflow-hidden shadow-2xl shadow-zinc-200 -mt-8 mb-16 z-10 border border-white/50 backdrop-blur-sm">
-                <img
-                    src="{{ $post->image ? Storage::url($post->image) : 'https://placehold.co/1200x600/f1f5f9/0b1f33?text=Grevx+Consulting' }}"
-                    alt="{{ $post->title }}"
-                    class="w-full h-full object-cover">
-            </div>
 
-            <!-- Content Area -->
-            <div class="flex flex-col lg:flex-row gap-16">
-                <!-- Share Sidebar (Desktop Only) -->
-                <div class="hidden lg:block w-12 sticky top-32 h-fit">
-                    <div class="flex flex-col gap-4 text-zinc-400">
-                        <p class="text-[10px] font-bold uppercase tracking-widest mb-2 origin-left -rotate-90">Share</p>
-                        <a href="#" class="w-10 h-10 flex items-center justify-center rounded-xl bg-muted hover:bg-secondary hover:text-white transition shadow-sm"><i class="ri-linkedin-fill"></i></a>
-                        <a href="#" class="w-10 h-10 flex items-center justify-center rounded-xl bg-muted hover:bg-secondary hover:text-white transition shadow-sm"><i class="ri-twitter-x-fill"></i></a>
-                        <a href="#" class="w-10 h-10 flex items-center justify-center rounded-xl bg-muted hover:bg-secondary hover:text-white transition shadow-sm"><i class="ri-facebook-fill"></i></a>
-                        <button onclick="window.print()" class="w-10 h-10 flex items-center justify-center rounded-xl bg-muted hover:bg-secondary hover:text-white transition shadow-sm"><i class="ri-printer-line"></i></button>
-                    </div>
-                </div>
+<!-- HERO HEADER -->
+<header class="pt-36 pb-24 bg-gradient-to-b from-zinc-50 to-white">
 
-                <!-- Text Content -->
-                <div class="flex-1 max-w-none">
-                    <div class="prose prose-lg prose-slate prose-headings:text-text-primary prose-headings:font-bold prose-headings:tracking-tight prose-p:text-zinc-600 prose-p:leading-relaxed prose-a:text-secondary prose-a:no-underline hover:prose-a:underline prose-img:rounded-2xl">
-                        {!! $post->content !!}
-                    </div>
+<div class="max-w-4xl mx-auto px-6 text-center">
 
-                    <!-- Post Footer -->
-                    <div class="mt-16 pt-10 border-t border-border flex flex-wrap items-center justify-between gap-6">
-                        <div class="flex items-center gap-3">
-                            <span class="text-sm font-bold text-text-primary">Tags:</span>
-                            @if($post->meta_keywords)
-                            @foreach(explode(',', $post->meta_keywords) as $tag)
-                            <span class="px-3 py-1 bg-muted rounded-full text-xs font-medium text-zinc-600">#{{ trim($tag) }}</span>
-                            @endforeach
-                            @else
-                            <span class="px-3 py-1 bg-muted rounded-full text-xs font-medium text-zinc-600">#Consulting</span>
-                            <span class="px-3 py-1 bg-muted rounded-full text-xs font-medium text-zinc-600">#Strategy</span>
-                            @endif
-                        </div>
+<nav class="text-sm text-zinc-500 mb-6">
 
-                        <div class="flex items-center gap-4 lg:hidden">
-                            <span class="text-sm font-bold">Share:</span>
-                            <div class="flex gap-2">
-                                <a href="#" class="text-zinc-400 hover:text-secondary"><i class="ri-linkedin-fill text-xl"></i></a>
-                                <a href="#" class="text-zinc-400 hover:text-secondary"><i class="ri-twitter-x-fill text-xl"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<a href="{{ route('pages::blog') }}"
+wire:navigate
+class="hover:text-secondary">
+Blog
+</a>
 
-    <!-- Related Articles -->
-    @if($recentPosts->isNotEmpty())
-    <section class="py-24 bg-muted/50 border-t border-border">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6">
-            <div class="flex items-end justify-between mb-12">
-                <div>
-                    <p class="text-xs font-bold text-secondary uppercase tracking-[0.2em] mb-3">Up next</p>
-                    <h2 class="text-3xl font-bold text-text-primary">Related Articles</h2>
-                </div>
-                <a href="{{ route('pages::blog') }}" class="text-sm font-bold text-secondary flex items-center gap-1 group">
-                    View All
-                    <i class="ri-arrow-right-line transition-transform group-hover:translate-x-1"></i>
-                </a>
-            </div>
+/
 
-            <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-                @foreach($recentPosts as $related)
-                <article class="group bg-white rounded-2xl border border-border overflow-hidden transition-all duration-300 hover:shadow-lg ">
-                    <div class="aspect-[16/10] overflow-hidden">
-                        <img src="{{ $related->image ? Storage::url($related->image) : 'https://placehold.co/800x600/f1f5f9/0b1f33?text=Related+Post' }}"
-                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="{{ $related->title }}">
-                    </div>
-                    <div class="p-6">
-                        <h3 class="font-bold text-text-primary group-hover:text-secondary transition-colors mb-4 leading-snug">
-                            <a href="{{ route('pages::blog-view', $related->slug) }}" wire:navigate>{{ $related->title }}</a>
-                        </h3>
-                        <a href="{{ route('pages::blog-view', $related->slug) }}" wire:navigate class="text-xs font-bold uppercase tracking-widest text-secondary inline-flex items-center gap-2">
-                            Read Now
-                            <i class="ri-arrow-right-line"></i>
-                        </a>
-                    </div>
-                </article>
-                @endforeach
-            </div>
-        </div>
-    </section>
-    @endif
+<span>Article</span>
 
-    <!-- Scroll Progress Script -->
-    <script>
-        window.addEventListener('scroll', () => {
-            const h = document.documentElement,
-                b = document.body,
-                st = 'scrollTop',
-                sh = 'scrollHeight';
-            const percent = (h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight) * 100;
-            const progress = document.getElementById('scroll-progress');
-            if (progress) progress.style.width = percent + '%';
-        });
-    </script>
+</nav>
+
+
+@if($post->category)
+
+<span class="inline-block text-xs uppercase tracking-widest text-secondary font-semibold bg-secondary/10 px-3 py-1 rounded-full">
+{{ $post->category->name }}
+</span>
+
+@endif
+
+
+<h1 class="mt-6 text-4xl md:text-5xl font-bold text-text-primary leading-tight">
+{{ $post->title }}
+</h1>
+
+
+<div class="mt-6 flex justify-center items-center gap-4 text-sm text-zinc-500">
+
+<span>{{ $post->created_at->format('M d, Y') }}</span>
+
+<span class="w-1 h-1 bg-zinc-400 rounded-full"></span>
+
+<span>5 min read</span>
+
+</div>
+
+</div>
+
+</header>
+
+
+
+<!-- MAIN CONTENT -->
+<section class="pb-28">
+
+<div class="max-w-7xl mx-auto px-6">
+
+<div class="grid lg:grid-cols-12 gap-16">
+
+
+
+
+<!-- ARTICLE -->
+<article class="lg:col-span-8">
+
+<!-- Featured Image -->
+
+<div class="rounded-3xl overflow-hidden mb-14 shadow-lg">
+
+<img
+src="{{ $post->image ? Storage::url($post->image) : 'https://placehold.co/1200x600' }}"
+class="w-full h-auto object-cover hover:scale-105 transition duration-700"
+alt="{{ $post->title }}">
+
+</div>
+
+
+
+<!-- Blog Content -->
+
+<div class="prose prose-lg max-w-none
+prose-headings:text-text-primary
+prose-headings:font-semibold
+prose-p:text-zinc-700
+prose-p:leading-relaxed
+prose-a:text-secondary
+prose-a:no-underline hover:prose-a:underline
+prose-img:rounded-2xl
+prose-blockquote:border-secondary
+prose-blockquote:bg-zinc-50
+prose-blockquote:px-6
+prose-blockquote:py-4
+prose-blockquote:rounded-lg">
+
+{!! $post->content !!}
+
+</div>
+
+
+
+<!-- Tags -->
+
+@if($post->meta_keywords)
+
+<div class="mt-12 pt-8 border-t border-zinc-100 flex flex-wrap gap-3">
+
+<span class="text-sm font-medium text-zinc-700">
+Tags:
+</span>
+
+@foreach(explode(',', $post->meta_keywords) as $tag)
+
+<span class="px-3 py-1 text-xs bg-zinc-100 rounded-full text-zinc-600 hover:bg-secondary hover:text-white transition cursor-pointer">
+#{{ trim($tag) }}
+</span>
+
+@endforeach
+
+</div>
+
+@endif
+
+
+
+
+<!-- CTA CARD -->
+
+<div class="mt-14">
+
+<div class="bg-gradient-to-br from-secondary/10 to-secondary/5 border border-secondary/20 rounded-2xl p-8">
+
+<h3 class="text-xl font-semibold text-text-primary">
+Need help applying this insight?
+</h3>
+
+<p class="mt-2 text-zinc-600">
+Our consulting team helps businesses translate strategy into practical action.
+</p>
+
+<a
+href="{{ route('pages::contact') }}"
+wire:navigate
+class="inline-flex items-center mt-5 px-5 py-2.5 bg-secondary text-white rounded-lg hover:opacity-90 transition">
+
+Talk to our team →
+
+</a>
+
+</div>
+
+</div>
+
+
+</article>
+
+
+
+
+<!-- SIDEBAR -->
+
+<aside class="lg:col-span-4">
+
+<div class="sticky top-32 space-y-10">
+
+
+
+<!-- Categories -->
+
+<div class="bg-white border border-zinc-100 rounded-2xl p-6 shadow-sm">
+
+<h3 class="text-sm font-semibold uppercase tracking-widest text-zinc-500 mb-5">
+Categories
+</h3>
+
+<ul class="space-y-3">
+
+@foreach($categories as $cat)
+
+<li>
+
+<a
+href="{{ route('pages::blog') }}?category={{ $cat->id }}"
+class="flex justify-between text-zinc-700 hover:text-secondary transition">
+
+{{ $cat->name }}
+
+<span class="text-zinc-400 text-sm">
+{{ $cat->posts()->count() }}
+</span>
+
+</a>
+
+</li>
+
+@endforeach
+
+</ul>
+
+</div>
+
+
+
+
+<!-- Recent Posts -->
+
+<div class="bg-white border border-zinc-100 rounded-2xl p-6 shadow-sm">
+
+<h3 class="text-sm font-semibold uppercase tracking-widest text-zinc-500 mb-6">
+Recent Articles
+</h3>
+
+<div class="space-y-6">
+
+@foreach($recentPosts as $recent)
+
+<a
+href="{{ route('pages::blog-view', $recent->slug) }}"
+wire:navigate
+class="flex gap-4 group">
+
+<div class="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0">
+
+<img
+src="{{ $recent->image ? Storage::url($recent->image) : 'https://placehold.co/200x200' }}"
+class="w-full h-full object-cover group-hover:scale-110 transition">
+
+</div>
+
+<div>
+
+<p class="text-xs text-zinc-400">
+{{ $recent->created_at->format('M d, Y') }}
+</p>
+
+<h4 class="text-sm font-semibold text-text-primary leading-snug group-hover:text-secondary transition">
+{{ Str::limit($recent->title, 60) }}
+</h4>
+
+</div>
+
+</a>
+
+@endforeach
+
+</div>
+
+</div>
+
+
+
+
+<!-- Work With Us -->
+
+<div class="bg-white border border-zinc-100 rounded-2xl p-6 shadow-sm">
+
+<h3 class="text-lg font-semibold text-text-primary">
+Work with Grevx
+</h3>
+
+<p class="mt-2 text-sm text-zinc-600">
+We help founders and leadership teams improve financial strategy and operational clarity.
+</p>
+
+<a
+href="{{ route('pages::contact') }}"
+wire:navigate
+class="inline-block mt-4 text-secondary font-semibold hover:underline">
+
+Start a conversation →
+
+</a>
+
+</div>
+
+
+
+</div>
+
+</aside>
+
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+
+<!-- RELATED ARTICLES -->
+
+@if($recentPosts->isNotEmpty())
+
+<section class="py-24 bg-zinc-50">
+
+<div class="max-w-7xl mx-auto px-6">
+
+<h2 class="text-2xl font-semibold text-text-primary mb-12">
+Related Articles
+</h2>
+
+<div class="grid gap-10 md:grid-cols-3">
+
+@foreach($recentPosts as $related)
+
+<article class="group">
+
+<div class="aspect-[16/10] rounded-xl overflow-hidden mb-5">
+
+<img
+src="{{ $related->image ? Storage::url($related->image) : 'https://placehold.co/800x600' }}"
+class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+
+</div>
+
+<p class="text-xs text-zinc-500 mb-2">
+{{ $related->created_at->format('M d, Y') }}
+</p>
+
+<h3 class="font-semibold text-text-primary leading-snug">
+
+<a
+href="{{ route('pages::blog-view', $related->slug) }}"
+wire:navigate
+class="hover:text-secondary">
+
+{{ $related->title }}
+
+</a>
+
+</h3>
+
+</article>
+
+@endforeach
+
+</div>
+
+</div>
+
+</section>
+
+@endif
+
+
 </div>

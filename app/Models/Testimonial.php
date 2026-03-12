@@ -10,6 +10,6 @@ class Testimonial extends Model
         'description',
         'company',
         'name',
-        'is_active',
+        'is_active'
     ];
 }
