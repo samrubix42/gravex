@@ -16,7 +16,7 @@ new class extends Component
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
 
             <!-- Logo -->
-            <a href="/" class="flex items-center">
+            <a href="{{ route('home') }}" wire:navigate class="flex items-center">
                 <img src="/logo.png" alt="Grevx" class="h-32">
             </a>
 
@@ -24,11 +24,11 @@ new class extends Component
             <!-- Desktop Navigation -->
             <nav class="hidden md:flex items-center gap-10 font-medium text-[15px]">
 
-                <a href="/" class="text-text-secondary hover:text-primary transition">
+                <a href="{{ route('home') }}" wire:navigate class="text-text-secondary hover:text-primary transition">
                     Home
                 </a>
 
-                <a href="#" class="text-text-secondary hover:text-primary transition">
+                <a href="{{ route('pages::about') }}" wire:navigate class="text-text-secondary hover:text-primary transition">
                     About
                 </a>
 
@@ -94,7 +94,7 @@ new class extends Component
                     Blog
                 </a>
 
-                <a href="#" class="text-text-secondary hover:text-primary transition">
+                <a href="{{ route('pages::contact') }}" wire:navigate class="text-text-secondary hover:text-primary transition">
                     Contact
                 </a>
 
@@ -104,7 +104,7 @@ new class extends Component
             <!-- CTA -->
             <div class="hidden md:block">
 
-                <a href="#"
+                <a href="{{ route('pages::contact') }}" wire:navigate
                     class="px-5 py-2.5 bg-secondary text-white rounded-lg font-medium hover:bg-secondary/90 transition">
                     Get Started
                 </a>
@@ -133,7 +133,9 @@ new class extends Component
         <!-- Top -->
         <div class="flex items-center justify-between h-20 px-6 border-b border-border">
 
-            <img src="/logo.png" class="h-8">
+            <a href="{{ route('home') }}" wire:navigate @click="open=false">
+                <img src="/logo.png" class="h-8">
+            </a>
 
             <button @click="open=false" class="text-2xl text-primary">
                 <i class="ri-close-line"></i>
@@ -145,11 +147,11 @@ new class extends Component
         <!-- Links -->
         <div class="flex flex-col px-6 pt-10 space-y-6 text-lg font-medium">
 
-            <a href="/" @click="open=false" class="text-text-secondary hover:text-primary transition">
+            <a href="{{ route('home') }}" wire:navigate @click="open=false" class="text-text-secondary hover:text-primary transition">
                 Home
             </a>
 
-            <a href="#" @click="open=false" class="text-text-secondary hover:text-primary transition">
+            <a href="{{ route('pages::about') }}" wire:navigate @click="open=false" class="text-text-secondary hover:text-primary transition">
                 About
             </a>
 
@@ -203,14 +205,15 @@ new class extends Component
                 Blog
             </a>
 
-            <a href="#" @click="open=false" class="text-text-secondary hover:text-primary transition">
+            <a href="{{ route('pages::contact') }}" wire:navigate @click="open=false" class="text-text-secondary hover:text-primary transition">
                 Contact
             </a>
 
 
             <!-- CTA -->
             <a
-                href="#"
+                href="{{ route('pages::contact') }}"
+                wire:navigate
                 class="mt-6 inline-flex justify-center px-6 py-3 bg-secondary text-white rounded-lg font-medium hover:bg-secondary/90 transition">
 
                 Get Started

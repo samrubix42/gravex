@@ -21,7 +21,9 @@ new class extends Component
             <!-- Brand -->
             <div class="space-y-5">
 
-                <img src="/logo.png" alt="GREVX Logo" class="w-32">
+                <a href="{{ route('home') }}" wire:navigate>
+                    <img src="/logo.png" alt="GREVX Logo" class="w-32">
+                </a>
 
                 <p class="text-sm text-text-secondary leading-relaxed">
                     GREVX delivers modern infrastructure, cloud platforms
@@ -62,26 +64,26 @@ new class extends Component
                 <ul class="space-y-2 text-sm text-text-secondary">
 
                     <li>
-                        <a href="#" class="hover:text-secondary transition">
+                        <a href="{{ route('pages::about') }}" wire:navigate class="hover:text-secondary transition">
                             About Us
                         </a>
                     </li>
 
                     <li>
-                        <a href="#" class="hover:text-secondary transition">
+                        <a href="{{ route('home') }}" wire:navigate class="hover:text-secondary transition">
                             Our Services
                         </a>
                     </li>
 
                     <li>
-                        <a href="#" class="hover:text-secondary transition">
+                        <a href="{{ route('pages::blog') }}" wire:navigate class="hover:text-secondary transition">
                             Blog
                         </a>
                     </li>
 
                     <li>
-                        <a href="#" class="hover:text-secondary transition">
-                            Careers
+                        <a href="{{ route('pages::contact') }}" wire:navigate class="hover:text-secondary transition">
+                            Contact
                         </a>
                     </li>
 
@@ -170,7 +172,7 @@ new class extends Component
         <div class="max-w-7xl mx-auto px-4 sm:px-6 py-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-text-secondary">
 
             <p class="text-center sm:text-left">
-                © {{ date('Y') }} GREVX. All rights reserved.
+                (c) {{ date('Y') }} GREVX. All rights reserved.
             </p>
 
             <div class="flex flex-wrap justify-center gap-5">
