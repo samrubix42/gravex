@@ -41,7 +41,7 @@ class AdminSidebar
                     (object)[
                         'title' => 'Blog Categories',
                         'icon' => 'ri-list-settings-line',
-                        'url' => Route::has('admin.blog.categories') ? route('admin.blog.categories') : '#',
+                        'url' => Route::has('admin.blog.category.list') ? route('admin.blog.category.list') : '#',
                         'hasSubmenu' => false,
                         'submenu' => [],
                     ],

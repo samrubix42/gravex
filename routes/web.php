@@ -16,6 +16,7 @@ Route::prefix('admin')->middleware('auth')->group(function () {
     Route::livewire('/testimonials', 'admin::testimonial.testimonial-list')->name('admin.testimonial');
     Route::livewire('/blog-categories', 'admin::blog.blog-category-list')->name('admin.blog.category.list');
     Route::livewire('/blogs', 'admin::blog.blog-list')->name('admin.blog.list');
+    Route::livewire('/contacts', 'admin::contact.contact-list')->name('admin.contact-list');
     Route::livewire('/blog/add', 'admin::blog.add-blog')->name('admin.blog.add');
     Route::livewire('/blog/update/{id}', 'admin::blog.update-blog')->name('admin.blog.update');
 
