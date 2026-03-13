@@ -1,10 +1,25 @@
 <?php
 
+use App\Models\Testimonial;
 use Livewire\Component;
 
 new class extends Component
 {
-    //
+    public array $testimonials = [];
+
+    public function mount(): void
+    {
+        $this->testimonials = Testimonial::query()
+            ->where('is_active', true)
+            ->latest()
+            ->get(['description', 'name', 'company'])
+            ->map(fn ($testimonial) => [
+                'quote' => $testimonial->description,
+                'name' => $testimonial->name,
+                'company' => $testimonial->company,
+            ])
+            ->toArray();
+    }
 };
 ?>
 
@@ -435,27 +450,17 @@ new class extends Component
         <section
             x-data="{
             active:0,
-            testimonials:[
-                {
-                    quote:'The leadership training program from Grevx helped our team communicate better and resolve issues faster.',
-                    name:'HR Director',
-                    company:'Technology Company'
-                },
-                {
-                    quote:'Their financial modeling and valuation insights helped us prepare confidently for investor conversations.',
-                    name:'Startup Founder',
-                    company:'Fintech Startup'
-                },
-                {
-                    quote:'Our managers gained practical leadership skills that improved collaboration across teams.',
-                    name:'L&D Head',
-                    company:'Corporate Client'
-                }
-            ],
-            next(){ this.active = (this.active + 1) % this.testimonials.length },
-            prev(){ this.active = (this.active - 1 + this.testimonials.length) % this.testimonials.length }
+            testimonials:@js($testimonials),
+            next(){
+                if (!this.testimonials.length) return;
+                this.active = (this.active + 1) % this.testimonials.length
+            },
+            prev(){
+                if (!this.testimonials.length) return;
+                this.active = (this.active - 1 + this.testimonials.length) % this.testimonials.length
+            }
         }"
-            x-init="setInterval(()=>next(),5000)"
+            x-init="if (testimonials.length > 1) setInterval(()=>next(),5000)"
             class="py-24 bg-muted">
 
             <div class="max-w-5xl mx-auto px-4 sm:px-6 text-center">
@@ -472,6 +477,12 @@ new class extends Component
 
                 <!-- Testimonial Card -->
                 <div class="relative mt-12">
+
+                    <template x-if="testimonials.length === 0">
+                        <div class="bg-white border border-border rounded-md p-8 shadow-sm">
+                            <p class="text-zinc-700">No testimonials available right now.</p>
+                        </div>
+                    </template>
 
                     <template x-for="(item,index) in testimonials" :key="index">
 
@@ -510,6 +521,7 @@ new class extends Component
 
                     <button
                         @click="prev()"
+                        :disabled="testimonials.length < 2"
                         class="w-10 h-10 flex items-center justify-center border border-border rounded-full hover:bg-background transition">
 
                         <i class="ri-arrow-left-line"></i>
@@ -518,6 +530,7 @@ new class extends Component
 
                     <button
                         @click="next()"
+                        :disabled="testimonials.length < 2"
                         class="w-10 h-10 flex items-center justify-center border border-border rounded-full hover:bg-background transition">
 
                         <i class="ri-arrow-right-line"></i>
