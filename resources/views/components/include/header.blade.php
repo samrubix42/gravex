@@ -8,7 +8,7 @@ new class extends Component
 };
 ?>
 
-<div x-cloak x-data="{ open:false, services:false }" class="relative">
+<div x-cloak x-data="{ open:false }" class="relative">
 
     <!-- HEADER -->
     <header class="fixed top-0 left-0 w-full bg-white/80 backdrop-blur-md border-b border-border z-50">
@@ -32,63 +32,13 @@ new class extends Component
                     About
                 </a>
 
+                <a href="{{ route('pages::consulting') }}" wire:navigate class="text-text-secondary hover:text-primary transition">
+                    Consulting
+                </a>
 
-                <!-- Services Dropdown -->
-                <div
-                    class="relative"
-                    @mouseenter="services=true"
-                    @mouseleave="services=false">
-
-                    <button class="flex items-center gap-1 text-text-secondary hover:text-primary transition">
-
-                        Services
-
-                        <i class="ri-arrow-down-s-line text-lg transition"
-                            :class="services ? 'rotate-180' : ''"></i>
-
-                    </button>
-
-
-                    <!-- Dropdown -->
-                    <div
-                        x-show="services"
-                        x-transition:enter="transition ease-out duration-200"
-                        x-transition:enter-start="opacity-0 translate-y-2"
-                        x-transition:enter-end="opacity-100 translate-y-0"
-                        x-transition:leave="transition ease-in duration-150"
-                        x-transition:leave-start="opacity-100 translate-y-0"
-                        x-transition:leave-end="opacity-0 translate-y-2"
-                        class="absolute left-0 top-full mt-3 w-64 bg-white border border-border rounded-xl shadow-lg p-2">
-
-                        <a href="#" class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-muted transition">
-                            <i class="ri-calculator-line text-secondary"></i>
-                            Accounting & Compliance
-                        </a>
-
-                        <a href="#" class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-muted transition">
-                            <i class="ri-file-text-line text-secondary"></i>
-                            Tax Filing
-                        </a>
-
-                        <a href="#" class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-muted transition">
-                            <i class="ri-team-line text-secondary"></i>
-                            Corporate Training
-                        </a>
-
-                        <a href="#" class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-muted transition">
-                            <i class="ri-bar-chart-line text-secondary"></i>
-                            Financial Modeling
-                        </a>
-
-                        <a href="#" class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-muted transition">
-                            <i class="ri-line-chart-line text-secondary"></i>
-                            Valuation
-                        </a>
-
-                    </div>
-
-                </div>
-
+                <a href="{{ route('pages::training') }}" wire:navigate class="text-text-secondary hover:text-primary transition">
+                    Training
+                </a>
 
                 <a href="{{ route('pages::blog') }}" wire:navigate class="text-text-secondary hover:text-primary transition">
                     Blog
@@ -155,51 +105,13 @@ new class extends Component
                 About
             </a>
 
+            <a href="{{ route('pages::consulting') }}" wire:navigate @click="open=false" class="text-text-secondary hover:text-primary transition">
+                Consulting
+            </a>
 
-            <!-- Mobile Services Dropdown -->
-            <div x-data="{ mobileServices:false }">
-
-                <button
-                    @click="mobileServices=!mobileServices"
-                    class="flex items-center justify-between w-full text-text-secondary hover:text-primary transition">
-
-                    <span>Services</span>
-
-                    <i class="ri-arrow-down-s-line transition"
-                        :class="mobileServices ? 'rotate-180' : ''"></i>
-
-                </button>
-
-
-                <div
-                    x-show="mobileServices"
-                    x-transition
-                    class="mt-3 pl-4 flex flex-col space-y-3 text-[16px]">
-
-                    <a href="#" @click="open=false" class="hover:text-secondary">
-                        Accounting & Compliance
-                    </a>
-
-                    <a href="#" @click="open=false" class="hover:text-secondary">
-                        Tax Filing
-                    </a>
-
-                    <a href="#" @click="open=false" class="hover:text-secondary">
-                        Corporate Training
-                    </a>
-
-                    <a href="#" @click="open=false" class="hover:text-secondary">
-                        Financial Modeling
-                    </a>
-
-                    <a href="#" @click="open=false" class="hover:text-secondary">
-                        Valuation
-                    </a>
-
-                </div>
-
-            </div>
-
+            <a href="{{ route('pages::training') }}" wire:navigate @click="open=false" class="text-text-secondary hover:text-primary transition">
+                Training
+            </a>
 
             <a href="{{ route('pages::blog') }}" wire:navigate @click="open=false" class="text-text-secondary hover:text-primary transition">
                 Blog
@@ -223,5 +135,6 @@ new class extends Component
         </div>
 
     </div>
+
 
 </div>

@@ -10,9 +10,6 @@ new class extends Component
 
 <footer class="bg-surface border-t border-border">
 
-
-
-
     <!-- Footer Main -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 py-14">
 
@@ -26,9 +23,9 @@ new class extends Component
                 </a>
 
                 <p class="text-sm text-text-secondary leading-relaxed">
-                    GREVX delivers modern infrastructure, cloud platforms
-                    and enterprise software solutions that help companies
-                    innovate and scale.
+                    GREVX delivers expert consulting, corporate training,
+                    and financial advisory solutions that help businesses
+                    grow, scale, and succeed.
                 </p>
 
                 <!-- Social Icons -->
@@ -64,14 +61,14 @@ new class extends Component
                 <ul class="space-y-2 text-sm text-text-secondary">
 
                     <li>
-                        <a href="{{ route('pages::about') }}" wire:navigate class="hover:text-secondary transition">
-                            About Us
+                        <a href="{{ route('home') }}" wire:navigate class="hover:text-secondary transition">
+                            Home
                         </a>
                     </li>
 
                     <li>
-                        <a href="{{ route('home') }}" wire:navigate class="hover:text-secondary transition">
-                            Our Services
+                        <a href="{{ route('pages::about') }}" wire:navigate class="hover:text-secondary transition">
+                            About Us
                         </a>
                     </li>
 
@@ -102,26 +99,38 @@ new class extends Component
                 <ul class="space-y-2 text-sm text-text-secondary">
 
                     <li>
-                        <a href="#" class="hover:text-secondary transition">
-                            Digital Infrastructure
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#" class="hover:text-secondary transition">
+                        <a href="{{ route('pages::consulting') }}" wire:navigate class="hover:text-secondary transition">
                             Consulting
                         </a>
                     </li>
 
                     <li>
-                        <a href="#" class="hover:text-secondary transition">
-                            More Services
+                        <a href="{{ route('pages::training') }}" wire:navigate class="hover:text-secondary transition">
+                            Corporate Training
                         </a>
                     </li>
 
                     <li>
-                        <a href="#" class="hover:text-secondary transition">
-                            Technology Consulting
+                        <a href="{{ route('pages::consulting') }}" wire:navigate class="hover:text-secondary transition">
+                            Tax Preparation &amp; Filing
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{{ route('pages::consulting') }}" wire:navigate class="hover:text-secondary transition">
+                            Financial Modeling
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{{ route('pages::consulting') }}" wire:navigate class="hover:text-secondary transition">
+                            Capital Infusion
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{{ route('pages::consulting') }}" wire:navigate class="hover:text-secondary transition">
+                            Investor Readiness
                         </a>
                     </li>
 
@@ -138,7 +147,7 @@ new class extends Component
                 </h3>
 
                 <p class="text-sm text-text-secondary mb-4">
-                    Get insights about infrastructure, cloud and modern digital systems.
+                    Get insights on consulting, finance, and business growth strategies.
                 </p>
 
                 <div class="flex flex-col sm:flex-row border border-border rounded-lg overflow-hidden">
@@ -172,7 +181,7 @@ new class extends Component
         <div class="max-w-7xl mx-auto px-4 sm:px-6 py-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-text-secondary">
 
             <p class="text-center sm:text-left">
-                (c) {{ date('Y') }} GREVX. All rights reserved.
+                &copy; {{ date('Y') }} GREVX. All rights reserved.
             </p>
 
             <div class="flex flex-wrap justify-center gap-5">

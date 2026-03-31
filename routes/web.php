@@ -10,6 +10,8 @@ Route::livewire('/blog/{slug}', 'pages::blog.blog-view')->name('pages::blog-view
 Route::livewire('/login', 'auth::login')->name('login')->middleware('guest');
 Route::livewire('/about','pages::about.about')->name('pages::about');
 Route::livewire('/contact','pages::contact.contact')->name('pages::contact');
+Route::livewire('/consulting','pages::consulting.consulting')->name('pages::consulting');
+Route::livewire('/corporate-training','pages::training.training')->name('pages::training');
 
 Route::prefix('admin')->middleware('auth')->group(function () {
     Route::livewire('/', 'admin::dashboard.dashboard')->name('admin.dashboard');
