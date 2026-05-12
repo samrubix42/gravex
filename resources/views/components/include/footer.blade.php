@@ -16,24 +16,21 @@ new class extends Component
         <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
 
             <!-- Brand -->
-            <div class="space-y-5">
+            <div class="space-y-2">
 
                 <a href="{{ route('home') }}" wire:navigate>
                     <img src="/logo.png" alt="GREVX Logo" class="w-32">
                 </a>
 
-                <p class="text-sm text-text-secondary leading-relaxed">
-                    GREVX delivers expert consulting, corporate training,
-                    and financial advisory solutions that help businesses
-                    grow, scale, and succeed.
-                </p>
 
                 <!-- Social Icons -->
                 <div class="flex gap-3">
 
-                    <a href="#"
+                    <a href="https://wa.me/918376059410?text=Hi%20happy%20to%20know%20about%20your%20services"
+
+                        target="_blank"
                         class="w-9 h-9 flex items-center justify-center rounded-md border border-border hover:bg-secondary hover:text-white transition">
-                        <i class="ri-twitter-x-line"></i>
+                        <i class="ri-whatsapp-line"></i>
                     </a>
 
                     <a href="#"
@@ -43,7 +40,7 @@ new class extends Component
 
                     <a href="#"
                         class="w-9 h-9 flex items-center justify-center rounded-md border border-border hover:bg-secondary hover:text-white transition">
-                        <i class="ri-github-line"></i>
+                        <i class="ri-instagram-line"></i>
                     </a>
 
                 </div>
@@ -184,18 +181,10 @@ new class extends Component
                 &copy; {{ date('Y') }} GREVX. All rights reserved.
             </p>
 
-            <div class="flex flex-wrap justify-center gap-5">
-
-                <a href="#" class="hover:text-secondary transition">
-                    Privacy Policy
-                </a>
-
-                <a href="#" class="hover:text-secondary transition">
-                    Terms
-                </a>
-
-                <a href="#" class="hover:text-secondary transition">
-                    Security
+            <div class="">
+                <span>Powered By</span>
+                <a href="https://techonika.com" class="hover:text-secondary transition">
+                    Techonika
                 </a>
 
             </div>

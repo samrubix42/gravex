@@ -7,9 +7,9 @@
     --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
 
     /* Primary Brand */
-    --color-primary: #0B1F33;
-    --color-secondary: #317695;
-    --color-accent: #06B6D4;
+    --color-primary: #263D5C;
+    --color-secondary: #263D5C;
+    --color-accent: #263D5C;
 
     /* Light Background */
     --color-background: #F8FAFC;

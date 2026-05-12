@@ -107,224 +107,219 @@ new class extends Component
 
 
 
-    <!-- CONTACT SECTION -->
-    <section class="py-24 bg-background">
+   <section class="py-24 bg-background">
 
-        <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16">
+    <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16">
 
-            <!-- LEFT SIDE INFO -->
-            <div>
+        <!-- LEFT SIDE INFO -->
+        <div>
 
-                <h2 class="text-2xl font-semibold text-text-primary">
-                    Contact <span class="text-secondary">Information</span>
-                </h2>
-
-                <p class="mt-4 text-zinc-700">
-                    Reach out to us directly using the information below or send
-                    a message using the form.
-                </p>
-
-
-                <!-- EMAIL -->
-                <div class="mt-10 flex items-start gap-4">
-
-                    <div class="w-12 h-12 rounded-lg border border-border bg-secondary/10 text-secondary flex items-center justify-center text-lg">
-                        <i class="ri-mail-line"></i>
-                    </div>
-
-                    <div>
-                        <p class="font-semibold text-text-primary">Email</p>
-                        <p class="text-zinc-700">hello@grevxconsulting.com</p>
-                    </div>
-
-                </div>
-
-
-                <!-- PHONE -->
-                <div class="mt-8 flex items-start gap-4">
-
-                    <div class="w-12 h-12 rounded-lg border border-border bg-secondary/10 text-secondary flex items-center justify-center text-lg">
-                        <i class="ri-phone-line"></i>
-                    </div>
-
-                    <div>
-                        <p class="font-semibold text-text-primary">Phone</p>
-                        <p class="text-zinc-700">+91 98XX XX XX XX</p>
-                    </div>
-
-                </div>
-
-
-                <!-- OFFICE -->
-                <div class="mt-8 flex items-start gap-4">
-
-                    <div class="w-12 h-12 rounded-lg border border-border bg-secondary/10 text-secondary flex items-center justify-center text-lg">
-                        <i class="ri-map-pin-line"></i>
-                    </div>
-
-                    <div>
-                        <p class="font-semibold text-text-primary">Office</p>
-                        <p class="text-zinc-700">Mumbai, India</p>
-                    </div>
-
-                </div>
-
-            </div>
-
-
-
-            <!-- CONTACT FORM -->
-            <div class="border border-border bg-white rounded-xl p-8 shadow-sm">
-
-                <h3 class="text-xl font-semibold text-text-primary">
-                    Send a <span class="text-secondary">Message</span>
-                </h3>
-
-                <p class="mt-2 text-zinc-700">
-                    Fill the form and our team will contact you soon.
-                </p>
-
-
-                @if (session('success'))
-                <div class="mt-6 rounded-md bg-secondary/10 text-secondary px-4 py-3 text-sm">
-                    {{ session('success') }}
-                </div>
-                @endif
-
-                @error('contact')
-                <div class="mt-6 rounded-md bg-red-50 text-red-700 px-4 py-3 text-sm">
-                    {{ $message }}
-                </div>
-                @enderror
-
-                <form wire:submit.prevent="submit" class="mt-8 grid gap-6">
-
-                    <div>
-                        <label class="text-sm font-medium text-text-primary">
-                            Full Name
-                        </label>
-
-                        <input
-                            type="text"
-                            wire:model.live.debounce.300ms="name"
-                            class="mt-2 w-full border border-border rounded-md px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-secondary/30"
-                            placeholder="Your name">
-                        @error('name')
-                        <p class="mt-2 text-xs text-red-600">{{ $message }}</p>
-                        @enderror
-                    </div>
-
-
-                    <div>
-                        <label class="text-sm font-medium text-text-primary">
-                            Phone Number
-                        </label>
-
-                        <input
-                            type="text"
-                            wire:model.live.debounce.300ms="phone"
-                            class="mt-2 w-full border border-border rounded-md px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-secondary/30"
-                            placeholder="+91 98XX XX XX XX">
-                        @error('phone')
-                        <p class="mt-2 text-xs text-red-600">{{ $message }}</p>
-                        @enderror
-                    </div>
-
-
-                    <div>
-                        <label class="text-sm font-medium text-text-primary">
-                            Email Address
-                        </label>
-
-                        <input
-                            type="email"
-                            wire:model.live.debounce.300ms="email"
-                            class="mt-2 w-full border border-border rounded-md px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-secondary/30"
-                            placeholder="you@company.com">
-                        @error('email')
-                        <p class="mt-2 text-xs text-red-600">{{ $message }}</p>
-                        @enderror
-                    </div>
-
-
-                    <div>
-                        <label class="text-sm font-medium text-text-primary">
-                            Subject
-                        </label>
-
-                        <input
-                            type="text"
-                            wire:model.live.debounce.300ms="subject"
-                            class="mt-2 w-full border border-border rounded-md px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-secondary/30"
-                            placeholder="Subject">
-                        @error('subject')
-                        <p class="mt-2 text-xs text-red-600">{{ $message }}</p>
-                        @enderror
-                    </div>
-
-
-                    <div>
-                        <label class="text-sm font-medium text-text-primary">
-                            Message
-                        </label>
-
-                        <textarea
-                            rows="5"
-                            wire:model.live.debounce.300ms="message"
-                            class="mt-2 w-full border border-border rounded-md px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-secondary/30"
-                            placeholder="Write your message"></textarea>
-                        @error('message')
-                        <p class="mt-2 text-xs text-red-600">{{ $message }}</p>
-                        @enderror
-                    </div>
-
-
-                    <button
-                        type="submit"
-                        class="mt-2 w-full bg-secondary text-white py-3 rounded-md font-medium hover:bg-secondary/90 transition">
-                        <span wire:loading.remove wire:target="submit">Submit Message</span>
-                        <span wire:loading wire:target="submit">Submitting...</span>
-                    </button>
-
-                </form>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- MAP SECTION -->
-    <section class="pb-24 bg-muted">
-
-        <div class="max-w-7xl mx-auto px-6">
-
-            <h2 class="text-2xl font-semibold text-text-primary text-center">
-                Our <span class="text-secondary">Location</span>
+            <h2 class="text-2xl font-semibold text-text-primary">
+                Contact <span class="text-secondary">Information</span>
             </h2>
 
-            <p class="text-zinc-700 text-center mt-2">
-                Visit our office or locate us on the map.
+            <p class="mt-4 text-zinc-700">
+                Reach out to us directly using the information below or send
+                a message using the form.
             </p>
 
 
-            <div class="mt-10 rounded-xl overflow-hidden border border-border bg-white shadow-sm">
+            <!-- EMAIL -->
+            <div class="mt-10 flex items-start gap-4">
 
-                <iframe
-                    src="https://www.google.com/maps?q=Mumbai&output=embed"
-                    width="100%"
-                    height="400"
-                    style="border:0;"
-                    allowfullscreen=""
-                    loading="lazy">
-                </iframe>
+                <div class="w-12 h-12 rounded-lg border border-border bg-secondary/10 text-secondary flex items-center justify-center text-lg">
+                    <i class="ri-mail-line"></i>
+                </div>
+
+                <div>
+                    <p class="font-semibold text-text-primary">Email</p>
+                    <p class="text-zinc-700">grevxconsulting@gmail.com</p>
+                </div>
+
+            </div>
+
+
+            <!-- PHONE -->
+            <div class="mt-8 flex items-start gap-4">
+
+                <div class="w-12 h-12 rounded-lg border border-border bg-secondary/10 text-secondary flex items-center justify-center text-lg">
+                    <i class="ri-phone-line"></i>
+                </div>
+
+                <div>
+                    <p class="font-semibold text-text-primary">Phone</p>
+
+                    <div class="text-zinc-700 space-y-2 mt-1">
+
+                        <p class="flex items-center gap-2">
+                            <i class="ri-map-pin-2-line text-secondary"></i>
+                            India: +91-8376059410
+                        </p>
+
+                        <p class="flex items-center gap-2">
+                            <i class="ri-map-pin-2-line text-secondary"></i>
+                            UAE: +971588440121
+                        </p>
+
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- LOCATION -->
+            <div class="mt-8 flex items-start gap-4">
+
+                <div class="w-12 h-12 rounded-lg border border-border bg-secondary/10 text-secondary flex items-center justify-center text-lg">
+                    <i class="ri-map-pin-line"></i>
+                </div>
+
+                <div>
+                    <p class="font-semibold text-text-primary">Location</p>
+                    <p class="text-zinc-700">UAE | USA | India</p>
+                </div>
 
             </div>
 
         </div>
 
-    </section>
+
+
+        <!-- CONTACT FORM -->
+        <div class="border border-border bg-white rounded-xl p-8 shadow-sm">
+
+            <h3 class="text-xl font-semibold text-text-primary">
+                Send a <span class="text-secondary">Message</span>
+            </h3>
+
+            <p class="mt-2 text-zinc-700">
+                Fill  the form  and our team will contact to you within 48 hours.
+            </p>
+
+
+            @if (session('success'))
+            <div class="mt-6 rounded-md bg-secondary/10 text-secondary px-4 py-3 text-sm">
+                {{ session('success') }}
+            </div>
+            @endif
+
+            @error('contact')
+            <div class="mt-6 rounded-md bg-red-50 text-red-700 px-4 py-3 text-sm">
+                {{ $message }}
+            </div>
+            @enderror
+
+            <form wire:submit.prevent="submit" class="mt-8 grid gap-6">
+
+                <div>
+                    <label class="text-sm font-medium text-text-primary">
+                        Full Name
+                    </label>
+
+                    <input
+                        type="text"
+                        wire:model.live.debounce.300ms="name"
+                        class="mt-2 w-full border border-border rounded-md px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-secondary/30"
+                        placeholder="Your name">
+
+                    @error('name')
+                    <p class="mt-2 text-xs text-red-600">{{ $message }}</p>
+                    @enderror
+                </div>
+
+
+                <div>
+                    <label class="text-sm font-medium text-text-primary">
+                        Phone Number
+                    </label>
+
+                    <input
+                        type="text"
+                        wire:model.live.debounce.300ms="phone"
+                        class="mt-2 w-full border border-border rounded-md px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-secondary/30"
+                        placeholder="+91 98XX XX XX XX">
+
+                    @error('phone')
+                    <p class="mt-2 text-xs text-red-600">{{ $message }}</p>
+                    @enderror
+                </div>
+
+
+                <div>
+                    <label class="text-sm font-medium text-text-primary">
+                        Email Address
+                    </label>
+
+                    <input
+                        type="email"
+                        wire:model.live.debounce.300ms="email"
+                        class="mt-2 w-full border border-border rounded-md px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-secondary/30"
+                        placeholder="you@company.com">
+
+                    @error('email')
+                    <p class="mt-2 text-xs text-red-600">{{ $message }}</p>
+                    @enderror
+                </div>
+
+
+                <div>
+                    <label class="text-sm font-medium text-text-primary">
+                        Subject
+                    </label>
+
+                    <input
+                        type="text"
+                        wire:model.live.debounce.300ms="subject"
+                        class="mt-2 w-full border border-border rounded-md px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-secondary/30"
+                        placeholder="Subject">
+
+                    @error('subject')
+                    <p class="mt-2 text-xs text-red-600">{{ $message }}</p>
+                    @enderror
+                </div>
+
+
+                <div>
+                    <label class="text-sm font-medium text-text-primary">
+                        Message
+                    </label>
+
+                    <textarea
+                        rows="5"
+                        wire:model.live.debounce.300ms="message"
+                        class="mt-2 w-full border border-border rounded-md px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-secondary/30"
+                        placeholder="Write your message"></textarea>
+
+                    @error('message')
+                    <p class="mt-2 text-xs text-red-600">{{ $message }}</p>
+                    @enderror
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="mt-2 w-full bg-secondary text-white py-3 rounded-md font-medium hover:bg-secondary/90 transition">
+
+                    <span wire:loading.remove wire:target="submit">
+                        Submit Message
+                    </span>
+
+                    <span wire:loading wire:target="submit">
+                        Submitting...
+                    </span>
+
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
 
 </div>
