@@ -29,19 +29,22 @@ new class extends Component
                 </p>
 
                 <h1 class="mt-4 text-4xl md:text-5xl font-bold text-text-primary leading-tight">
-                    Strategic Thinking for
-                    <span class="text-secondary">Growing Businesses</span>
+                    Strategic Advisory for
+                    <span class="text-secondary">Ambitious Businesses</span>
                 </h1>
 
                 <p class="mt-6 text-lg text-zinc-700 max-w-xl">
-                    Grevx partners with founders, executives, and leadership teams
-                    to strengthen financial strategy, improve operational discipline,
-                    and support sustainable business growth.
+                    Grevx partners with founders, business leaders, and growing organizations to solve complex financial and operational challenges with clarity and confidence.
+
                 </p>
 
                 <p class="mt-4 text-zinc-700 max-w-xl">
-                    Our approach focuses on practical solutions that teams can implement
-                    quickly, helping organizations move from complexity to clarity.
+                    We combine strategic thinking, financial expertise, and practical execution support to help businesses scale sustainably and make smarter decisions.
+
+                </p>
+                <p class="mt-4 text-zinc-700 max-w-xl">
+                    Our approach is built on delivering actionable solutions, not just recommendations to create measurable impact and long-term value.
+
                 </p>
             </div>
 
@@ -57,22 +60,22 @@ new class extends Component
 
                     <li class="flex items-start gap-3">
                         <i class="ri-check-line text-secondary mt-1"></i>
-                        Financial strategy that supports confident decision-making
+                        Financial strategies that drive sustainable business growth
                     </li>
 
                     <li class="flex items-start gap-3">
                         <i class="ri-check-line text-secondary mt-1"></i>
-                        Leadership capability building for long-term growth
+                        Advisory support for expansion, fundraising, and decision-making
                     </li>
 
                     <li class="flex items-start gap-3">
                         <i class="ri-check-line text-secondary mt-1"></i>
-                        Advisory support for expansion, investment, and performance
+                        Strong operational and compliance frameworks for better execution
                     </li>
 
                     <li class="flex items-start gap-3">
                         <i class="ri-check-line text-secondary mt-1"></i>
-                        Operational systems that strengthen execution discipline
+                        Capability building through practical corporate training and leadership development
                     </li>
 
                 </ul>
@@ -129,23 +132,24 @@ new class extends Component
         <div class="max-w-6xl mx-auto px-6 grid sm:grid-cols-3 gap-8 text-center">
 
             <div>
-                <h3 class="text-4xl font-bold text-secondary">50+</h3>
+                <h3 class="text-4xl font-bold text-secondary">3+</h3>
                 <p class="mt-2 text-zinc-700 text-sm">
-                    Strategic engagements with founders and leadership teams
+                    Geographies & sector agnostic approach
+
                 </p>
             </div>
 
             <div>
-                <h3 class="text-4xl font-bold text-secondary">10+</h3>
+                <h3 class="text-4xl font-bold text-secondary">100+</h3>
                 <p class="mt-2 text-zinc-700 text-sm">
-                    Industries supported through advisory and consulting
+                    Companies supported through Consulting
                 </p>
             </div>
 
             <div>
                 <h3 class="text-4xl font-bold text-secondary">100%</h3>
                 <p class="mt-2 text-zinc-700 text-sm">
-                    Focus on practical, implementable recommendations
+                    Focus on practical & implementable recommendations
                 </p>
             </div>
 
@@ -177,15 +181,15 @@ new class extends Component
 
                 <div class="p-6 bg-surface border border-border rounded-lg">
                     <div class="w-11 h-11 flex items-center justify-center rounded-lg bg-secondary/10 text-secondary text-xl">
-                        <i class="ri-lightbulb-line"></i>
+                        <i class="ri-award-line"></i>
                     </div>
 
                     <h3 class="mt-4 font-semibold text-text-primary">
-                        Clarity Over Complexity
+                        Excellence
                     </h3>
 
                     <p class="mt-2 text-sm text-zinc-700">
-                        Clear thinking and structured decisions lead to stronger execution.
+                        We strive for the highest standards in our consulting and training services, ensuring unparalleled quality and impactful outcomes.
                     </p>
                 </div>
 
@@ -197,11 +201,11 @@ new class extends Component
                     </div>
 
                     <h3 class="mt-4 font-semibold text-text-primary">
-                        Growth with Discipline
+                        Growth Centric
                     </h3>
 
                     <p class="mt-2 text-sm text-zinc-700">
-                        Sustainable growth requires financial discipline and strategic focus.
+                        We focus on driving growth and empowering businesses through tailored solutions that foster continuous development and success.
                     </p>
                 </div>
 
@@ -209,15 +213,15 @@ new class extends Component
 
                 <div class="p-6 bg-surface border border-border rounded-lg">
                     <div class="w-11 h-11 flex items-center justify-center rounded-lg bg-secondary/10 text-secondary text-xl">
-                        <i class="ri-team-line"></i>
+                        <i class="ri-shield-check-line"></i>
                     </div>
 
                     <h3 class="mt-4 font-semibold text-text-primary">
-                        People-Centered Execution
+                        Integrity &amp; Professionalism
                     </h3>
 
                     <p class="mt-2 text-sm text-zinc-700">
-                        Teams empowered with clarity and structure can sustain performance.
+                        We conduct our consulting and training with unwavering integrity and professionalism, building trust and delivering results that matter.
                     </p>
                 </div>
 

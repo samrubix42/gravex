@@ -92,17 +92,21 @@ new class extends Component
         .consult-scroll::-webkit-scrollbar {
             width: 8px;
         }
+
         .consult-scroll::-webkit-scrollbar-track {
             background: #f3f4f6;
             border-radius: 999px;
         }
+
         .consult-scroll::-webkit-scrollbar-thumb {
             background: #cbd5e1;
             border-radius: 999px;
         }
+
         .consult-scroll::-webkit-scrollbar-thumb:hover {
             background: #94a3b8;
         }
+
         .consult-scroll {
             scrollbar-width: thin;
             scrollbar-color: #cbd5e1 #f3f4f6;
@@ -151,15 +155,15 @@ new class extends Component
             </p>
 
             @if (session('consult_success'))
-                <div class="mt-5 rounded-md bg-secondary/10 text-secondary px-4 py-3 text-sm">
-                    {{ session('consult_success') }}
-                </div>
+            <div class="mt-5 rounded-md bg-secondary/10 text-secondary px-4 py-3 text-sm">
+                {{ session('consult_success') }}
+            </div>
             @endif
 
             @error('consult_contact')
-                <div class="mt-5 rounded-md bg-red-50 text-red-700 px-4 py-3 text-sm">
-                    {{ $message }}
-                </div>
+            <div class="mt-5 rounded-md bg-red-50 text-red-700 px-4 py-3 text-sm">
+                {{ $message }}
+            </div>
             @enderror
 
             <form wire:submit.prevent="submitConsultation" class="mt-4 sm:mt-5 grid gap-4">
@@ -173,7 +177,7 @@ new class extends Component
                         class="mt-2 w-full border border-border rounded-md px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-secondary/30"
                         placeholder="Your name">
                     @error('consult_name')
-                        <p class="mt-2 text-xs text-red-600">{{ $message }}</p>
+                    <p class="mt-2 text-xs text-red-600">{{ $message }}</p>
                     @enderror
                 </div>
 
@@ -188,7 +192,7 @@ new class extends Component
                             class="mt-2 w-full border border-border rounded-md px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-secondary/30"
                             placeholder="+91 98XX XX XX XX">
                         @error('consult_phone')
-                            <p class="mt-2 text-xs text-red-600">{{ $message }}</p>
+                        <p class="mt-2 text-xs text-red-600">{{ $message }}</p>
                         @enderror
                     </div>
 
@@ -202,7 +206,7 @@ new class extends Component
                             class="mt-2 w-full border border-border rounded-md px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-secondary/30"
                             placeholder="you@company.com">
                         @error('consult_email')
-                            <p class="mt-2 text-xs text-red-600">{{ $message }}</p>
+                        <p class="mt-2 text-xs text-red-600">{{ $message }}</p>
                         @enderror
                     </div>
                 </div>
@@ -217,7 +221,7 @@ new class extends Component
                         class="mt-2 w-full border border-border rounded-md px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-secondary/30"
                         placeholder="Tell us about your needs"></textarea>
                     @error('consult_message')
-                        <p class="mt-2 text-xs text-red-600">{{ $message }}</p>
+                    <p class="mt-2 text-xs text-red-600">{{ $message }}</p>
                     @enderror
                 </div>
 
@@ -387,15 +391,14 @@ new class extends Component
 
                     <h3 class="mt-5 text-lg font-semibold text-text-primary relative inline-block">
 
-                        Accounting & Compliance
-
+                        Control Deficiency
                         <span class="block h-[2px] w-10 bg-secondary mt-2 transition-all duration-300 group-hover:w-full"></span>
 
                     </h3>
 
                     <p class="mt-3 text-sm text-zinc-700 leading-relaxed">
-                        Reliable accounting systems and financial compliance
-                        support for growing businesses.
+                        Identify gaps in internal controls, reduce operational risks, and strengthen governance systems to improve business efficiency and compliance confidence.
+
                     </p>
 
                 </div>
@@ -411,15 +414,14 @@ new class extends Component
 
                     <h3 class="mt-5 text-lg font-semibold text-text-primary relative inline-block">
 
-                        Tax Filing
-
+                        Accounting & Compliance
                         <span class="block h-[2px] w-10 bg-secondary mt-2 transition-all duration-300 group-hover:w-full"></span>
 
                     </h3>
 
                     <p class="mt-3 text-sm text-zinc-700 leading-relaxed">
-                        Simplified tax planning and filing solutions
-                        designed for compliance and efficiency.
+                        Streamline your accounting processes and stay compliant with evolving regulations through accurate reporting, reliable bookkeeping, and expert financial oversight.
+
                     </p>
 
                 </div>
@@ -436,14 +438,13 @@ new class extends Component
                     <h3 class="mt-5 text-lg font-semibold text-text-primary relative inline-block">
 
                         Corporate Training
-
                         <span class="block h-[2px] w-10 bg-secondary mt-2 transition-all duration-300 group-hover:w-full"></span>
 
                     </h3>
 
                     <p class="mt-3 text-sm text-zinc-700 leading-relaxed">
-                        Leadership and communication programs designed
-                        to strengthen high-performing teams.
+                        Empower your teams with practical, industry-focused training programs designed to enhance productivity, leadership, finance, and business skills.
+
                     </p>
 
                 </div>
@@ -459,15 +460,14 @@ new class extends Component
 
                     <h3 class="mt-5 text-lg font-semibold text-text-primary relative inline-block">
 
-                        Financial Modeling
-
+Financial Modelling & Valuations
                         <span class="block h-[2px] w-10 bg-secondary mt-2 transition-all duration-300 group-hover:w-full"></span>
 
                     </h3>
 
                     <p class="mt-3 text-sm text-zinc-700 leading-relaxed">
-                        Build robust financial models to guide
-                        business decisions and growth strategies.
+              Build dynamic financial models that support strategic decision-making, forecasting, fundraising, budgeting and gain clear insights into your company’s worth with data driven valuations.
+
                     </p>
 
                 </div>
@@ -483,15 +483,14 @@ new class extends Component
 
                     <h3 class="mt-5 text-lg font-semibold text-text-primary relative inline-block">
 
-                        Valuation
+                        Investor Readiness
 
                         <span class="block h-[2px] w-10 bg-secondary mt-2 transition-all duration-300 group-hover:w-full"></span>
 
                     </h3>
 
                     <p class="mt-3 text-sm text-zinc-700 leading-relaxed">
-                        Accurate company valuation to support
-                        investment decisions and strategic planning.
+                        Prepare your business for investors with compelling financials, strategic positioning, pitch support, and investment-ready documentation.
                     </p>
 
                 </div>
@@ -779,7 +778,7 @@ new class extends Component
                     <a wire:navigate href="{{route('pages::consulting')}}"
                         class="px-7 py-3 border border-border rounded-lg text-text-primary hover:bg-muted transition">
 
-            Explore Our Services
+                        Explore Our Services
                     </a>
 
                 </div>

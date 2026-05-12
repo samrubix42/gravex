@@ -29,14 +29,15 @@ new class extends Component
                 </p>
 
                 <h1 class="mt-4 text-4xl md:text-5xl font-bold text-text-primary leading-tight">
-                    Expert Guidance for
-                    <span class="text-secondary">Sustainable Business Growth</span>
+                    Helping Businesses Build with
+                    <span class="text-secondary">Clarity and Confidence
+                    </span>
                 </h1>
 
                 <p class="mt-6 text-lg text-zinc-700 max-w-xl leading-relaxed">
-                    GREVX delivers end-to-end consulting solutions — from financial compliance and tax strategy to
-                    corporate training, investor readiness, and capital access. We partner with businesses at
-                    every stage to unlock clarity, structure, and measurable results.
+
+                    At GREVX, we support businesses with practical consulting solutions that simplify financial operations, strengthen decision-making, and prepare organizations for long-term growth. Our services are designed to help companies improve structure, manage risk, optimize performance, and unlock new opportunities.
+
                 </p>
 
                 <div class="mt-8 flex flex-wrap gap-4">
@@ -94,23 +95,23 @@ new class extends Component
         <div class="max-w-6xl mx-auto px-6 grid sm:grid-cols-4 gap-10 text-center">
 
             <div>
-                <p class="text-4xl font-bold">200+</p>
-                <p class="mt-2 text-white/70 text-sm">Clients Served</p>
+                <p class="text-4xl font-bold">100+</p>
+                <p class="mt-2 text-white/70 text-sm">Businesses Advised</p>
             </div>
 
             <div>
-                <p class="text-4xl font-bold">15+</p>
+                <p class="text-4xl font-bold">60+</p>
+                <p class="mt-2 text-white/70 text-sm">Years of Accumulated experience</p>
+            </div>
+
+            <div>
+                <p class="text-4xl font-bold">10+</p>
                 <p class="mt-2 text-white/70 text-sm">Industries Covered</p>
             </div>
 
             <div>
-                <p class="text-4xl font-bold">₹500Cr+</p>
-                <p class="mt-2 text-white/70 text-sm">Capital Facilitated</p>
-            </div>
-
-            <div>
                 <p class="text-4xl font-bold">98%</p>
-                <p class="mt-2 text-white/70 text-sm">Client Satisfaction</p>
+                <p class="mt-2 text-white/70 text-sm">Satisfaction Rate</p>
             </div>
 
         </div>
@@ -486,7 +487,7 @@ new class extends Component
 
                     <p class="mt-4 text-zinc-700 leading-relaxed">
                         In today's competitive funding environment, the businesses that win aren't just the
-                        ones with the best ideas — they're the ones that tell the most credible, compelling
+                        ones with the best ideas  they're the ones that tell the most credible, compelling
                         financial story. GREVX helps you build that story from the ground up.
                     </p>
 
@@ -594,7 +595,7 @@ new class extends Component
             </h2>
 
             <p class="mt-5 text-white/80 text-lg max-w-2xl mx-auto">
-                Whether you need compliance support, a compelling investor pitch, or access to capital —
+                Whether you need compliance support, a compelling investor pitch, or access to capital
                 GREVX has the expertise to deliver. Let's start with a conversation.
             </p>
 
@@ -603,7 +604,7 @@ new class extends Component
                     class="px-8 py-3 bg-white text-secondary font-semibold rounded-lg hover:bg-gray-100 transition">
                     Book a Free Consultation
                 </a>
-                <a href="tel:+91XXXXXXXXXX"
+                <a href="tel:+918376059410"
                     class="px-8 py-3 border border-white/40 text-white font-semibold rounded-lg hover:bg-white/10 transition">
                     Call Us Now
                 </a>

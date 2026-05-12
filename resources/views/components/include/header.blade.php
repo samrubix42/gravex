@@ -29,7 +29,7 @@ new class extends Component
                 </a>
 
                 <a href="{{ route('pages::about') }}" wire:navigate class="text-text-secondary hover:text-primary transition">
-                    About
+                    About Us
                 </a>
 
                 <a href="{{ route('pages::consulting') }}" wire:navigate class="text-text-secondary hover:text-primary transition">
@@ -37,15 +37,15 @@ new class extends Component
                 </a>
 
                 <a href="{{ route('pages::training') }}" wire:navigate class="text-text-secondary hover:text-primary transition">
-                    Training
+                    Training Programs
                 </a>
 
                 <a href="{{ route('pages::blog') }}" wire:navigate class="text-text-secondary hover:text-primary transition">
-                    Blog
+                    Article
                 </a>
 
                 <a href="{{ route('pages::contact') }}" wire:navigate class="text-text-secondary hover:text-primary transition">
-                    Contact
+                    Contact Us
                 </a>
 
             </nav>
@@ -54,7 +54,9 @@ new class extends Component
             <!-- CTA -->
             <div class="hidden md:block">
 
-                <a href="{{ route('pages::contact') }}" wire:navigate
+                <a href="https://wa.me/918376059410?text=Hi%20happy%20to%20know%20about%20your%20services"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     class="px-5 py-2.5 bg-secondary text-white rounded-lg font-medium hover:bg-secondary/90 transition">
                     Get Started
                 </a>
@@ -102,7 +104,7 @@ new class extends Component
             </a>
 
             <a href="{{ route('pages::about') }}" wire:navigate @click="open=false" class="text-text-secondary hover:text-primary transition">
-                About
+                About Us
             </a>
 
             <a href="{{ route('pages::consulting') }}" wire:navigate @click="open=false" class="text-text-secondary hover:text-primary transition">
@@ -110,22 +112,23 @@ new class extends Component
             </a>
 
             <a href="{{ route('pages::training') }}" wire:navigate @click="open=false" class="text-text-secondary hover:text-primary transition">
-                Training
+                Training Programs
             </a>
 
             <a href="{{ route('pages::blog') }}" wire:navigate @click="open=false" class="text-text-secondary hover:text-primary transition">
-                Blog
+                Article
             </a>
 
             <a href="{{ route('pages::contact') }}" wire:navigate @click="open=false" class="text-text-secondary hover:text-primary transition">
-                Contact
+                Contact Us
             </a>
 
 
             <!-- CTA -->
             <a
-                href="{{ route('pages::contact') }}"
-                wire:navigate
+                href="https://wa.me/918376059410?text=Hi%20happy%20to%20know%20about%20your%20services"
+                target="_blank"
+                rel="noopener noreferrer"
                 class="mt-6 inline-flex justify-center px-6 py-3 bg-secondary text-white rounded-lg font-medium hover:bg-secondary/90 transition">
 
                 Get Started

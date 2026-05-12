@@ -72,13 +72,13 @@ new class extends Component
 
                     <li>
                         <a href="{{ route('pages::blog') }}" wire:navigate class="hover:text-secondary transition">
-                            Blog
+                            Articles
                         </a>
                     </li>
 
                     <li>
                         <a href="{{ route('pages::contact') }}" wire:navigate class="hover:text-secondary transition">
-                            Contact
+                            Contact Us
                         </a>
                     </li>
 
