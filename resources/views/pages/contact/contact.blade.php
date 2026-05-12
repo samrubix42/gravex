@@ -2,6 +2,7 @@
 
 use Livewire\Component;
 use App\Models\Contact;
+use Illuminate\Support\Facades\Mail;
 
 new class extends Component
 {
@@ -61,7 +62,7 @@ new class extends Component
             return;
         }
 
-        Contact::create([
+        $contact = Contact::create([
             'name' => $validated['name'],
             'phone' => $validated['phone'] ?: null,
             'email' => $validated['email'] ?: null,
@@ -69,6 +70,8 @@ new class extends Component
             'message' => $validated['message'],
             'is_read' => false,
         ]);
+
+        Mail::to('samcool3203@gmail.com')->send(new \App\Mail\ContactSubmissionMail($contact));
 
         $this->reset(['name', 'phone', 'email', 'subject', 'message']);
         $this->resetErrorBag();
