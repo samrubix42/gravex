@@ -35,6 +35,9 @@ new #[Title('Blog Details - Grevx Consulting')] class extends Component
 };
 ?>
 
+@section('title', $post->title . ' - Grevx Consulting')
+@section('meta_description', \Illuminate\Support\Str::limit(strip_tags($post->content), 155))
+
 <div class="bg-white">
 
 <!-- Reading Progress Bar -->

@@ -51,6 +51,9 @@ new #[Title('Blog - Grevx Consulting')] class extends Component
 };
 ?>
 
+@section('title', 'Grevx Insights - Grevx Consulting')
+@section('meta_description', 'Insights on financial strategy, leadership capability, and operational discipline for growing organizations.')
+
 <div class="bg-white">
 
     <!-- HERO -->

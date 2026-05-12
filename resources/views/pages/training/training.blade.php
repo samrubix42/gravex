@@ -8,6 +8,9 @@ new class extends Component
 };
 ?>
 
+@section('title', 'Corporate Training - Grevx Consulting')
+@section('meta_description', 'Corporate training programs that sharpen financial acumen, elevate leadership capability, and build a culture of continuous improvement.')
+
 <div>
 
     <!-- HERO -->

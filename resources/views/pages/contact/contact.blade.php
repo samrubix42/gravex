@@ -77,6 +77,9 @@ new class extends Component
 };
 ?>
 
+@section('title', 'Contact Grevx Consulting')
+@section('meta_description', 'Get in touch with Grevx for consulting, training, or advisory support. Share your goals and our team will respond.')
+
 <div>
 
     <!-- HERO -->

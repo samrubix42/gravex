@@ -23,6 +23,9 @@ new class extends Component
 };
 ?>
 
+@section('title', 'Grevx Consulting - Strategic Business Consulting')
+@section('meta_description', 'Strategic consulting to close revenue leakages, strengthen operations, and drive sustainable growth for modern businesses.')
+
 <div>
 
     <section

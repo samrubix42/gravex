@@ -8,6 +8,9 @@ new class extends Component
 };
 ?>
 
+@section('title', 'About Grevx Consulting - Strategy and Leadership Support')
+@section('meta_description', 'Learn how Grevx helps founders and leadership teams strengthen financial strategy, improve operations, and build sustainable growth.')
+
 <div>
 
     <!-- HERO -->

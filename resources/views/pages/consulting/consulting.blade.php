@@ -8,6 +8,9 @@ new class extends Component
 };
 ?>
 
+@section('title', 'Consulting Services - Grevx Consulting')
+@section('meta_description', 'End-to-end consulting for financial compliance, tax strategy, investor readiness, and growth planning for modern businesses.')
+
 <div>
 
     <!-- HERO -->
