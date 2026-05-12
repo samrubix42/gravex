@@ -8,18 +8,19 @@ new class extends Component
 };
 ?>
 
-<footer class="bg-surface border-t border-border">
+<footer class="bg-surface border-t border-border relative">
+
 
     <!-- Footer Main -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-14">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 pt-10 pb-12">
 
-        <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+        <div class="grid items-start gap-8 sm:gap-10 sm:grid-cols-2 lg:grid-cols-3">
 
             <!-- Brand -->
-            <div class="space-y-2">
+            <div class="space-y-4 self-start">
 
-                <a href="{{ route('home') }}" wire:navigate>
-                    <img src="/logo.png" alt="GREVX Logo" class="w-32">
+                <a href="{{ route('home') }}" wire:navigate class="inline-flex items-start leading-none">
+                    <img src="/logo.png" alt="GREVX Logo" class="block w-32 h-auto -mt-8">
                 </a>
 
 
@@ -135,36 +136,6 @@ new class extends Component
 
             </div>
 
-
-            <!-- Newsletter -->
-            <div x-data="{ email:'' }">
-
-                <h3 class="text-text-primary font-semibold mb-4">
-                    Newsletter
-                </h3>
-
-                <p class="text-sm text-text-secondary mb-4">
-                    Get insights on consulting, finance, and business growth strategies.
-                </p>
-
-                <div class="flex flex-col sm:flex-row border border-border rounded-lg overflow-hidden">
-
-                    <input
-                        type="email"
-                        x-model="email"
-                        placeholder="Enter your email"
-                        class="w-full px-3 py-2 text-sm outline-none text-text-primary placeholder-gray-400">
-
-                    <button
-                        class="px-4 py-2 bg-secondary hover:bg-accent transition text-white flex items-center justify-center">
-
-                        <i class="ri-send-plane-line"></i>
-
-                    </button>
-
-                </div>
-
-            </div>
 
         </div>
 
