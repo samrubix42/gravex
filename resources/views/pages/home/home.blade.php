@@ -1,11 +1,17 @@
 <?php
 
+use App\Models\Contact;
 use App\Models\Testimonial;
 use Livewire\Component;
 
 new class extends Component
 {
     public array $testimonials = [];
+    public string $consult_name = '';
+    public ?string $consult_phone = null;
+    public ?string $consult_email = null;
+    public string $consult_subject = 'Consultation Request';
+    public string $consult_message = '';
 
     public function mount(): void
     {
@@ -20,13 +26,238 @@ new class extends Component
             ])
             ->toArray();
     }
+
+    protected function rules(): array
+    {
+        return [
+            'consult_name' => ['required', 'string', 'min:2', 'max:100'],
+            'consult_phone' => ['nullable', 'regex:/^[0-9+\-\s()]{7,20}$/'],
+            'consult_email' => ['nullable', 'email', 'max:255'],
+            'consult_subject' => ['nullable', 'string', 'min:3', 'max:150'],
+            'consult_message' => ['required', 'string', 'min:10', 'max:5000'],
+        ];
+    }
+
+    protected function messages(): array
+    {
+        return [
+            'consult_name.required' => 'Please enter your full name.',
+            'consult_name.min' => 'Name must be at least 2 characters.',
+            'consult_phone.regex' => 'Please enter a valid phone number.',
+            'consult_email.email' => 'Please enter a valid email address.',
+            'consult_message.required' => 'Please enter your message.',
+            'consult_message.min' => 'Message must be at least 10 characters.',
+        ];
+    }
+
+    public function submitConsultation(): void
+    {
+        $this->consult_name = trim($this->consult_name);
+        $this->consult_phone = blank($this->consult_phone) ? null : trim($this->consult_phone);
+        $this->consult_email = blank($this->consult_email) ? null : trim($this->consult_email);
+        $this->consult_subject = 'Consultation Request';
+        $this->consult_message = trim($this->consult_message);
+
+        $validated = $this->validate();
+        if (empty($validated['consult_phone']) && empty($validated['consult_email'])) {
+            $this->addError('consult_contact', 'Please provide at least a phone number or email address.');
+            return;
+        }
+
+        Contact::create([
+            'name' => $validated['consult_name'],
+            'phone' => $validated['consult_phone'] ?: null,
+            'email' => $validated['consult_email'] ?: null,
+            'subject' => $validated['consult_subject'],
+            'message' => $validated['consult_message'],
+            'is_read' => false,
+        ]);
+
+        $this->reset(['consult_name', 'consult_phone', 'consult_email', 'consult_subject', 'consult_message']);
+        $this->resetErrorBag();
+        session()->flash('consult_success', 'Thank you. We received your request and will respond soon.');
+    }
 };
 ?>
 
 @section('title', 'Grevx Consulting - Strategic Business Consulting')
 @section('meta_description', 'Strategic consulting to close revenue leakages, strengthen operations, and drive sustainable growth for modern businesses.')
 
-<div>
+<div x-data="{ openConsult:false }">
+
+    <style>
+        .consult-scroll::-webkit-scrollbar {
+            width: 8px;
+        }
+        .consult-scroll::-webkit-scrollbar-track {
+            background: #f3f4f6;
+            border-radius: 999px;
+        }
+        .consult-scroll::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 999px;
+        }
+        .consult-scroll::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+        .consult-scroll {
+            scrollbar-width: thin;
+            scrollbar-color: #cbd5e1 #f3f4f6;
+        }
+    </style>
+
+    <!-- Consultation Modal -->
+    <div
+        class="fixed inset-0 z-50 flex items-center justify-center px-4 sm:px-6"
+        x-show="openConsult">
+
+        <div
+            class="absolute inset-0 bg-black/50"
+            @click="openConsult=false">
+        </div>
+
+        <div
+            x-show="openConsult"
+            x-transition:enter="transition ease-out duration-200"
+            x-transition:enter-start="opacity-0 scale-95"
+            x-transition:enter-end="opacity-100 scale-100"
+            x-transition:leave="transition ease-in duration-150"
+            x-transition:leave-start="opacity-100 scale-100"
+            x-transition:leave-end="opacity-0 scale-95"
+            class="consult-scroll relative w-full max-w-lg rounded-xl bg-surface border border-border shadow-xl p-5 sm:p-6 max-h-[85vh] sm:max-h-[80vh] overflow-y-auto">
+
+            <div class="flex items-start justify-between gap-4">
+                <div>
+                    <p class="text-sm font-semibold tracking-widest text-secondary uppercase">
+                        Book a Consultation
+                    </p>
+                    <h3 class="mt-2 text-xl sm:text-2xl font-semibold text-text-primary">
+                        Contact Our Team
+                    </h3>
+                </div>
+                <button
+                    type="button"
+                    class="w-9 h-9 flex items-center justify-center rounded-md border border-border text-text-primary hover:bg-muted transition"
+                    @click="openConsult=false">
+                    <i class="ri-close-line"></i>
+                </button>
+            </div>
+
+            <p class="mt-2 sm:mt-3 text-sm text-zinc-700">
+                Share your needs and we will respond within 48 hours.
+            </p>
+
+            @if (session('consult_success'))
+                <div class="mt-5 rounded-md bg-secondary/10 text-secondary px-4 py-3 text-sm">
+                    {{ session('consult_success') }}
+                </div>
+            @endif
+
+            @error('consult_contact')
+                <div class="mt-5 rounded-md bg-red-50 text-red-700 px-4 py-3 text-sm">
+                    {{ $message }}
+                </div>
+            @enderror
+
+            <form wire:submit.prevent="submitConsultation" class="mt-4 sm:mt-5 grid gap-4">
+                <div>
+                    <label class="text-sm font-medium text-text-primary">
+                        Full Name
+                    </label>
+                    <input
+                        type="text"
+                        wire:model.live.debounce.300ms="consult_name"
+                        class="mt-2 w-full border border-border rounded-md px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-secondary/30"
+                        placeholder="Your name">
+                    @error('consult_name')
+                        <p class="mt-2 text-xs text-red-600">{{ $message }}</p>
+                    @enderror
+                </div>
+
+                <div class="grid gap-4 sm:grid-cols-2">
+                    <div>
+                        <label class="text-sm font-medium text-text-primary">
+                            Phone Number
+                        </label>
+                        <input
+                            type="text"
+                            wire:model.live.debounce.300ms="consult_phone"
+                            class="mt-2 w-full border border-border rounded-md px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-secondary/30"
+                            placeholder="+91 98XX XX XX XX">
+                        @error('consult_phone')
+                            <p class="mt-2 text-xs text-red-600">{{ $message }}</p>
+                        @enderror
+                    </div>
+
+                    <div>
+                        <label class="text-sm font-medium text-text-primary">
+                            Email Address
+                        </label>
+                        <input
+                            type="email"
+                            wire:model.live.debounce.300ms="consult_email"
+                            class="mt-2 w-full border border-border rounded-md px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-secondary/30"
+                            placeholder="you@company.com">
+                        @error('consult_email')
+                            <p class="mt-2 text-xs text-red-600">{{ $message }}</p>
+                        @enderror
+                    </div>
+                </div>
+
+                <div>
+                    <label class="text-sm font-medium text-text-primary">
+                        Message
+                    </label>
+                    <textarea
+                        rows="3"
+                        wire:model.live.debounce.300ms="consult_message"
+                        class="mt-2 w-full border border-border rounded-md px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-secondary/30"
+                        placeholder="Tell us about your needs"></textarea>
+                    @error('consult_message')
+                        <p class="mt-2 text-xs text-red-600">{{ $message }}</p>
+                    @enderror
+                </div>
+
+                <button
+                    type="submit"
+                    class="mt-1 w-full bg-secondary text-white py-2.5 rounded-md font-medium hover:bg-secondary/90 transition">
+                    <span wire:loading.remove wire:target="submitConsultation">Submit Request</span>
+                    <span wire:loading wire:target="submitConsultation">Submitting...</span>
+                </button>
+            </form>
+
+            <div class="mt-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 rounded-lg border border-border bg-muted/40 px-4 py-3">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-lg border border-border bg-secondary/10 text-secondary flex items-center justify-center">
+                        <i class="ri-whatsapp-line"></i>
+                    </div>
+                    <div>
+                        <p class="text-sm font-medium text-text-primary">WhatsApp (India)</p>
+                        <a
+                            href="https://wa.me/918376059410?text=Hi%20happy%20to%20know%20about%20your%20services"
+                            target="_blank"
+                            class="text-sm text-secondary hover:underline">
+                            +91-8376059410
+                        </a>
+                    </div>
+                </div>
+                <div class="text-xs text-zinc-600 sm:text-right">
+                    Tap to message us on WhatsApp.
+                </div>
+            </div>
+
+            <div class="mt-4 flex justify-end">
+                <button
+                    type="button"
+                    class="px-4 py-2 border border-border rounded-md text-text-primary hover:bg-muted transition"
+                    @click="openConsult=false">
+                    Close
+                </button>
+            </div>
+
+        </div>
+
+    </div>
 
     <section
         x-data="{ show:false }"
@@ -74,7 +305,8 @@ new class extends Component
                 <!-- CTA -->
                 <div class="flex flex-wrap justify-center md:justify-start gap-4 mt-9">
 
-                    <a wire:navigate href="{{route('pages::contact')}}"
+                    <a href="#"
+                        @click.prevent="openConsult=true"
                         class="px-7 py-3 bg-secondary text-white rounded-md font-medium hover:bg-secondary/90 shadow-sm hover:shadow-md transition">
 
                         Book a Consultation
@@ -534,6 +766,7 @@ new class extends Component
                 <div class="flex flex-wrap justify-center gap-4 mt-8">
 
                     <a href="#"
+                        @click.prevent="openConsult=true"
                         class="px-7 py-3 bg-secondary text-white font-medium rounded-lg hover:bg-accent transition">
 
                         Book a Consultation
