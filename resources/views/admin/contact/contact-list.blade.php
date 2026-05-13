@@ -32,6 +32,8 @@ new #[Layout('layouts.admin')] class extends Component {
         $contact->is_read = true;
         $contact->save();
 
+        $this->dispatch('contacts-updated');
+
         $this->dispatch('toast-show', [
             'message' => 'Contact marked as read.',
             'type' => 'success',
@@ -44,6 +46,8 @@ new #[Layout('layouts.admin')] class extends Component {
         $contact = Contact::findOrFail($id);
         $contact->is_read = false;
         $contact->save();
+
+        $this->dispatch('contacts-updated');
 
         $this->dispatch('toast-show', [
             'message' => 'Contact marked as unread.',
@@ -67,6 +71,7 @@ new #[Layout('layouts.admin')] class extends Component {
         Contact::findOrFail($this->deleteId)->delete();
         $this->reset('deleteId');
         $this->dispatch('close-delete-modal');
+        $this->dispatch('contacts-updated');
 
         $this->dispatch('toast-show', [
             'message' => 'Contact deleted successfully.',

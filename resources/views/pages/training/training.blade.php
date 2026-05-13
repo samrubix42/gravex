@@ -94,8 +94,9 @@ new class extends Component
         <div class="max-w-6xl mx-auto px-6 grid sm:grid-cols-4 gap-10 text-center">
 
             <div>
-                <p class="text-4xl font-bold">500+</p>
-                <p class="mt-2 text-white/70 text-sm">Professionals Trained</p>
+                <p class="text-4xl font-bold">17,000+</p>
+                <p class="mt-2 text-white/70 text-sm">Learners Skilled
+</p>
             </div>
 
             <div>
@@ -104,13 +105,13 @@ new class extends Component
             </div>
 
             <div>
-                <p class="text-4xl font-bold">20+</p>
-                <p class="mt-2 text-white/70 text-sm">Corporate Clients</p>
+                <p class="text-4xl font-bold">5+</p>
+                <p class="mt-2 text-white/70 text-sm">Geographies Covered</p>
             </div>
 
             <div>
                 <p class="text-4xl font-bold">96%</p>
-                <p class="mt-2 text-white/70 text-sm">Participant Satisfaction</p>
+                <p class="mt-2 text-white/70 text-sm">Satisfaction Rate</p>
             </div>
 
         </div>
@@ -153,13 +154,13 @@ new class extends Component
 
                 <p class="mt-5 text-zinc-700 leading-relaxed">
                     At GREVX, we believe that learning should never be generic. Every programme we design
-                    is rooted in real business challenges — tailored to your industry, your team's current
+                    is rooted in real business challenges tailored to your industry, your team's current
                     skill gaps, and your organisation's strategic goals.
                 </p>
 
                 <p class="mt-4 text-zinc-700 leading-relaxed">
                     Our expert facilitators combine deep domain expertise with practical, experiential
-                    delivery methods — ensuring concepts move seamlessly from the classroom into daily
+                    delivery methods ensuring concepts move seamlessly from the classroom into daily
                     workflows where they create measurable impact.
                 </p>
 
@@ -195,21 +196,20 @@ new class extends Component
                     Our Training Programmes
                 </h2>
                 <p class="mt-4 text-zinc-600">
-                    From finance fundamentals to advanced leadership strategy — we cover every layer of your
-                    organisation with precision-designed learning experiences.
+                   From financial fundamentals and analytics to AI literacy, soft skills, and leadership excellence. we build capabilities that move businesses forward
+
                 </p>
             </div>
 
             <div class="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
 
-                <!-- Programme 1 -->
-                <div class="bg-white border border-border rounded-xl p-7 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300">
+                <!-- <div class="bg-white border border-border rounded-xl p-7 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300">
                     <div class="w-12 h-12 flex items-center justify-center rounded-xl bg-secondary/10 text-secondary text-2xl mb-5">
                         <i class="ri-money-dollar-circle-line"></i>
                     </div>
                     <h3 class="font-bold text-text-primary text-lg">Finance for Non-Finance Managers</h3>
                     <p class="mt-3 text-sm text-zinc-600 leading-relaxed">
-                        Empower department heads and managers with financial literacy — so they can read P&L
+                        Empower department heads and managers with financial literacy so they can read P&L
                         statements, understand budgets, manage costs, and contribute meaningfully to business strategy.
                     </p>
                     <ul class="mt-4 space-y-2 text-sm text-zinc-700">
@@ -224,12 +224,12 @@ new class extends Component
                             Enquire <i class="ri-arrow-right-line"></i>
                         </a>
                     </div>
-                </div>
+                </div> -->
 
                 <!-- Programme 2 -->
                 <div class="bg-white border border-border rounded-xl p-7 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300">
                     <div class="w-12 h-12 flex items-center justify-center rounded-xl bg-secondary/10 text-secondary text-2xl mb-5">
-                        <i class="ri-leadership-line"></i>
+                        <i class="ri-file-user-line"></i>
                     </div>
                     <h3 class="font-bold text-text-primary text-lg">Leadership & Strategic Thinking</h3>
                     <p class="mt-3 text-sm text-zinc-600 leading-relaxed">
@@ -257,8 +257,8 @@ new class extends Component
                     </div>
                     <h3 class="font-bold text-text-primary text-lg">Compliance & Regulatory Awareness</h3>
                     <p class="mt-3 text-sm text-zinc-600 leading-relaxed">
-                        Keep your teams up-to-date with the latest regulatory requirements — GST, TDS, labour law,
-                        and corporate governance — minimising risk and ensuring organisation-wide compliance culture.
+                        Keep your teams up-to-date with the latest regulatory requirements GST, TDS, labour law,
+                        and corporate governance minimising risk and ensuring organisation-wide compliance culture.
                     </p>
                     <ul class="mt-4 space-y-2 text-sm text-zinc-700">
                         <li class="flex items-center gap-2"><i class="ri-check-line text-secondary"></i> GST, TDS & income tax fundamentals</li>
@@ -329,7 +329,7 @@ new class extends Component
                     </div>
                     <h3 class="font-bold text-text-primary text-lg">Communication & Executive Presence</h3>
                     <p class="mt-3 text-sm text-zinc-600 leading-relaxed">
-                        Help your leaders and managers communicate with clarity, authority, and impact — from
+                        Help your leaders and managers communicate with clarity, authority, and impact from
                         boardroom presentations to difficult conversations and cross-functional collaboration.
                     </p>
                     <ul class="mt-4 space-y-2 text-sm text-zinc-700">
@@ -412,7 +412,7 @@ new class extends Component
                     </div>
                     <h3 class="text-lg font-bold text-text-primary">Blended Learning</h3>
                     <p class="mt-3 text-sm text-zinc-600 leading-relaxed">
-                        The best of both worlds — combining pre-work, live sessions (in-person or virtual),
+                        The best of both worlds combining pre-work, live sessions (in-person or virtual),
                         and follow-up coaching to create a sustained, long-term learning journey.
                     </p>
                     <ul class="mt-5 space-y-2 text-sm text-zinc-700">
@@ -487,7 +487,7 @@ new class extends Component
 
 
     <!-- WHO WE TRAIN -->
-    <section class="py-24 bg-white">
+    <!-- <section class="py-24 bg-white">
 
         <div class="max-w-7xl mx-auto px-6">
 
@@ -497,7 +497,7 @@ new class extends Component
                     Training for Every Level of Your Organisation
                 </h2>
                 <p class="mt-4 text-zinc-600">
-                    Whether you're onboarding new hires or developing your most senior executives — we have
+                    Whether you're onboarding new hires or developing your most senior executives we have
                     the right programme for every stage of your team's journey.
                 </p>
             </div>
@@ -540,57 +540,10 @@ new class extends Component
 
         </div>
 
-    </section>
+    </section> -->
 
 
-    <!-- INDUSTRIES -->
-    <section class="py-20 bg-secondary text-white">
-
-        <div class="max-w-7xl mx-auto px-6">
-
-            <div class="text-center max-w-xl mx-auto mb-12">
-                <p class="text-sm font-semibold text-white/60 tracking-widest uppercase">Industries We Serve</p>
-                <h2 class="mt-3 text-3xl font-bold">Deep Domain Expertise Across Sectors</h2>
-            </div>
-
-            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
-
-                <div class="bg-white/10 border border-white/15 rounded-xl p-5 text-center hover:bg-white/20 transition">
-                    <i class="ri-building-4-line text-3xl mb-3 block"></i>
-                    <p class="text-sm font-semibold">Banking & Finance</p>
-                </div>
-
-                <div class="bg-white/10 border border-white/15 rounded-xl p-5 text-center hover:bg-white/20 transition">
-                    <i class="ri-hospital-line text-3xl mb-3 block"></i>
-                    <p class="text-sm font-semibold">Healthcare</p>
-                </div>
-
-                <div class="bg-white/10 border border-white/15 rounded-xl p-5 text-center hover:bg-white/20 transition">
-                    <i class="ri-store-3-line text-3xl mb-3 block"></i>
-                    <p class="text-sm font-semibold">Retail & FMCG</p>
-                </div>
-
-                <div class="bg-white/10 border border-white/15 rounded-xl p-5 text-center hover:bg-white/20 transition">
-                    <i class="ri-computer-line text-3xl mb-3 block"></i>
-                    <p class="text-sm font-semibold">Technology</p>
-                </div>
-
-                <div class="bg-white/10 border border-white/15 rounded-xl p-5 text-center hover:bg-white/20 transition">
-                    <i class="ri-truck-line text-3xl mb-3 block"></i>
-                    <p class="text-sm font-semibold">Manufacturing</p>
-                </div>
-
-                <div class="bg-white/10 border border-white/15 rounded-xl p-5 text-center hover:bg-white/20 transition">
-                    <i class="ri-seedling-line text-3xl mb-3 block"></i>
-                    <p class="text-sm font-semibold">Startups & SMEs</p>
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
+ 
 
     <!-- CTA -->
     <section class="py-24 bg-secondary text-white">
@@ -603,7 +556,7 @@ new class extends Component
 
             <p class="mt-5 text-white/80 text-lg max-w-2xl mx-auto">
                 Tell us about your team, your goals, and your challenges. We'll design a programme
-                that delivers measurable results — and a lasting competitive advantage.
+                that delivers measurable results and a lasting competitive advantage.
             </p>
 
             <div class="mt-8 flex flex-wrap justify-center gap-4">
@@ -611,7 +564,7 @@ new class extends Component
                     class="px-8 py-3 bg-white text-secondary font-semibold rounded-lg hover:bg-gray-100 transition">
                     Get a Custom Quote
                 </a>
-                <a href="tel:+91XXXXXXXXXX"
+                <a href="tel:+918376059410" target="_blank"
                     class="px-8 py-3 border border-white/40 text-white font-semibold rounded-lg hover:bg-white/10 transition">
                     Call Us Now
                 </a>

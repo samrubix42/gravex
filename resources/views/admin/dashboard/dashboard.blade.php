@@ -1,152 +1,185 @@
 <?php
-
+use App\Models\Contact;
+use App\Models\Post;
+use App\Models\Testimonial;
 use Livewire\Attributes\Layout;
 use Livewire\Component;
 
-new #[Layout('layouts::admin')] class extends Component
+new #[Layout('layouts.admin')] class extends Component
 {
-    //
+    public function with(): array
+    {
+        return [
+            'userName' => auth()->user()?->name ?? 'Admin',
+            'totalContacts' => Contact::count(),
+            'unreadContacts' => Contact::where('is_read', false)->count(),
+            'postsCount' => Post::count(),
+            'testimonialsCount' => Testimonial::count(),
+            'recentContacts' => Contact::latest()->take(5)->get(),
+        ];
+    }
 };
 ?>
 
-<div class="max-w-7xl mx-auto space-y-8">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 space-y-8">
 
-    <!-- Welcome Header -->
     <div class="space-y-2">
-        <h1 class="text-3xl font-extrabold text-slate-800 tracking-tight">
-            Welcome back, <span class="text-secondary font-bold">Aayush</span>
+        <h1 class="text-2xl sm:text-3xl font-semibold text-slate-900">
+            Welcome back, <span class="text-secondary font-semibold">{{ $userName }}</span>
         </h1>
-        <p class="text-slate-500 max-w-2xl font-medium">
-            Here's what developer is happening across <span class="text-slate-700 italic">Grevx Consulting</span> today.
+        <p class="text-sm text-slate-500">
+            Here is a quick snapshot of your activity across Grevx Consulting.
         </p>
     </div>
 
-    <!-- Quick Insights (Stats Cards) -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-
-        <!-- Stats Card: Total Views -->
-        <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-all group overflow-hidden relative">
-            <div class="flex items-center justify-between mb-4">
-                <div class="w-12 h-12 bg-secondary/10 rounded-xl flex items-center justify-center text-secondary">
-                    <i class="ri-eye-line text-2xl group-hover:scale-110 transition-transform"></i>
-                </div>
-                <div class="text-[11px] font-bold text-emerald-500 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-100 flex items-center gap-1">
-                    <i class="ri-arrow-right-up-line"></i> 12.5%
-                </div>
+    <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div class="rounded-xl border border-slate-200 bg-white p-4">
+            <div class="flex items-center justify-between">
+                <p class="text-xs text-slate-500">Total Enquiries</p>
+                <span class="h-9 w-9 rounded-lg bg-secondary/10 text-secondary flex items-center justify-center">
+                    <i class="ri-mail-line"></i>
+                </span>
             </div>
-            <p class="text-[11px] font-bold text-slate-400 uppercase tracking-widest">Total Site Views</p>
-            <h3 class="text-3xl font-extrabold text-slate-800 mt-1">24,512</h3>
-            <div class="absolute -right-4 -bottom-4 opacity-5 pointer-events-none group-hover:scale-110 transition-transform">
-                <i class="ri-eye-line text-8xl text-secondary"></i>
-            </div>
+            <p class="mt-2 text-2xl font-semibold text-slate-900">{{ $totalContacts }}</p>
         </div>
 
-        <!-- Stats Card: New Leads -->
-        <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-all group overflow-hidden relative">
-            <div class="flex items-center justify-between mb-4">
-                <div class="w-12 h-12 bg-indigo-50 rounded-xl flex items-center justify-center text-indigo-500">
-                    <i class="ri-user-follow-line text-2xl group-hover:scale-110 transition-transform"></i>
-                </div>
-                <div class="text-[11px] font-bold text-emerald-500 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-100 flex items-center gap-1">
-                    <i class="ri-arrow-right-up-line"></i> 8.1%
-                </div>
+        <div class="rounded-xl border border-slate-200 bg-white p-4">
+            <div class="flex items-center justify-between">
+                <p class="text-xs text-slate-500">Unread Enquiries</p>
+                <span class="h-9 w-9 rounded-lg bg-rose-50 text-rose-600 flex items-center justify-center">
+                    <i class="ri-mail-unread-line"></i>
+                </span>
             </div>
-            <p class="text-[11px] font-bold text-slate-400 uppercase tracking-widest">Inquiry Leads</p>
-            <h3 class="text-3xl font-extrabold text-slate-800 mt-1">128</h3>
-            <div class="absolute -right-4 -bottom-4 opacity-5 pointer-events-none group-hover:scale-110 transition-transform text-indigo-500">
-                <i class="ri-user-follow-line text-8xl"></i>
-            </div>
+            <p class="mt-2 text-2xl font-semibold text-rose-600">{{ $unreadContacts }}</p>
         </div>
 
-        <!-- Stats Card: Blog Count -->
-        <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-all group overflow-hidden relative">
-            <div class="flex items-center justify-between mb-4">
-                <div class="w-12 h-12 bg-amber-50 rounded-xl flex items-center justify-center text-amber-500">
-                    <i class="ri-article-line text-2xl group-hover:scale-110 transition-transform"></i>
-                </div>
-                <div class="text-[11px] font-bold text-slate-400 bg-slate-50 px-2 py-0.5 rounded-full border border-slate-200 flex items-center gap-1">
-                    STABLE
-                </div>
+        <div class="rounded-xl border border-slate-200 bg-white p-4">
+            <div class="flex items-center justify-between">
+                <p class="text-xs text-slate-500">Blog Posts</p>
+                <span class="h-9 w-9 rounded-lg bg-indigo-50 text-indigo-600 flex items-center justify-center">
+                    <i class="ri-article-line"></i>
+                </span>
             </div>
-            <p class="text-[11px] font-bold text-slate-400 uppercase tracking-widest">Total Articles</p>
-            <h3 class="text-3xl font-extrabold text-slate-800 mt-1">42</h3>
-            <div class="absolute -right-4 -bottom-4 opacity-5 pointer-events-none group-hover:scale-110 transition-transform text-amber-500">
-                <i class="ri-article-line text-8xl"></i>
-            </div>
+            <p class="mt-2 text-2xl font-semibold text-slate-900">{{ $postsCount }}</p>
         </div>
 
-        <!-- Stats Card: Conversion -->
-        <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-all group overflow-hidden relative">
-            <div class="flex items-center justify-between mb-4">
-                <div class="w-12 h-12 bg-rose-50 rounded-xl flex items-center justify-center text-rose-500">
-                    <i class="ri-pie-chart-line text-2xl group-hover:scale-110 transition-transform"></i>
-                </div>
-                <div class="text-[11px] font-bold text-rose-500 bg-rose-50 px-2 py-0.5 rounded-full border border-rose-100 flex items-center gap-1">
-                    <i class="ri-arrow-right-down-line"></i> 2.4%
-                </div>
+        <div class="rounded-xl border border-slate-200 bg-white p-4">
+            <div class="flex items-center justify-between">
+                <p class="text-xs text-slate-500">Testimonials</p>
+                <span class="h-9 w-9 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center">
+                    <i class="ri-message-3-line"></i>
+                </span>
             </div>
-            <p class="text-[11px] font-bold text-slate-400 uppercase tracking-widest">Conversion Rate</p>
-            <h3 class="text-3xl font-extrabold text-slate-800 mt-1">4.2%</h3>
-            <div class="absolute -right-4 -bottom-4 opacity-5 pointer-events-none group-hover:scale-110 transition-transform text-rose-500">
-                <i class="ri-pie-chart-line text-8xl"></i>
-            </div>
+            <p class="mt-2 text-2xl font-semibold text-slate-900">{{ $testimonialsCount }}</p>
         </div>
-
     </div>
 
-    <!-- Main Dashboard Row: Recent Content and Growth -->
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-
-        <!-- Column 1 & 2: Recent Activity / Table -->
-        <div class="lg:col-span-2 space-y-6">
-            <div class="bg-white overflow-hidden rounded-2xl border border-slate-200 shadow-sm">
-                <div class="px-6 py-5 border-b border-slate-100 flex items-center justify-between">
-                    <h3 class="text-lg font-bold text-slate-800 tracking-tight">Recent Inquiries</h3>
-                    <button class="text-xs font-bold text-secondary bg-secondary/10 px-3 py-1.5 rounded-full border border-secondary/20 hover:bg-secondary hover:text-white transition-all transform hover:-translate-y-px uppercase">View All Inquiries</button>
+    <div class="grid gap-6 lg:grid-cols-3">
+        <div class="lg:col-span-2">
+            <div class="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">
+                <div class="flex items-center justify-between border-b border-slate-100 px-6 py-4">
+                    <h3 class="text-base font-semibold text-slate-900">Recent Enquiries</h3>
+                    <a
+                        href="{{ route('admin.contact-list') }}"
+                        wire:navigate
+                        class="text-xs font-semibold text-secondary hover:text-secondary/80">
+                        View all
+                    </a>
                 </div>
-                <div class="divide-y divide-slate-100">
 
-                    @foreach (range(1, 4) as $item)
-                    <div class="px-6 py-4 flex items-center justify-between hover:bg-slate-50/50 transition-all cursor-pointer group">
-                        <div class="flex items-center gap-4">
-                            <div class="w-10 h-10 rounded-full flex items-center justify-center bg-slate-100 text-slate-400 group-hover:bg-secondary/10 group-hover:text-secondary transition-colors">
-                                <i class="ri-mail-line text-xl"></i>
-                            </div>
+                <div class="hidden sm:block overflow-x-auto">
+                    <table class="min-w-full divide-y divide-slate-200 text-sm">
+                        <thead class="bg-slate-50">
+                            <tr class="text-left text-xs font-semibold uppercase tracking-wider text-slate-500">
+                                <th class="px-4 py-3 w-12">#</th>
+                                <th class="px-4 py-3">Contact</th>
+                                <th class="px-4 py-3">Subject</th>
+                                <th class="px-4 py-3">Date</th>
+                                <th class="px-4 py-3">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-100 bg-white">
+                            @forelse($recentContacts as $contact)
+                            <tr class="hover:bg-slate-50/70 transition-colors">
+                                <td class="px-4 py-3 text-slate-500">{{ $loop->iteration }}</td>
+                                <td class="px-4 py-3">
+                                    <p class="font-medium text-slate-800">{{ $contact->name }}</p>
+                                    <p class="text-xs text-slate-500">{{ $contact->email ?: 'No email' }}</p>
+                                </td>
+                                <td class="px-4 py-3 text-slate-700">
+                                    {{ $contact->subject ?: 'No subject' }}
+                                </td>
+                                <td class="px-4 py-3 text-slate-500">
+                                    {{ $contact->created_at?->format('d M Y, h:i A') }}
+                                </td>
+                                <td class="px-4 py-3">
+                                    <span class="inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-xs font-semibold {{ $contact->is_read ? 'bg-emerald-100 text-emerald-700' : 'bg-rose-100 text-rose-700' }}">
+                                        <span class="h-1.5 w-1.5 rounded-full {{ $contact->is_read ? 'bg-emerald-500' : 'bg-rose-500' }}"></span>
+                                        {{ $contact->is_read ? 'Read' : 'Unread' }}
+                                    </span>
+                                </td>
+                            </tr>
+                            @empty
+                            <tr>
+                                <td colspan="5" class="px-4 py-8 text-center text-sm text-slate-500">
+                                    No recent enquiries.
+                                </td>
+                            </tr>
+                            @endforelse
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="space-y-3 p-4 sm:hidden">
+                    @forelse($recentContacts as $contact)
+                    <div class="rounded-lg border border-slate-200 bg-white p-4">
+                        <div class="flex items-start justify-between">
                             <div>
-                                <p class="text-sm font-bold text-slate-700">Client #{{ rand(100, 999) }} Request</p>
-                                <p class="text-[11px] text-slate-400 font-medium">Interest in Financial Modeling • 2h ago</p>
+                                <p class="text-sm font-semibold text-slate-900">{{ $contact->name }}</p>
+                                <p class="text-xs text-slate-500">{{ $contact->email ?: 'No email' }}</p>
                             </div>
+                            <span class="inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[11px] font-semibold {{ $contact->is_read ? 'bg-emerald-100 text-emerald-700' : 'bg-rose-100 text-rose-700' }}">
+                                {{ $contact->is_read ? 'Read' : 'Unread' }}
+                            </span>
                         </div>
-                        <button class="w-8 h-8 rounded-full flex items-center justify-center text-slate-300 hover:text-slate-600 transition-colors">
-                            <i class="ri-arrow-right-s-line text-xl"></i>
-                        </button>
+                        <p class="mt-2 text-xs font-semibold text-slate-700">{{ $contact->subject ?: 'No subject' }}</p>
+                        <p class="mt-1 text-[11px] text-slate-500">{{ $contact->created_at?->format('d M Y, h:i A') }}</p>
                     </div>
-                    @endforeach
-
+                    @empty
+                    <div class="rounded-lg border border-dashed border-slate-200 bg-slate-50 px-4 py-8 text-center text-sm text-slate-500">
+                        No recent enquiries.
+                    </div>
+                    @endforelse
                 </div>
             </div>
         </div>
 
-        <!-- Column 3: Stats or Info -->
-        <div class="space-y-6">
-            <div class="bg-slate-900 overflow-hidden rounded-2xl shadow-xl shadow-slate-200 relative group">
-                <div class="p-8 space-y-4">
-                    <div class="w-12 h-12 bg-secondary rounded-xl flex items-center justify-center text-white mb-6 transform group-hover:rotate-12 transition-transform">
-                        <i class="ri-flashlight-line text-2xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-white leading-tight">Optimizing your <span class="text-secondary italic">Consulting Funnel</span></h3>
-                    <p class="text-slate-400 text-sm leading-relaxed">
-                        Data shows that clients are searching for <span class="text-white font-medium italic">"Tax Compliance UAE"</span> more than ever.
-                    </p>
-                    <button class="mt-4 px-6 py-2.5 bg-white text-slate-900 text-sm font-extrabold rounded-lg hover:bg-slate-100 transition-all transform hover:-translate-y-px">
-                        Review Strategy
-                    </button>
+        <div class="space-y-4">
+            <div class="rounded-xl border border-slate-200 bg-white p-5">
+                <h3 class="text-sm font-semibold text-slate-900">Quick Actions</h3>
+                <p class="mt-1 text-xs text-slate-500">Jump to commonly used admin pages.</p>
+                <div class="mt-4 space-y-2">
+                    <a href="{{ route('admin.contact-list') }}" wire:navigate class="flex items-center justify-between rounded-md border border-slate-200 px-3 py-2 text-xs font-semibold text-slate-700 hover:bg-slate-50">
+                        Contact enquiries
+                        <i class="ri-arrow-right-line"></i>
+                    </a>
+                    <a href="{{ route('admin.blog.list') }}" wire:navigate class="flex items-center justify-between rounded-md border border-slate-200 px-3 py-2 text-xs font-semibold text-slate-700 hover:bg-slate-50">
+                        Blog posts
+                        <i class="ri-arrow-right-line"></i>
+                    </a>
+                    <a href="{{ route('admin.testimonial') }}" wire:navigate class="flex items-center justify-between rounded-md border border-slate-200 px-3 py-2 text-xs font-semibold text-slate-700 hover:bg-slate-50">
+                        Testimonials
+                        <i class="ri-arrow-right-line"></i>
+                    </a>
                 </div>
-                <!-- Subtle Gradient Glow -->
-                <div class="absolute -right-20 -bottom-20 w-40 h-40 bg-secondary/30 rounded-full blur-3xl pointer-events-none group-hover:scale-150 transition-transform duration-700"></div>
+            </div>
+
+            <div class="rounded-xl border border-slate-200 bg-secondary/10 p-5">
+                <h3 class="text-sm font-semibold text-secondary">Unread Enquiries</h3>
+                <p class="mt-2 text-3xl font-semibold text-slate-900">{{ $unreadContacts }}</p>
+                <p class="mt-1 text-xs text-slate-600">Follow up on unread messages to keep response times tight.</p>
             </div>
         </div>
-
     </div>
 
 </div>

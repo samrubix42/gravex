@@ -246,46 +246,6 @@ new #[Title('Blog - Grevx Consulting')] class extends Component
 
 
 
-    <!-- NEWSLETTER -->
-    <section class="pb-24">
-
-        <div class="max-w-6xl mx-auto px-6">
-
-            <div class="bg-secondary rounded-3xl p-10 md:p-16 text-center text-white relative overflow-hidden">
-
-                <h2 class="text-3xl font-semibold">
-
-                    Get Strategy Insights Monthly
-
-                </h2>
-
-                <p class="mt-4 text-white/80 max-w-xl mx-auto">
-
-                    Join our monthly briefing on financial strategy,
-                    leadership development, and business performance.
-
-                </p>
-
-
-                <form class="mt-8 flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-
-                    <input
-                        type="email"
-                        placeholder="Enter your email"
-                        class="flex-1 px-5 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/60 focus:outline-none">
-
-                    <button class="px-6 py-3 bg-white text-secondary font-semibold rounded-lg hover:bg-zinc-100">
-
-                        Subscribe
-
-                    </button>
-
-                </form>
-
-            </div>
-
-        </div>
-
-    </section>
+>
 
 </div>
