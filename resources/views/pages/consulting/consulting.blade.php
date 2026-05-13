@@ -136,13 +136,99 @@ new class extends Component
             </div>
 
 
-            <!-- Service 1: Accounting & Compliance -->
-            <div id="accounting" class="mt-20 grid md:grid-cols-2 gap-12 items-center">
+            <!-- Service 1: Control Deficiency & Risk Advisory -->
+            <div id="control-risk" class="mt-20 grid md:grid-cols-2 gap-12 items-center">
 
                 <div class="order-2 md:order-1">
                     <div class="inline-flex items-center gap-2 bg-secondary/10 text-secondary text-sm font-medium px-4 py-1.5 rounded-full mb-5">
-                        <i class="ri-calculator-line"></i>
+                        <i class="ri-shield-check-line"></i>
                         Service 01
+                    </div>
+
+                    <h2 class="text-3xl font-bold text-text-primary">
+                        Control Deficiency & Risk Advisory
+                    </h2>
+
+                    <p class="mt-4 text-zinc-700 leading-relaxed">
+                        Operational gaps and weak internal controls can expose businesses to financial,
+                        compliance, and strategic risks. GREVX helps organizations identify control
+                        deficiencies, strengthen governance structures, and improve operational discipline
+                        through practical risk advisory solutions.
+                    </p>
+
+                    <p class="mt-4 text-zinc-700 leading-relaxed">
+                        As businesses increasingly adopt automation and AI-powered systems, we also help
+                        assess AI-related process risks, control gaps, and governance challenges to ensure
+                        secure and efficient implementation.
+                    </p>
+
+                    <ul class="mt-6 space-y-3 text-zinc-700">
+                        <li class="flex items-start gap-3">
+                            <i class="ri-checkbox-circle-line text-secondary mt-0.5"></i>
+                            Internal control reviews and gap assessments
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="ri-checkbox-circle-line text-secondary mt-0.5"></i>
+                            SOP and process framework development
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="ri-checkbox-circle-line text-secondary mt-0.5"></i>
+                            Risk identification and mitigation planning
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="ri-checkbox-circle-line text-secondary mt-0.5"></i>
+                            Compliance and governance advisory
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="ri-checkbox-circle-line text-secondary mt-0.5"></i>
+                            AI governance and workflow risk assessment
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="ri-checkbox-circle-line text-secondary mt-0.5"></i>
+                            Operational efficiency and monitoring systems
+                        </li>
+                    </ul>
+
+                    <a href="{{ route('pages::contact') }}" wire:navigate
+                        class="mt-8 inline-flex items-center gap-2 px-6 py-3 bg-secondary text-white font-semibold rounded-lg hover:bg-secondary/90 transition">
+                        Get Started
+                        <i class="ri-arrow-right-line"></i>
+                    </a>
+                </div>
+
+                <div class="order-1 md:order-2 bg-gradient-to-br from-secondary/10 to-blue-50 rounded-2xl p-10 flex flex-col items-center justify-center gap-6 min-h-[300px]">
+                    <div class="w-20 h-20 flex items-center justify-center rounded-2xl bg-white shadow-md text-secondary text-4xl">
+                        <i class="ri-shield-check-line"></i>
+                    </div>
+                    <div class="text-center">
+                        <p class="font-semibold text-text-primary text-lg">Strengthen Governance with Better Controls</p>
+                        <p class="text-sm text-zinc-600 mt-1 max-w-xs">Build resilient processes that improve accountability, reduce risk, and support sustainable growth.</p>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="my-16 border-t border-border"></div>
+
+
+            <!-- Service 2: Accounting & Compliance -->
+            <div id="accounting" class="grid md:grid-cols-2 gap-12 items-center">
+
+                <div class="bg-gradient-to-br from-accent/10 to-blue-50 rounded-2xl p-10 flex flex-col items-center justify-center gap-6 min-h-[300px]">
+                    <div class="w-20 h-20 flex items-center justify-center rounded-2xl bg-white shadow-md text-secondary text-4xl">
+                        <i class="ri-calculator-line"></i>
+                    </div>
+                    <div class="text-center">
+                        <p class="font-semibold text-text-primary text-lg">Accurate Books. Stronger Business Decisions.</p>
+                        <p class="text-sm text-zinc-600 mt-1 max-w-xs">Create reliable financial systems that keep your business compliant, organized, and growth-ready.</p>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="inline-flex items-center gap-2 bg-secondary/10 text-secondary text-sm font-medium px-4 py-1.5 rounded-full mb-5">
+                        <i class="ri-calculator-line"></i>
+                        Service 02
                     </div>
 
                     <h2 class="text-3xl font-bold text-text-primary">
@@ -150,31 +236,106 @@ new class extends Component
                     </h2>
 
                     <p class="mt-4 text-zinc-700 leading-relaxed">
-                        Accurate accounting is the backbone of every successful business. At GREVX, we bring
-                        precision, transparency, and compliance to your financial records — so you always know
-                        where you stand and remain audit-ready at all times.
+                        Strong accounting systems are essential for business clarity and long-term growth. GREVX
+                        helps businesses maintain accurate financial records, stay compliant with evolving
+                        regulations, and build streamlined accounting processes that support informed
+                        decision-making.
+                    </p>
+
+                    <p class="mt-4 text-zinc-700 leading-relaxed">
+                        We work with modern accounting platforms including QuickBooks, Zoho Books, Tally, and
+                        cloud-based financial systems to improve reporting efficiency and operational
+                        transparency.
                     </p>
 
                     <ul class="mt-6 space-y-3 text-zinc-700">
                         <li class="flex items-start gap-3">
                             <i class="ri-checkbox-circle-line text-secondary mt-0.5"></i>
-                            Bookkeeping & monthly financial statements
+                            Bookkeeping and monthly financial reporting
                         </li>
                         <li class="flex items-start gap-3">
                             <i class="ri-checkbox-circle-line text-secondary mt-0.5"></i>
-                            Statutory compliance — GST, TDS, ROC, FEMA
+                            GST, TDS, ROC, and FEMA compliance support
                         </li>
                         <li class="flex items-start gap-3">
                             <i class="ri-checkbox-circle-line text-secondary mt-0.5"></i>
-                            Annual audit preparation and financial reporting
+                            QuickBooks and Zoho Books implementation and management
                         </li>
                         <li class="flex items-start gap-3">
                             <i class="ri-checkbox-circle-line text-secondary mt-0.5"></i>
-                            Payroll management and labour law compliance
+                            Payroll processing and labour law compliance
                         </li>
                         <li class="flex items-start gap-3">
                             <i class="ri-checkbox-circle-line text-secondary mt-0.5"></i>
-                            Internal controls and risk management advisory
+                            MIS reporting and reconciliations
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="ri-checkbox-circle-line text-secondary mt-0.5"></i>
+                            Audit preparation and finance process optimization
+                        </li>
+                    </ul>
+
+                    <a href="{{ route('pages::contact') }}" wire:navigate
+                        class="mt-8 inline-flex items-center gap-2 px-6 py-3 bg-secondary text-white font-semibold rounded-lg hover:bg-secondary/90 transition">
+                        Get Started
+                        <i class="ri-arrow-right-line"></i>
+                    </a>
+                </div>
+
+            </div>
+
+
+            <div class="my-16 border-t border-border"></div>
+
+
+            <!-- Service 3: Tax Prep & Filing -->
+            <div id="tax" class="grid md:grid-cols-2 gap-12 items-center">
+
+                <div class="order-2 md:order-1">
+                    <div class="inline-flex items-center gap-2 bg-secondary/10 text-secondary text-sm font-medium px-4 py-1.5 rounded-full mb-5">
+                        <i class="ri-file-text-line"></i>
+                        Service 03
+                    </div>
+
+                    <h2 class="text-3xl font-bold text-text-primary">
+                        Tax Prep & Filing
+                    </h2>
+
+                    <p class="mt-4 text-zinc-700 leading-relaxed">
+                        Managing taxes effectively requires a balance of compliance, planning, and financial
+                        clarity. GREVX provides reliable tax preparation and filing support that helps
+                        businesses reduce compliance risks and stay financially structured.
+                    </p>
+
+                    <p class="mt-4 text-zinc-700 leading-relaxed">
+                        Our approach focuses on timely execution, strategic planning, and proactive support
+                        across direct and indirect taxation.
+                    </p>
+
+                    <ul class="mt-6 space-y-3 text-zinc-700">
+                        <li class="flex items-start gap-3">
+                            <i class="ri-checkbox-circle-line text-secondary mt-0.5"></i>
+                            Income tax and GST return filings
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="ri-checkbox-circle-line text-secondary mt-0.5"></i>
+                            TDS compliance and reconciliations
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="ri-checkbox-circle-line text-secondary mt-0.5"></i>
+                            Tax planning and advisory support
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="ri-checkbox-circle-line text-secondary mt-0.5"></i>
+                            Regulatory notices and assessment assistance
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="ri-checkbox-circle-line text-secondary mt-0.5"></i>
+                            Compliance reviews and tax health checks
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="ri-checkbox-circle-line text-secondary mt-0.5"></i>
+                            Financial documentation and reporting support
                         </li>
                     </ul>
 
@@ -187,11 +348,11 @@ new class extends Component
 
                 <div class="order-1 md:order-2 bg-gradient-to-br from-secondary/10 to-blue-50 rounded-2xl p-10 flex flex-col items-center justify-center gap-6 min-h-[300px]">
                     <div class="w-20 h-20 flex items-center justify-center rounded-2xl bg-white shadow-md text-secondary text-4xl">
-                        <i class="ri-calculator-line"></i>
+                        <i class="ri-file-text-line"></i>
                     </div>
                     <div class="text-center">
-                        <p class="font-semibold text-text-primary text-lg">Always Audit-Ready</p>
-                        <p class="text-sm text-zinc-600 mt-1 max-w-xs">Stay compliant, organised, and financially transparent at every regulatory touchpoint.</p>
+                        <p class="font-semibold text-text-primary text-lg">Simplifying Tax Compliance</p>
+                        <p class="text-sm text-zinc-600 mt-1 max-w-xs">Stay compliant, minimize risk, and manage taxation with greater confidence and efficiency.</p>
                     </div>
                 </div>
 
@@ -201,78 +362,23 @@ new class extends Component
             <div class="my-16 border-t border-border"></div>
 
 
-            <!-- Service 2: Tax Preparation & Filing -->
-            <div id="tax" class="grid md:grid-cols-2 gap-12 items-center">
+            <!-- Service 4: Corporate Training -->
+            <div id="training" class="grid md:grid-cols-2 gap-12 items-center">
 
                 <div class="bg-gradient-to-br from-accent/10 to-blue-50 rounded-2xl p-10 flex flex-col items-center justify-center gap-6 min-h-[300px]">
                     <div class="w-20 h-20 flex items-center justify-center rounded-2xl bg-white shadow-md text-secondary text-4xl">
-                        <i class="ri-file-text-line"></i>
+                        <i class="ri-team-line"></i>
                     </div>
                     <div class="text-center">
-                        <p class="font-semibold text-text-primary text-lg">Zero-Stress Tax Filing</p>
-                        <p class="text-sm text-zinc-600 mt-1 max-w-xs">We handle the complexity so you can focus on building your business.</p>
+                        <p class="font-semibold text-text-primary text-lg">Building Future-Ready Teams</p>
+                        <p class="text-sm text-zinc-600 mt-1 max-w-xs">Equip your workforce with practical skills, strategic thinking, and AI-enabled capabilities.</p>
                     </div>
                 </div>
 
                 <div>
                     <div class="inline-flex items-center gap-2 bg-secondary/10 text-secondary text-sm font-medium px-4 py-1.5 rounded-full mb-5">
-                        <i class="ri-file-text-line"></i>
-                        Service 02
-                    </div>
-
-                    <h2 class="text-3xl font-bold text-text-primary">
-                        Tax Preparation & Filing
-                    </h2>
-
-                    <p class="mt-4 text-zinc-700 leading-relaxed">
-                        Navigating the tax landscape requires expertise and strategic planning. Our tax advisory
-                        team ensures you meet every deadline, optimise your tax position legally, and never face
-                        unnecessary penalties or exposure.
-                    </p>
-
-                    <ul class="mt-6 space-y-3 text-zinc-700">
-                        <li class="flex items-start gap-3">
-                            <i class="ri-checkbox-circle-line text-secondary mt-0.5"></i>
-                            Income tax filing — individuals, HUFs, companies, LLPs
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <i class="ri-checkbox-circle-line text-secondary mt-0.5"></i>
-                            GST registration, returns, and refund management
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <i class="ri-checkbox-circle-line text-secondary mt-0.5"></i>
-                            Tax planning strategies to minimise liability
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <i class="ri-checkbox-circle-line text-secondary mt-0.5"></i>
-                            TDS compliance, filings, and assessments
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <i class="ri-checkbox-circle-line text-secondary mt-0.5"></i>
-                            Representation before tax authorities
-                        </li>
-                    </ul>
-
-                    <a href="{{ route('pages::contact') }}" wire:navigate
-                        class="mt-8 inline-flex items-center gap-2 px-6 py-3 bg-secondary text-white font-semibold rounded-lg hover:bg-secondary/90 transition">
-                        Get Started
-                        <i class="ri-arrow-right-line"></i>
-                    </a>
-                </div>
-
-            </div>
-
-
-            <div class="my-16 border-t border-border"></div>
-
-
-            <!-- Service 3: Corporate Training -->
-            <div id="training" class="grid md:grid-cols-2 gap-12 items-center">
-
-                <div class="order-2 md:order-1">
-                    <div class="inline-flex items-center gap-2 bg-secondary/10 text-secondary text-sm font-medium px-4 py-1.5 rounded-full mb-5">
                         <i class="ri-team-line"></i>
-                        Service 03
+                        Service 04
                     </div>
 
                     <h2 class="text-3xl font-bold text-text-primary">
@@ -280,107 +386,41 @@ new class extends Component
                     </h2>
 
                     <p class="mt-4 text-zinc-700 leading-relaxed">
-                        A highly skilled team is your most valuable competitive asset. GREVX designs and
-                        delivers bespoke corporate training programmes that sharpen financial acumen, enhance
-                        leadership capabilities, and foster a culture of continuous improvement across your
-                        organisation.
+                        GREVX delivers practical and business-focused corporate training programs designed to
+                        strengthen workforce capability, leadership effectiveness, and organizational
+                        productivity. Our sessions are highly interactive, implementation-driven, and tailored
+                        to industry requirements.
                     </p>
-
-                    <ul class="mt-6 space-y-3 text-zinc-700">
-                        <li class="flex items-start gap-3">
-                            <i class="ri-checkbox-circle-line text-secondary mt-0.5"></i>
-                            Finance & accounting literacy for non-finance managers
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <i class="ri-checkbox-circle-line text-secondary mt-0.5"></i>
-                            Leadership, strategy, and decision-making workshops
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <i class="ri-checkbox-circle-line text-secondary mt-0.5"></i>
-                            Compliance and regulatory awareness training
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <i class="ri-checkbox-circle-line text-secondary mt-0.5"></i>
-                            Customised learning paths for departmental teams
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <i class="ri-checkbox-circle-line text-secondary mt-0.5"></i>
-                            On-site, online, and blended delivery formats
-                        </li>
-                    </ul>
-
-                    <a href="{{ route('pages::contact') }}" wire:navigate
-                        class="mt-8 inline-flex items-center gap-2 px-6 py-3 bg-secondary text-white font-semibold rounded-lg hover:bg-secondary/90 transition">
-                        Get Started
-                        <i class="ri-arrow-right-line"></i>
-                    </a>
-                </div>
-
-                <div class="order-1 md:order-2 bg-gradient-to-br from-secondary/10 to-blue-50 rounded-2xl p-10 flex flex-col items-center justify-center gap-6 min-h-[300px]">
-                    <div class="w-20 h-20 flex items-center justify-center rounded-2xl bg-white shadow-md text-secondary text-4xl">
-                        <i class="ri-team-line"></i>
-                    </div>
-                    <div class="text-center">
-                        <p class="font-semibold text-text-primary text-lg">Build High-Impact Teams</p>
-                        <p class="text-sm text-zinc-600 mt-1 max-w-xs">Empower your people with the financial and strategic knowledge to drive business forward.</p>
-                    </div>
-                </div>
-
-            </div>
-
-
-            <div class="my-16 border-t border-border"></div>
-
-
-            <!-- Service 4: Financial Modeling & Valuation -->
-            <div id="modeling" class="grid md:grid-cols-2 gap-12 items-center">
-
-                <div class="bg-gradient-to-br from-accent/10 to-blue-50 rounded-2xl p-10 flex flex-col items-center justify-center gap-6 min-h-[300px]">
-                    <div class="w-20 h-20 flex items-center justify-center rounded-2xl bg-white shadow-md text-secondary text-4xl">
-                        <i class="ri-bar-chart-2-line"></i>
-                    </div>
-                    <div class="text-center">
-                        <p class="font-semibold text-text-primary text-lg">Data-Driven Decisions</p>
-                        <p class="text-sm text-zinc-600 mt-1 max-w-xs">Turn complex financial data into clear, actionable insights for leadership and investors.</p>
-                    </div>
-                </div>
-
-                <div>
-                    <div class="inline-flex items-center gap-2 bg-secondary/10 text-secondary text-sm font-medium px-4 py-1.5 rounded-full mb-5">
-                        <i class="ri-bar-chart-2-line"></i>
-                        Service 04
-                    </div>
-
-                    <h2 class="text-3xl font-bold text-text-primary">
-                        Financial Modeling & Valuation
-                    </h2>
 
                     <p class="mt-4 text-zinc-700 leading-relaxed">
-                        Sound financial models are the foundation of smart business strategy. Our financial
-                        modeling and valuation experts build robust, scenario-driven frameworks that support
-                        fundraising, mergers, acquisitions, and strategic planning with precision.
+                        We also help organizations embrace the future of work through training on Generative AI,
+                        AI productivity tools, automation workflows, and AI-enabled business processes.
                     </p>
 
                     <ul class="mt-6 space-y-3 text-zinc-700">
                         <li class="flex items-start gap-3">
                             <i class="ri-checkbox-circle-line text-secondary mt-0.5"></i>
-                            Three-statement financial models (P&L, Balance Sheet, Cash Flow)
+                            Finance and business acumen programs
                         </li>
                         <li class="flex items-start gap-3">
                             <i class="ri-checkbox-circle-line text-secondary mt-0.5"></i>
-                            DCF, comparable company, and precedent transaction analysis
+                            Leadership and communication training
                         </li>
                         <li class="flex items-start gap-3">
                             <i class="ri-checkbox-circle-line text-secondary mt-0.5"></i>
-                            Startup valuation for funding rounds (Seed to Series C+)
+                            Generative AI and AI adoption workshops
                         </li>
                         <li class="flex items-start gap-3">
                             <i class="ri-checkbox-circle-line text-secondary mt-0.5"></i>
-                            M&A financial advisory and due diligence support
+                            Excel, Power BI, and productivity training
                         </li>
                         <li class="flex items-start gap-3">
                             <i class="ri-checkbox-circle-line text-secondary mt-0.5"></i>
-                            Scenario planning and sensitivity analysis
+                            Compliance and risk awareness programs
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="ri-checkbox-circle-line text-secondary mt-0.5"></i>
+                            Customized corporate learning solutions
                         </li>
                     </ul>
 
@@ -397,45 +437,55 @@ new class extends Component
             <div class="my-16 border-t border-border"></div>
 
 
-            <!-- Service 5: Capital Infusion -->
-            <div id="capital" class="grid md:grid-cols-2 gap-12 items-center">
+            <!-- Service 5: Financial Modelling & Valuations -->
+            <div id="modeling" class="grid md:grid-cols-2 gap-12 items-center">
 
                 <div class="order-2 md:order-1">
                     <div class="inline-flex items-center gap-2 bg-secondary/10 text-secondary text-sm font-medium px-4 py-1.5 rounded-full mb-5">
-                        <i class="ri-bank-line"></i>
+                        <i class="ri-bar-chart-2-line"></i>
                         Service 05
                     </div>
 
                     <h2 class="text-3xl font-bold text-text-primary">
-                        Capital Infusion
+                        Financial Modelling & Valuations
                     </h2>
 
                     <p class="mt-4 text-zinc-700 leading-relaxed">
-                        Access to the right capital at the right time is a game-changer. GREVX connects
-                        businesses with a curated network of lenders, investors, and financial institutions,
-                        while structuring your capital requirements for maximum efficiency and minimal dilution.
+                        Strategic financial insights are critical for investment decisions, business planning,
+                        fundraising, and growth strategy. GREVX develops robust financial models and valuation
+                        frameworks that help businesses understand performance, assess opportunities, and make
+                        informed decisions.
+                    </p>
+
+                    <p class="mt-4 text-zinc-700 leading-relaxed">
+                        Our solutions combine analytical depth with practical business understanding to deliver
+                        actionable financial intelligence.
                     </p>
 
                     <ul class="mt-6 space-y-3 text-zinc-700">
                         <li class="flex items-start gap-3">
                             <i class="ri-checkbox-circle-line text-secondary mt-0.5"></i>
-                            Debt structuring — term loans, working capital, overdrafts
+                            Three-statement financial models
                         </li>
                         <li class="flex items-start gap-3">
                             <i class="ri-checkbox-circle-line text-secondary mt-0.5"></i>
-                            Equity fundraising — angel, VC, and PE introductions
+                            Forecasting, budgeting, and scenario analysis
                         </li>
                         <li class="flex items-start gap-3">
                             <i class="ri-checkbox-circle-line text-secondary mt-0.5"></i>
-                            Government grant and subsidy identification
+                            Startup and fundraising financial models
                         </li>
                         <li class="flex items-start gap-3">
                             <i class="ri-checkbox-circle-line text-secondary mt-0.5"></i>
-                            Bank loan facilitation and credit rating improvement
+                            Business and startup valuations
                         </li>
                         <li class="flex items-start gap-3">
                             <i class="ri-checkbox-circle-line text-secondary mt-0.5"></i>
-                            Capital allocation strategy and treasury management
+                            DCF and market-based valuation approaches
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="ri-checkbox-circle-line text-secondary mt-0.5"></i>
+                            Investor presentations and financial analysis support
                         </li>
                     </ul>
 
@@ -448,11 +498,11 @@ new class extends Component
 
                 <div class="order-1 md:order-2 bg-gradient-to-br from-secondary/10 to-blue-50 rounded-2xl p-10 flex flex-col items-center justify-center gap-6 min-h-[300px]">
                     <div class="w-20 h-20 flex items-center justify-center rounded-2xl bg-white shadow-md text-secondary text-4xl">
-                        <i class="ri-bank-line"></i>
+                        <i class="ri-bar-chart-2-line"></i>
                     </div>
                     <div class="text-center">
-                        <p class="font-semibold text-text-primary text-lg">Fuel Your Next Phase</p>
-                        <p class="text-sm text-zinc-600 mt-1 max-w-xs">Access strategic capital solutions tailored to your business stage and growth ambitions.</p>
+                        <p class="font-semibold text-text-primary text-lg">Financial Insights That Drive Growth</p>
+                        <p class="text-sm text-zinc-600 mt-1 max-w-xs">Turn financial data into strategic clarity with structured modelling and valuation expertise.</p>
                     </div>
                 </div>
 
@@ -470,8 +520,8 @@ new class extends Component
                         <i class="ri-rocket-line"></i>
                     </div>
                     <div class="text-center">
-                        <p class="font-semibold text-text-primary text-lg">Pitch with Confidence</p>
-                        <p class="text-sm text-zinc-600 mt-1 max-w-xs">Walk into every investor meeting with a compelling story backed by solid financial evidence.</p>
+                        <p class="font-semibold text-text-primary text-lg">Prepare to Raise with Confidence</p>
+                        <p class="text-sm text-zinc-600 mt-1 max-w-xs">Build credibility with investors through strong financial foundations and strategic preparation.</p>
                     </div>
                 </div>
 
@@ -486,31 +536,40 @@ new class extends Component
                     </h2>
 
                     <p class="mt-4 text-zinc-700 leading-relaxed">
-                        In today's competitive funding environment, the businesses that win aren't just the
-                        ones with the best ideas  they're the ones that tell the most credible, compelling
-                        financial story. GREVX helps you build that story from the ground up.
+                        Raising capital requires more than strong ideas - it requires preparation, clarity, and
+                        investor confidence. GREVX helps businesses become investment-ready through structured
+                        financial preparation, strategic positioning, and fundraising support.
+                    </p>
+
+                    <p class="mt-4 text-zinc-700 leading-relaxed">
+                        We work closely with founders and leadership teams to strengthen investor communication
+                        and improve overall readiness for capital opportunities.
                     </p>
 
                     <ul class="mt-6 space-y-3 text-zinc-700">
                         <li class="flex items-start gap-3">
                             <i class="ri-checkbox-circle-line text-secondary mt-0.5"></i>
-                            Pitch deck creation with investor-grade financial narratives
+                            Investor pitch deck preparation
                         </li>
                         <li class="flex items-start gap-3">
                             <i class="ri-checkbox-circle-line text-secondary mt-0.5"></i>
-                            Business plan and information memorandum preparation
+                            Financial projections and fundraising strategy
                         </li>
                         <li class="flex items-start gap-3">
                             <i class="ri-checkbox-circle-line text-secondary mt-0.5"></i>
-                            Virtual data room setup and due diligence management
+                            Business plans and growth storytelling
                         </li>
                         <li class="flex items-start gap-3">
                             <i class="ri-checkbox-circle-line text-secondary mt-0.5"></i>
-                            Funding round strategy and term sheet negotiations
+                            Due diligence readiness support
                         </li>
                         <li class="flex items-start gap-3">
                             <i class="ri-checkbox-circle-line text-secondary mt-0.5"></i>
-                            Cap table management and equity structuring advice
+                            Investor communication and presentation guidance
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="ri-checkbox-circle-line text-secondary mt-0.5"></i>
+                            Capital readiness and strategic advisory
                         </li>
                     </ul>
 
