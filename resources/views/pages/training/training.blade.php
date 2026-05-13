@@ -30,7 +30,7 @@ new class extends Component
 
                 <h1 class="mt-4 text-3xl sm:text-4xl md:text-5xl font-bold text-text-primary leading-tight">
                     Empower Your Team,
-                    <span class="text-secondary">Accelerate Your Growth</span>
+                    <span class="text-[#37809F]">Accelerate Your Growth</span>
                 </h1>
 
                 <p class="mt-5 sm:mt-6 text-base sm:text-lg text-zinc-700 max-w-xl leading-relaxed">
@@ -110,7 +110,7 @@ new class extends Component
             </div>
 
             <div>
-                <p class="text-4xl font-bold">96%</p>
+                <p class="text-4xl font-bold">97%</p>
                 <p class="mt-2 text-white/70 text-sm">Satisfaction Rate</p>
             </div>
 
@@ -186,6 +186,8 @@ new class extends Component
 
 
     <!-- TRAINING PROGRAMMES -->
+ {{--
+ 
     <section id="programmes" class="py-20 sm:py-24 bg-muted">
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6">
@@ -351,6 +353,7 @@ new class extends Component
         </div>
 
     </section>
+ --}}
 
 
     <!-- DELIVERY FORMATS -->

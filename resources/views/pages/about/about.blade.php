@@ -90,13 +90,22 @@ new class extends Component
     <!-- COMPANY STORY -->
     <section class="py-20 sm:py-24 bg-white">
 
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 grid md:grid-cols-2 gap-10 lg:gap-14 items-center">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col md:flex-row gap-10 lg:gap-14 items-center">
 
-            <div class="bg-muted rounded-xl h-[240px] sm:h-[300px] md:h-[360px] flex items-center justify-center text-zinc-400 text-sm">
-                Company Image / Illustration
+            <!-- Portrait Image Container -->
+            <div class="flex justify-center md:justify-start w-full md:w-auto">
+                <div class="bg-muted rounded-2xl overflow-hidden ring-1 ring-black/5
+                    w-[260px] sm:w-[320px] md:w-[380px]
+                    h-[360px] sm:h-[440px] md:h-[520px] shadow-xl">
+                    <img
+                        src="{{ asset('images/owner.jpeg') }}"
+                        alt="Company Owner"
+                        class="w-full h-full object-cover object-top">
+                </div>
             </div>
 
-            <div>
+            <!-- Content -->
+            <div class="max-w-3xl">
 
                 <h2 class="text-2xl sm:text-3xl font-bold text-text-primary">
                     Our Approach
@@ -110,18 +119,32 @@ new class extends Component
                 <p class="mt-4 text-zinc-700 leading-relaxed">
                     Grevx works closely with leadership teams to bring structure
                     to decision-making, align financial strategy with growth goals,
-                    and implement processes that improve performance.
+                    and implement processes that improve performance across functions.
                 </p>
 
                 <p class="mt-4 text-zinc-700 leading-relaxed">
-                    We believe strategy should not remain in presentations.
-                    It should translate into daily actions that move the business forward.
+                    We translate strategy into clear priorities, ownership, and timelines,
+                    so momentum carries through well beyond the kickoff session.
+                </p>
+
+                <p class="mt-4 text-zinc-700 leading-relaxed">
+                    Our approach blends deep analysis with practical execution support,
+                    helping teams stay focused on what moves the business forward each day.
+                </p>
+
+                <p class="mt-4 text-zinc-700 leading-relaxed">
+                    We prioritize sustainable growth by building systems that improve efficiency,
+                    strengthen accountability, and support better decision-making at every level.
+                </p>
+
+                <p class="mt-4 text-zinc-700 leading-relaxed">
+                    Through collaborative planning and continuous refinement, we help businesses
+                    adapt to changing market conditions while maintaining long-term strategic focus.
                 </p>
 
             </div>
 
         </div>
-
     </section>
 
 
@@ -134,7 +157,7 @@ new class extends Component
             <div>
                 <h3 class="text-4xl font-bold text-secondary">3+</h3>
                 <p class="mt-2 text-zinc-700 text-sm">
-                    Geographies & sector agnostic approach
+                    Geographies covered globally & sector agnostic approach 
 
                 </p>
             </div>
@@ -142,7 +165,7 @@ new class extends Component
             <div>
                 <h3 class="text-4xl font-bold text-secondary">100+</h3>
                 <p class="mt-2 text-zinc-700 text-sm">
-                    Companies supported through Consulting
+                    Companies supported through dynamic strategic consulting.
                 </p>
             </div>
 

@@ -30,7 +30,7 @@ new class extends Component
 
                 <h1 class="mt-4 text-3xl sm:text-4xl md:text-5xl font-bold text-text-primary leading-tight">
                     Helping Businesses Build with
-                    <span class="text-secondary">Clarity and Confidence
+                    <span class="text-[#37809F]">Clarity and Confidence
                     </span>
                 </h1>
 
@@ -315,11 +315,11 @@ new class extends Component
                     <ul class="mt-6 space-y-3 text-zinc-700">
                         <li class="flex items-start gap-3">
                             <i class="ri-checkbox-circle-line text-secondary mt-0.5"></i>
-                            Income tax and GST return filings
+                            Timely tax filings
                         </li>
                         <li class="flex items-start gap-3">
                             <i class="ri-checkbox-circle-line text-secondary mt-0.5"></i>
-                            TDS compliance and reconciliations
+                            Compliance and reconciliations report
                         </li>
                         <li class="flex items-start gap-3">
                             <i class="ri-checkbox-circle-line text-secondary mt-0.5"></i>
