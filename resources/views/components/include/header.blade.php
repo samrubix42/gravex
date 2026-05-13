@@ -41,7 +41,7 @@ new class extends Component
                 </a>
 
                 <a href="{{ route('pages::blog') }}" wire:navigate class="text-text-secondary hover:text-primary transition">
-                    Article
+                    Articles
                 </a>
 
                 <a href="{{ route('pages::contact') }}" wire:navigate class="text-text-secondary hover:text-primary transition">
@@ -114,7 +114,7 @@ new class extends Component
             </a>
 
             <a href="{{ route('pages::blog') }}" wire:navigate @click="open=false" class="text-text-secondary hover:text-primary transition">
-                Article
+                Articles
             </a>
 
             <a href="{{ route('pages::contact') }}" wire:navigate @click="open=false" class="text-text-secondary hover:text-primary transition">

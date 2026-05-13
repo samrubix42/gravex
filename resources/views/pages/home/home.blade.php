@@ -426,6 +426,25 @@ new class extends Component
                     </p>
 
                 </div>
+                <div class="group p-7 bg-surface rounded-xl border border-border transition hover:shadow-lg hover:-translate-y-1">
+
+                    <div class="w-12 h-12 flex items-center justify-center rounded-lg bg-secondary/10 text-secondary text-xl transition group-hover:bg-secondary group-hover:text-white">
+                        <i class="ri-article-line"></i>
+                    </div>
+
+                    <h3 class="mt-5 text-lg font-semibold text-text-primary relative inline-block">
+
+                        Tax Prep & Filing
+                        <span class="block h-[2px] w-10 bg-secondary mt-2 transition-all duration-300 group-hover:w-full"></span>
+
+                    </h3>
+
+                    <p class="mt-3 text-sm text-zinc-700 leading-relaxed">
+                        Simplify tax management with timely filings, strategic tax planning, and compliance-focused solutions tailored to your business needs.
+
+                    </p>
+
+                </div>
 
 
 
@@ -461,13 +480,13 @@ new class extends Component
 
                     <h3 class="mt-5 text-lg font-semibold text-text-primary relative inline-block">
 
-Financial Modelling & Valuations
+                        Financial Modelling & Valuations
                         <span class="block h-[2px] w-10 bg-secondary mt-2 transition-all duration-300 group-hover:w-full"></span>
 
                     </h3>
 
                     <p class="mt-3 text-sm text-zinc-700 leading-relaxed">
-              Build dynamic financial models that support strategic decision-making, forecasting, fundraising, budgeting and gain clear insights into your company’s worth with data driven valuations.
+                        Build dynamic financial models that support strategic decision-making, forecasting, fundraising, budgeting and gain clear insights into your company’s worth with data driven valuations.
 
                     </p>
 
@@ -492,30 +511,6 @@ Financial Modelling & Valuations
 
                     <p class="mt-3 text-sm text-zinc-700 leading-relaxed">
                         Prepare your business for investors with compelling financials, strategic positioning, pitch support, and investment-ready documentation.
-                    </p>
-
-                </div>
-
-
-
-                <!-- Card -->
-                <div class="group p-7 bg-surface rounded-xl border border-border transition hover:shadow-lg hover:-translate-y-1">
-
-                    <div class="w-12 h-12 flex items-center justify-center rounded-lg bg-secondary/10 text-secondary text-xl transition group-hover:bg-secondary group-hover:text-white">
-                        <i class="ri-funds-line"></i>
-                    </div>
-
-                    <h3 class="mt-5 text-lg font-semibold text-text-primary relative inline-block">
-
-                        Investor Readiness
-
-                        <span class="block h-[2px] w-10 bg-secondary mt-2 transition-all duration-300 group-hover:w-full"></span>
-
-                    </h3>
-
-                    <p class="mt-3 text-sm text-zinc-700 leading-relaxed">
-                        Prepare your company with financial clarity
-                        and strategy before approaching investors.
                     </p>
 
                 </div>
