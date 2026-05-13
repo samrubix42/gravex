@@ -397,7 +397,7 @@ new class extends Component
 
                     </h3>
 
-                    <p class="mt-3 text-sm text-zinc-700 leading-relaxed">
+                    <p class="mt-3 text-sm text-zinc-700 text-balance leading-relaxed">
                         Identify gaps in internal controls, reduce operational risks, and strengthen governance systems to improve business efficiency and compliance confidence.
 
                     </p>
@@ -420,7 +420,7 @@ new class extends Component
 
                     </h3>
 
-                    <p class="mt-3 text-sm text-zinc-700 leading-relaxed">
+                    <p class="mt-3 text-sm text-zinc-700 text-balanceleading-relaxed">
                         Streamline your accounting processes and stay compliant with evolving regulations through accurate reporting, reliable bookkeeping, and expert financial oversight.
 
                     </p>
@@ -439,9 +439,8 @@ new class extends Component
 
                     </h3>
 
-                    <p class="mt-3 text-sm text-zinc-700 leading-relaxed">
-                        Simplify tax management with timely filings, strategic tax planning, and compliance-focused solutions tailored to your business needs.
-
+                    <p class="mt-3 text-sm text-zinc-700 text-balance leading-relaxed">
+Simplify tax management with timely filings, strategic tax planning, and compliance-focused professional solutions carefully tailored to your unique business needs.
                     </p>
 
                 </div>
@@ -462,7 +461,7 @@ new class extends Component
 
                     </h3>
 
-                    <p class="mt-3 text-sm text-zinc-700 leading-relaxed">
+                    <p class="mt-3 text-sm text-zinc-700 text-balance leading-relaxed">
                         Empower your teams with practical, industry-focused training programs designed to enhance productivity, leadership, finance, and business skills.
 
                     </p>
@@ -485,7 +484,7 @@ new class extends Component
 
                     </h3>
 
-                    <p class="mt-3 text-sm text-zinc-700 leading-relaxed">
+                    <p class="mt-3 text-sm text-zinc-700 text-balance leading-relaxed">
                         Build dynamic financial models that support strategic decision-making, forecasting, fundraising, budgeting and gain clear insights into your company’s worth with data driven valuations.
 
                     </p>
@@ -510,8 +509,7 @@ new class extends Component
                     </h3>
 
                     <p class="mt-3 text-sm text-zinc-700 leading-relaxed">
-                        Prepare your business for investors with compelling financials, strategic positioning, pitch support, and investment-ready documentation.
-                    </p>
+Prepare your business for investors with compelling financials, strategic positioning, professional pitch support, and comprehensive investment-ready documentation.                    </p>
 
                 </div>
 

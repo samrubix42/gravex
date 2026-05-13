@@ -30,7 +30,7 @@ new class extends Component
 
                 <h1 class="mt-4 text-3xl sm:text-4xl md:text-5xl font-bold text-text-primary leading-tight">
                     Strategic Advisory for
-                    <span class="text-secondary">Ambitious Businesses</span>
+                    <span class="text-[#37809F]">Ambitious Businesses</span>
                 </h1>
 
                 <p class="mt-5 sm:mt-6 text-base sm:text-lg text-zinc-700 max-w-xl">
