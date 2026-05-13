@@ -14,45 +14,45 @@ new class extends Component
 <div>
 
     <!-- HERO -->
-    <section class="relative pt-32 pb-24 bg-blue-50/20 overflow-hidden">
+    <section class="relative pt-24 sm:pt-28 md:pt-32 pb-20 sm:pb-24 bg-blue-50/20 overflow-hidden">
 
         <div class="absolute inset-0 opacity-30 pointer-events-none">
             <div class="absolute w-[480px] h-[480px] bg-secondary/10 rounded-full blur-3xl -top-32 -left-32"></div>
             <div class="absolute w-[360px] h-[360px] bg-accent/10 rounded-full blur-3xl bottom-0 right-0"></div>
         </div>
 
-        <div class="relative max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 grid md:grid-cols-2 gap-10 lg:gap-12 items-center">
 
             <div>
                 <p class="text-sm font-semibold text-secondary tracking-widest uppercase">
                     Corporate Training
                 </p>
 
-                <h1 class="mt-4 text-4xl md:text-5xl font-bold text-text-primary leading-tight">
+                <h1 class="mt-4 text-3xl sm:text-4xl md:text-5xl font-bold text-text-primary leading-tight">
                     Empower Your Team,
                     <span class="text-secondary">Accelerate Your Growth</span>
                 </h1>
 
-                <p class="mt-6 text-lg text-zinc-700 max-w-xl leading-relaxed">
+                <p class="mt-5 sm:mt-6 text-base sm:text-lg text-zinc-700 max-w-xl leading-relaxed">
                     GREVX designs and delivers high impact corporate training programmes that sharpen financial
                     acumen, elevate leadership capabilities, and build a culture of continuous improvement
                     turning your people into your greatest competitive advantage.
                 </p>
 
-                <div class="mt-8 flex flex-wrap gap-4">
+                <div class="mt-8 flex flex-col sm:flex-row sm:flex-wrap gap-4">
                     <a href="{{ route('pages::contact') }}" wire:navigate
-                        class="px-6 py-3 bg-secondary text-white font-semibold rounded-lg hover:bg-secondary/90 transition">
+                        class="w-full sm:w-auto px-6 py-3 bg-secondary text-white font-semibold rounded-lg hover:bg-secondary/90 transition text-center">
                         Enquire Now
                     </a>
                     <a href="#programmes"
-                        class="px-6 py-3 border border-secondary text-secondary font-semibold rounded-lg hover:bg-secondary/10 transition">
+                        class="w-full sm:w-auto px-6 py-3 border border-secondary text-secondary font-semibold rounded-lg hover:bg-secondary/10 transition text-center">
                         View Programmes
                     </a>
                 </div>
             </div>
 
             <!-- Feature Card -->
-            <div class="bg-white border border-border rounded-xl p-8 shadow-sm space-y-6">
+            <div class="bg-white border border-border rounded-xl p-6 sm:p-8 shadow-sm space-y-6">
 
                 <h2 class="text-xl font-semibold text-text-primary">
                     Why Invest in Training?
@@ -89,9 +89,9 @@ new class extends Component
 
 
     <!-- STATS BAR -->
-    <section class="py-16 bg-secondary text-white">
+    <section class="py-14 sm:py-16 bg-secondary text-white">
 
-        <div class="max-w-6xl mx-auto px-6 grid sm:grid-cols-4 gap-10 text-center">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 grid grid-cols-2 sm:grid-cols-4 gap-8 sm:gap-10 text-center">
 
             <div>
                 <p class="text-4xl font-bold">17,000+</p>
@@ -120,12 +120,12 @@ new class extends Component
 
 
     <!-- ABOUT THE PROGRAMME -->
-    <section class="py-24 bg-white">
+    <section class="py-20 sm:py-24 bg-white">
 
-        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-14 items-center">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 grid md:grid-cols-2 gap-10 lg:gap-14 items-center">
 
             <!-- Visual Box -->
-            <div class="bg-gradient-to-br from-secondary/10 to-blue-50 rounded-2xl p-10 flex flex-col justify-between min-h-[340px]">
+            <div class="bg-gradient-to-br from-secondary/10 to-blue-50 rounded-2xl p-6 sm:p-10 flex flex-col justify-between min-h-[260px] sm:min-h-[320px]">
                 <div class="w-16 h-16 flex items-center justify-center rounded-2xl bg-white shadow-md text-secondary text-3xl">
                     <i class="ri-team-line"></i>
                 </div>
@@ -148,7 +148,7 @@ new class extends Component
             <div>
                 <p class="text-sm font-semibold text-secondary tracking-widest uppercase">Our Approach</p>
 
-                <h2 class="mt-3 text-3xl font-bold text-text-primary">
+                <h2 class="mt-3 text-2xl sm:text-3xl font-bold text-text-primary">
                     Training That Delivers Real Business Impact
                 </h2>
 
@@ -186,13 +186,13 @@ new class extends Component
 
 
     <!-- TRAINING PROGRAMMES -->
-    <section id="programmes" class="py-24 bg-muted">
+    <section id="programmes" class="py-20 sm:py-24 bg-muted">
 
-        <div class="max-w-7xl mx-auto px-6">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
 
             <div class="text-center max-w-2xl mx-auto">
                 <p class="text-sm font-semibold text-secondary tracking-widest uppercase">What We Offer</p>
-                <h2 class="mt-3 text-3xl md:text-4xl font-bold text-text-primary">
+                <h2 class="mt-3 text-2xl sm:text-3xl md:text-4xl font-bold text-text-primary">
                     Our Training Programmes
                 </h2>
                 <p class="mt-4 text-zinc-600">
@@ -201,7 +201,7 @@ new class extends Component
                 </p>
             </div>
 
-            <div class="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="mt-10 sm:mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
 
                 <!-- <div class="bg-white border border-border rounded-xl p-7 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300">
                     <div class="w-12 h-12 flex items-center justify-center rounded-xl bg-secondary/10 text-secondary text-2xl mb-5">
@@ -227,7 +227,7 @@ new class extends Component
                 </div> -->
 
                 <!-- Programme 2 -->
-                <div class="bg-white border border-border rounded-xl p-7 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300">
+                <div class="bg-white border border-border rounded-xl p-6 sm:p-7 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300">
                     <div class="w-12 h-12 flex items-center justify-center rounded-xl bg-secondary/10 text-secondary text-2xl mb-5">
                         <i class="ri-file-user-line"></i>
                     </div>
@@ -251,7 +251,7 @@ new class extends Component
                 </div>
 
                 <!-- Programme 3 -->
-                <div class="bg-white border border-border rounded-xl p-7 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300">
+                <div class="bg-white border border-border rounded-xl p-6 sm:p-7 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300">
                     <div class="w-12 h-12 flex items-center justify-center rounded-xl bg-secondary/10 text-secondary text-2xl mb-5">
                         <i class="ri-shield-check-line"></i>
                     </div>
@@ -275,7 +275,7 @@ new class extends Component
                 </div>
 
                 <!-- Programme 4 -->
-                <div class="bg-white border border-border rounded-xl p-7 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300">
+                <div class="bg-white border border-border rounded-xl p-6 sm:p-7 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300">
                     <div class="w-12 h-12 flex items-center justify-center rounded-xl bg-secondary/10 text-secondary text-2xl mb-5">
                         <i class="ri-bar-chart-grouped-line"></i>
                     </div>
@@ -299,7 +299,7 @@ new class extends Component
                 </div>
 
                 <!-- Programme 5 -->
-                <div class="bg-white border border-border rounded-xl p-7 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300">
+                <div class="bg-white border border-border rounded-xl p-6 sm:p-7 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300">
                     <div class="w-12 h-12 flex items-center justify-center rounded-xl bg-secondary/10 text-secondary text-2xl mb-5">
                         <i class="ri-user-star-line"></i>
                     </div>
@@ -323,7 +323,7 @@ new class extends Component
                 </div>
 
                 <!-- Programme 6 -->
-                <div class="bg-white border border-border rounded-xl p-7 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300">
+                <div class="bg-white border border-border rounded-xl p-6 sm:p-7 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300">
                     <div class="w-12 h-12 flex items-center justify-center rounded-xl bg-secondary/10 text-secondary text-2xl mb-5">
                         <i class="ri-presentation-line"></i>
                     </div>
@@ -369,10 +369,10 @@ new class extends Component
                 </p>
             </div>
 
-            <div class="mt-14 grid sm:grid-cols-3 gap-8">
+            <div class="mt-10 sm:mt-14 grid sm:grid-cols-3 gap-6 sm:gap-8">
 
                 <!-- In-Person -->
-                <div class="group p-8 border border-border rounded-xl bg-surface hover:border-secondary hover:shadow-lg transition-all duration-300">
+                <div class="group p-6 sm:p-8 border border-border rounded-xl bg-surface hover:border-secondary hover:shadow-lg transition-all duration-300">
                     <div class="w-14 h-14 flex items-center justify-center rounded-xl bg-secondary/10 text-secondary text-2xl mb-6 group-hover:bg-secondary group-hover:text-white transition-all duration-300">
                         <i class="ri-building-3-line"></i>
                     </div>
@@ -389,7 +389,7 @@ new class extends Component
                 </div>
 
                 <!-- Online / Virtual -->
-                <div class="group p-8 border border-border rounded-xl bg-surface hover:border-secondary hover:shadow-lg transition-all duration-300">
+                <div class="group p-6 sm:p-8 border border-border rounded-xl bg-surface hover:border-secondary hover:shadow-lg transition-all duration-300">
                     <div class="w-14 h-14 flex items-center justify-center rounded-xl bg-secondary/10 text-secondary text-2xl mb-6 group-hover:bg-secondary group-hover:text-white transition-all duration-300">
                         <i class="ri-computer-line"></i>
                     </div>
@@ -406,7 +406,7 @@ new class extends Component
                 </div>
 
                 <!-- Blended -->
-                <div class="group p-8 border border-border rounded-xl bg-surface hover:border-secondary hover:shadow-lg transition-all duration-300">
+                <div class="group p-6 sm:p-8 border border-border rounded-xl bg-surface hover:border-secondary hover:shadow-lg transition-all duration-300">
                     <div class="w-14 h-14 flex items-center justify-center rounded-xl bg-secondary/10 text-secondary text-2xl mb-6 group-hover:bg-secondary group-hover:text-white transition-all duration-300">
                         <i class="ri-git-merge-line"></i>
                     </div>
@@ -430,13 +430,13 @@ new class extends Component
 
 
     <!-- HOW IT WORKS -->
-    <section class="py-24 bg-muted">
+    <section class="py-20 sm:py-24 bg-muted">
 
-        <div class="max-w-7xl mx-auto px-6">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
 
             <div class="text-center max-w-2xl mx-auto">
                 <p class="text-sm font-semibold text-secondary tracking-widest uppercase">Our Process</p>
-                <h2 class="mt-3 text-3xl md:text-4xl font-bold text-text-primary">
+                <h2 class="mt-3 text-2xl sm:text-3xl md:text-4xl font-bold text-text-primary">
                     How We Design Your Programme
                 </h2>
                 <p class="mt-4 text-zinc-600">
@@ -445,7 +445,7 @@ new class extends Component
                 </p>
             </div>
 
-            <div class="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="mt-10 sm:mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
 
                 <div class="bg-white border border-border rounded-xl p-6 text-center hover:shadow-md transition">
                     <div class="w-12 h-12 mx-auto flex items-center justify-center rounded-full bg-secondary/10 text-secondary font-bold text-lg">
@@ -546,26 +546,26 @@ new class extends Component
  
 
     <!-- CTA -->
-    <section class="py-24 bg-secondary text-white">
+    <section class="py-20 sm:py-24 bg-secondary text-white">
 
-        <div class="max-w-4xl mx-auto px-6 text-center">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
 
-            <h2 class="text-3xl md:text-4xl font-bold">
+            <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold">
                 Ready to Develop Your Team?
             </h2>
 
-            <p class="mt-5 text-white/80 text-lg max-w-2xl mx-auto">
+            <p class="mt-4 sm:mt-5 text-white/80 text-base sm:text-lg max-w-2xl mx-auto">
                 Tell us about your team, your goals, and your challenges. We'll design a programme
                 that delivers measurable results and a lasting competitive advantage.
             </p>
 
-            <div class="mt-8 flex flex-wrap justify-center gap-4">
+            <div class="mt-8 flex flex-col sm:flex-row justify-center gap-4">
                 <a href="{{ route('pages::contact') }}" wire:navigate
-                    class="px-8 py-3 bg-white text-secondary font-semibold rounded-lg hover:bg-gray-100 transition">
+                    class="w-full sm:w-auto px-8 py-3 bg-white text-secondary font-semibold rounded-lg hover:bg-gray-100 transition text-center">
                     Get a Custom Quote
                 </a>
                 <a href="tel:+918376059410" target="_blank"
-                    class="px-8 py-3 border border-white/40 text-white font-semibold rounded-lg hover:bg-white/10 transition">
+                    class="w-full sm:w-auto px-8 py-3 border border-white/40 text-white font-semibold rounded-lg hover:bg-white/10 transition text-center">
                     Call Us Now
                 </a>
             </div>

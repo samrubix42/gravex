@@ -83,11 +83,9 @@ new class extends Component
         class="fixed inset-0 bg-white z-[100] flex flex-col">
 
         <!-- Top -->
-        <div class="flex items-center justify-between h-20 px-6 border-b border-border">
+        <div class="flex items-center justify-end h-20 px-6 border-b border-border">
 
-            <a href="{{ route('home') }}" wire:navigate @click="open=false">
-                <img src="/logo.png" class="h-8">
-            </a>
+           
 
             <button @click="open=false" class="text-2xl text-primary">
                 <i class="ri-close-line"></i>

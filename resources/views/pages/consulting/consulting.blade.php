@@ -14,46 +14,46 @@ new class extends Component
 <div>
 
     <!-- HERO -->
-    <section class="relative pt-32 pb-24 bg-blue-50/20 overflow-hidden">
+    <section class="relative pt-24 sm:pt-28 md:pt-32 pb-20 sm:pb-24 bg-blue-50/20 overflow-hidden">
 
         <div class="absolute inset-0 opacity-30 pointer-events-none">
             <div class="absolute w-[480px] h-[480px] bg-secondary/10 rounded-full blur-3xl -top-32 -left-32"></div>
             <div class="absolute w-[360px] h-[360px] bg-accent/10 rounded-full blur-3xl bottom-0 right-0"></div>
         </div>
 
-        <div class="relative max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 grid md:grid-cols-2 gap-10 lg:gap-12 items-center">
 
             <div>
                 <p class="text-sm font-semibold text-secondary tracking-widest uppercase">
                     Consulting Services
                 </p>
 
-                <h1 class="mt-4 text-4xl md:text-5xl font-bold text-text-primary leading-tight">
+                <h1 class="mt-4 text-3xl sm:text-4xl md:text-5xl font-bold text-text-primary leading-tight">
                     Helping Businesses Build with
                     <span class="text-secondary">Clarity and Confidence
                     </span>
                 </h1>
 
-                <p class="mt-6 text-lg text-zinc-700 max-w-xl leading-relaxed">
+                <p class="mt-5 sm:mt-6 text-base sm:text-lg text-zinc-700 max-w-xl leading-relaxed">
 
                     At GREVX, we support businesses with practical consulting solutions that simplify financial operations, strengthen decision-making, and prepare organizations for long-term growth. Our services are designed to help companies improve structure, manage risk, optimize performance, and unlock new opportunities.
 
                 </p>
 
-                <div class="mt-8 flex flex-wrap gap-4">
+                <div class="mt-8 flex flex-col sm:flex-row sm:flex-wrap gap-4">
                     <a href="{{ route('pages::contact') }}" wire:navigate
-                        class="px-6 py-3 bg-secondary text-white font-semibold rounded-lg hover:bg-secondary/90 transition">
+                        class="w-full sm:w-auto px-6 py-3 bg-secondary text-white font-semibold rounded-lg hover:bg-secondary/90 transition text-center">
                         Book a Consultation
                     </a>
                     <a href="#services"
-                        class="px-6 py-3 border border-secondary text-secondary font-semibold rounded-lg hover:bg-secondary/10 transition">
+                        class="w-full sm:w-auto px-6 py-3 border border-secondary text-secondary font-semibold rounded-lg hover:bg-secondary/10 transition text-center">
                         Explore Services
                     </a>
                 </div>
             </div>
 
             <!-- Stats Card -->
-            <div class="bg-white border border-border rounded-xl p-8 shadow-sm space-y-6">
+            <div class="bg-white border border-border rounded-xl p-6 sm:p-8 shadow-sm space-y-6">
 
                 <h2 class="text-xl font-semibold text-text-primary">
                     Why GREVX?
@@ -90,9 +90,9 @@ new class extends Component
 
 
     <!-- IMPACT NUMBERS -->
-    <section class="py-16 bg-secondary text-white">
+    <section class="py-14 sm:py-16 bg-secondary text-white">
 
-        <div class="max-w-6xl mx-auto px-6 grid sm:grid-cols-4 gap-10 text-center">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 grid grid-cols-2 sm:grid-cols-4 gap-8 sm:gap-10 text-center">
 
             <div>
                 <p class="text-4xl font-bold">100+</p>
@@ -120,13 +120,13 @@ new class extends Component
 
 
     <!-- SERVICES -->
-    <section id="services" class="py-24 bg-white">
+    <section id="services" class="py-20 sm:py-24 bg-white">
 
-        <div class="max-w-7xl mx-auto px-6">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
 
             <div class="text-center max-w-2xl mx-auto">
                 <p class="text-sm font-semibold text-secondary tracking-widest uppercase">What We Offer</p>
-                <h2 class="mt-3 text-3xl md:text-4xl font-bold text-text-primary">
+                <h2 class="mt-3 text-2xl sm:text-3xl md:text-4xl font-bold text-text-primary">
                     Our Consulting Services
                 </h2>
                 <p class="mt-4 text-zinc-600">
@@ -137,7 +137,7 @@ new class extends Component
 
 
             <!-- Service 1: Control Deficiency & Risk Advisory -->
-            <div id="control-risk" class="mt-20 grid md:grid-cols-2 gap-12 items-center">
+            <div id="control-risk" class="mt-14 sm:mt-20 grid md:grid-cols-2 gap-10 lg:gap-12 items-center">
 
                 <div class="order-2 md:order-1">
                     <div class="inline-flex items-center gap-2 bg-secondary/10 text-secondary text-sm font-medium px-4 py-1.5 rounded-full mb-5">
@@ -145,7 +145,7 @@ new class extends Component
                         Service 01
                     </div>
 
-                    <h2 class="text-3xl font-bold text-text-primary">
+                    <h2 class="text-2xl sm:text-3xl font-bold text-text-primary">
                         Control Deficiency & Risk Advisory
                     </h2>
 
@@ -196,7 +196,7 @@ new class extends Component
                     </a>
                 </div>
 
-                <div class="order-1 md:order-2 bg-gradient-to-br from-secondary/10 to-blue-50 rounded-2xl p-10 flex flex-col items-center justify-center gap-6 min-h-[300px]">
+                <div class="order-1 md:order-2 bg-gradient-to-br from-secondary/10 to-blue-50 rounded-2xl p-6 sm:p-10 flex flex-col items-center justify-center gap-5 sm:gap-6 min-h-[240px] sm:min-h-[300px]">
                     <div class="w-20 h-20 flex items-center justify-center rounded-2xl bg-white shadow-md text-secondary text-4xl">
                         <i class="ri-shield-check-line"></i>
                     </div>
@@ -209,13 +209,13 @@ new class extends Component
             </div>
 
 
-            <div class="my-16 border-t border-border"></div>
+            <div class="my-12 sm:my-16 border-t border-border"></div>
 
 
             <!-- Service 2: Accounting & Compliance -->
-            <div id="accounting" class="grid md:grid-cols-2 gap-12 items-center">
+            <div id="accounting" class="grid md:grid-cols-2 gap-10 lg:gap-12 items-center">
 
-                <div class="bg-gradient-to-br from-accent/10 to-blue-50 rounded-2xl p-10 flex flex-col items-center justify-center gap-6 min-h-[300px]">
+                <div class="bg-gradient-to-br from-accent/10 to-blue-50 rounded-2xl p-6 sm:p-10 flex flex-col items-center justify-center gap-5 sm:gap-6 min-h-[240px] sm:min-h-[300px]">
                     <div class="w-20 h-20 flex items-center justify-center rounded-2xl bg-white shadow-md text-secondary text-4xl">
                         <i class="ri-calculator-line"></i>
                     </div>
@@ -231,7 +231,7 @@ new class extends Component
                         Service 02
                     </div>
 
-                    <h2 class="text-3xl font-bold text-text-primary">
+                    <h2 class="text-2xl sm:text-3xl font-bold text-text-primary">
                         Accounting & Compliance
                     </h2>
 
@@ -285,11 +285,11 @@ new class extends Component
             </div>
 
 
-            <div class="my-16 border-t border-border"></div>
+            <div class="my-12 sm:my-16 border-t border-border"></div>
 
 
             <!-- Service 3: Tax Prep & Filing -->
-            <div id="tax" class="grid md:grid-cols-2 gap-12 items-center">
+            <div id="tax" class="grid md:grid-cols-2 gap-10 lg:gap-12 items-center">
 
                 <div class="order-2 md:order-1">
                     <div class="inline-flex items-center gap-2 bg-secondary/10 text-secondary text-sm font-medium px-4 py-1.5 rounded-full mb-5">
@@ -297,7 +297,7 @@ new class extends Component
                         Service 03
                     </div>
 
-                    <h2 class="text-3xl font-bold text-text-primary">
+                    <h2 class="text-2xl sm:text-3xl font-bold text-text-primary">
                         Tax Prep & Filing
                     </h2>
 
@@ -346,7 +346,7 @@ new class extends Component
                     </a>
                 </div>
 
-                <div class="order-1 md:order-2 bg-gradient-to-br from-secondary/10 to-blue-50 rounded-2xl p-10 flex flex-col items-center justify-center gap-6 min-h-[300px]">
+                <div class="order-1 md:order-2 bg-gradient-to-br from-secondary/10 to-blue-50 rounded-2xl p-6 sm:p-10 flex flex-col items-center justify-center gap-5 sm:gap-6 min-h-[240px] sm:min-h-[300px]">
                     <div class="w-20 h-20 flex items-center justify-center rounded-2xl bg-white shadow-md text-secondary text-4xl">
                         <i class="ri-file-text-line"></i>
                     </div>
@@ -359,13 +359,13 @@ new class extends Component
             </div>
 
 
-            <div class="my-16 border-t border-border"></div>
+            <div class="my-12 sm:my-16 border-t border-border"></div>
 
 
             <!-- Service 4: Corporate Training -->
-            <div id="training" class="grid md:grid-cols-2 gap-12 items-center">
+            <div id="training" class="grid md:grid-cols-2 gap-10 lg:gap-12 items-center">
 
-                <div class="bg-gradient-to-br from-accent/10 to-blue-50 rounded-2xl p-10 flex flex-col items-center justify-center gap-6 min-h-[300px]">
+                <div class="bg-gradient-to-br from-accent/10 to-blue-50 rounded-2xl p-6 sm:p-10 flex flex-col items-center justify-center gap-5 sm:gap-6 min-h-[240px] sm:min-h-[300px]">
                     <div class="w-20 h-20 flex items-center justify-center rounded-2xl bg-white shadow-md text-secondary text-4xl">
                         <i class="ri-team-line"></i>
                     </div>
@@ -381,7 +381,7 @@ new class extends Component
                         Service 04
                     </div>
 
-                    <h2 class="text-3xl font-bold text-text-primary">
+                    <h2 class="text-2xl sm:text-3xl font-bold text-text-primary">
                         Corporate Training
                     </h2>
 
@@ -434,11 +434,11 @@ new class extends Component
             </div>
 
 
-            <div class="my-16 border-t border-border"></div>
+            <div class="my-12 sm:my-16 border-t border-border"></div>
 
 
             <!-- Service 5: Financial Modelling & Valuations -->
-            <div id="modeling" class="grid md:grid-cols-2 gap-12 items-center">
+            <div id="modeling" class="grid md:grid-cols-2 gap-10 lg:gap-12 items-center">
 
                 <div class="order-2 md:order-1">
                     <div class="inline-flex items-center gap-2 bg-secondary/10 text-secondary text-sm font-medium px-4 py-1.5 rounded-full mb-5">
@@ -446,7 +446,7 @@ new class extends Component
                         Service 05
                     </div>
 
-                    <h2 class="text-3xl font-bold text-text-primary">
+                    <h2 class="text-2xl sm:text-3xl font-bold text-text-primary">
                         Financial Modelling & Valuations
                     </h2>
 
@@ -496,7 +496,7 @@ new class extends Component
                     </a>
                 </div>
 
-                <div class="order-1 md:order-2 bg-gradient-to-br from-secondary/10 to-blue-50 rounded-2xl p-10 flex flex-col items-center justify-center gap-6 min-h-[300px]">
+                <div class="order-1 md:order-2 bg-gradient-to-br from-secondary/10 to-blue-50 rounded-2xl p-6 sm:p-10 flex flex-col items-center justify-center gap-5 sm:gap-6 min-h-[240px] sm:min-h-[300px]">
                     <div class="w-20 h-20 flex items-center justify-center rounded-2xl bg-white shadow-md text-secondary text-4xl">
                         <i class="ri-bar-chart-2-line"></i>
                     </div>
@@ -509,13 +509,13 @@ new class extends Component
             </div>
 
 
-            <div class="my-16 border-t border-border"></div>
+            <div class="my-12 sm:my-16 border-t border-border"></div>
 
 
             <!-- Service 6: Investor Readiness -->
-            <div id="investor" class="grid md:grid-cols-2 gap-12 items-center">
+            <div id="investor" class="grid md:grid-cols-2 gap-10 lg:gap-12 items-center">
 
-                <div class="bg-gradient-to-br from-accent/10 to-blue-50 rounded-2xl p-10 flex flex-col items-center justify-center gap-6 min-h-[300px]">
+                <div class="bg-gradient-to-br from-accent/10 to-blue-50 rounded-2xl p-6 sm:p-10 flex flex-col items-center justify-center gap-5 sm:gap-6 min-h-[240px] sm:min-h-[300px]">
                     <div class="w-20 h-20 flex items-center justify-center rounded-2xl bg-white shadow-md text-secondary text-4xl">
                         <i class="ri-rocket-line"></i>
                     </div>
@@ -531,7 +531,7 @@ new class extends Component
                         Service 06
                     </div>
 
-                    <h2 class="text-3xl font-bold text-text-primary">
+                    <h2 class="text-2xl sm:text-3xl font-bold text-text-primary">
                         Investor Readiness
                     </h2>
 
@@ -588,13 +588,13 @@ new class extends Component
 
 
     <!-- PROCESS -->
-    <section class="py-24 bg-muted">
+    <section class="py-20 sm:py-24 bg-muted">
 
-        <div class="max-w-7xl mx-auto px-6">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
 
             <div class="text-center max-w-2xl mx-auto">
                 <p class="text-sm font-semibold text-secondary tracking-widest uppercase">How We Work</p>
-                <h2 class="mt-3 text-3xl md:text-4xl font-bold text-text-primary">
+                <h2 class="mt-3 text-2xl sm:text-3xl md:text-4xl font-bold text-text-primary">
                     Our Proven Consulting Process
                 </h2>
                 <p class="mt-4 text-zinc-600">
@@ -603,7 +603,7 @@ new class extends Component
                 </p>
             </div>
 
-            <div class="mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="mt-12 sm:mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
 
                 <div class="bg-white border border-border rounded-xl p-6 text-center">
                     <div class="w-12 h-12 mx-auto flex items-center justify-center rounded-full bg-secondary/10 text-secondary font-bold text-lg">
@@ -645,26 +645,26 @@ new class extends Component
 
 
     <!-- CTA -->
-    <section class="py-24 bg-secondary text-white">
+    <section class="py-20 sm:py-24 bg-secondary text-white">
 
-        <div class="max-w-4xl mx-auto px-6 text-center">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
 
-            <h2 class="text-3xl md:text-4xl font-bold">
+            <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold">
                 Ready to Transform Your Business?
             </h2>
 
-            <p class="mt-5 text-white/80 text-lg max-w-2xl mx-auto">
+            <p class="mt-4 sm:mt-5 text-white/80 text-base sm:text-lg max-w-2xl mx-auto">
                 Whether you need compliance support, a compelling investor pitch, or access to capital
                 GREVX has the expertise to deliver. Let's start with a conversation.
             </p>
 
-            <div class="mt-8 flex flex-wrap justify-center gap-4">
+            <div class="mt-8 flex flex-col sm:flex-row justify-center gap-4">
                 <a href="{{ route('pages::contact') }}" wire:navigate
-                    class="px-8 py-3 bg-white text-secondary font-semibold rounded-lg hover:bg-gray-100 transition">
+                    class="w-full sm:w-auto px-8 py-3 bg-white text-secondary font-semibold rounded-lg hover:bg-gray-100 transition text-center">
                     Book a Free Consultation
                 </a>
                 <a href="tel:+918376059410"
-                    class="px-8 py-3 border border-white/40 text-white font-semibold rounded-lg hover:bg-white/10 transition">
+                    class="w-full sm:w-auto px-8 py-3 border border-white/40 text-white font-semibold rounded-lg hover:bg-white/10 transition text-center">
                     Call Us Now
                 </a>
             </div>

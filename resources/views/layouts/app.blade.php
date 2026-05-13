@@ -35,6 +35,14 @@
 
     </main>
 
+    <a
+  href="https://wa.me/918376059410?text=Hi%20happy%20to%20know%20about%20your%20services"
+  target="_blank"
+  class="fixed bottom-10 right-2 md:right-4 z-50 flex h-16 w-16 items-center justify-center rounded-full bg-green-500 text-white shadow-lg"
+>
+  <i class="ri-whatsapp-line text-3xl"></i>
+</a>
+
     <livewire:include.footer />
 
 
