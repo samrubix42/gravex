@@ -124,6 +124,7 @@ new class extends Component
         </div>
 
         <div
+            x-cloak
             x-show="openConsult"
             x-transition:enter="transition ease-out duration-200"
             x-transition:enter-start="opacity-0 scale-95"
