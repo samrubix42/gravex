@@ -17,7 +17,7 @@ new class extends Component
 
             <!-- Logo -->
             <a href="{{ route('home') }}" wire:navigate class="flex items-center">
-                <img src="/logo.png" alt="Grevx" class="h-32">
+                <img src="/logo.png" alt="Grevx" class="h-36">
             </a>
 
 
@@ -41,7 +41,7 @@ new class extends Component
                 </a>
 
                 <a href="{{ route('pages::blog') }}" wire:navigate class="text-text-secondary hover:text-primary transition">
-                    Articles
+                Articles
                 </a>
 
                 <a href="{{ route('pages::contact') }}" wire:navigate class="text-text-secondary hover:text-primary transition">
