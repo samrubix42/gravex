@@ -246,9 +246,9 @@ new class extends Component
                 Let's discuss how Grevx can support your next stage of growth.
             </p>
 
-            <button class="mt-8 px-8 py-3 bg-white text-secondary font-semibold rounded-md hover:bg-gray-100 transition">
+            <a href="https://wa.me/918376059410?text=Hi%20happy%20to%20know%20about%20your%20services" target="_blank" class="mt-8 inline-flex items-center justify-center px-8 py-3 bg-white text-secondary font-semibold rounded-md hover:bg-gray-100 transition">
                 Start a Conversation
-            </button>
+            </a>
 
         </div>
 

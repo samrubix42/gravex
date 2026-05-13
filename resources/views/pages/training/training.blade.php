@@ -34,8 +34,8 @@ new class extends Component
                 </h1>
 
                 <p class="mt-6 text-lg text-zinc-700 max-w-xl leading-relaxed">
-                    GREVX designs and delivers world-class corporate training programmes that sharpen financial
-                    acumen, elevate leadership capabilities, and build a culture of continuous improvement —
+                    GREVX designs and delivers high impact corporate training programmes that sharpen financial
+                    acumen, elevate leadership capabilities, and build a culture of continuous improvement
                     turning your people into your greatest competitive advantage.
                 </p>
 
