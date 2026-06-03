@@ -136,21 +136,9 @@ alt="{{ $post->title }}">
 
 <!-- Blog Content -->
 
-<div class="prose prose-lg max-w-none
-prose-headings:text-text-primary
-prose-headings:font-semibold
-prose-p:text-zinc-700
-prose-p:leading-relaxed
-prose-a:text-secondary
-prose-a:no-underline hover:prose-a:underline
-prose-img:rounded-2xl
-prose-blockquote:border-secondary
-prose-blockquote:bg-zinc-50
-prose-blockquote:px-6
-prose-blockquote:py-4
-prose-blockquote:rounded-lg">
+<div class="tinymce-content max-w-none">
 
-{!! $post->content !!}
+{!! preg_replace('/<p[^>]*>\s*(?:&nbsp;|\s|<br\s*\/?>)*\s*<\/p>/i', '', $post->content) !!}
 
 </div>
 
