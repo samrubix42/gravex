@@ -244,8 +244,4 @@ new #[Title('Blog - Grevx Consulting')] class extends Component
 
     </section>
 
-
-
->
-
 </div>

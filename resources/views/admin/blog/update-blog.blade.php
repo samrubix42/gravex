@@ -146,6 +146,8 @@ new #[Layout('layouts.admin')] class extends Component {
                                             menubar: false,
                                             plugins: 'advlist autolink lists link image charmap preview anchor searchreplace visualblocks code fullscreen insertdatetime media table code help wordcount',
                                             toolbar: 'undo redo | blocks | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | code help',
+                                            relative_urls: false,
+                                            remove_script_host: true,
                                             setup: (editor) => {
                                                 this.instance = editor;
                                                 editor.on('change', () => {

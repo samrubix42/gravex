@@ -138,7 +138,7 @@ alt="{{ $post->title }}">
 
 <div class="tinymce-content max-w-none">
 
-{!! preg_replace('/<p[^>]*>\s*(?:&nbsp;|\s|<br\s*\/?>)*\s*<\/p>/i', '', $post->content) !!}
+{!! preg_replace('/href=(["\'])(?![a-z]+:\/\/|\/|#|mailto:|tel:|javascript:)([^"\']+)\1/i', 'href=$1/$2$1', preg_replace('/<p[^>]*>\s*(?:&nbsp;|\s|<br\s*\/?>)*\s*<\/p>/i', '', $post->content)) !!}
 
 </div>
 
