@@ -143,14 +143,14 @@
 }
 
 /* Link styling: Blue highlighting with underline */
-.tinymce-content a {
+.tinymce-content a[href] {
     color: #2563eb !important; /* Royal Blue */
     text-decoration: underline !important;
     text-underline-offset: 3px;
     font-weight: 500 !important;
     transition: var(--transition-default);
 }
-.tinymce-content a:hover {
+.tinymce-content a[href]:hover {
     color: #1d4ed8 !important; /* Darker blue on hover */
     text-decoration: underline !important;
 }

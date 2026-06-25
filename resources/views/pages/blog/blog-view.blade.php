@@ -138,7 +138,18 @@ alt="{{ $post->title }}">
 
 <div class="tinymce-content max-w-none">
 
-{!! preg_replace('/href=(["\'])(?![a-z]+:\/\/|\/|#|mailto:|tel:|javascript:)([^"\']+)\1/i', 'href=$1/$2$1', preg_replace('/<p[^>]*>\s*(?:&nbsp;|\s|<br\s*\/?>)*\s*<\/p>/i', '', $post->content)) !!}
+@php
+    $cleanedContent = $post->content;
+    // Remove <a> tags that don't have an href attribute
+    $cleanedContent = preg_replace('/<a(?![^>]*\bhref\b)[^>]*>(.*?)<\/a>/is', '$1', $cleanedContent);
+    // Remove <a> tags that have an empty href attribute (e.g. href="", href='')
+    $cleanedContent = preg_replace('/<a[^>]*\bhref=["\']\s*["\'][^>]*>(.*?)<\/a>/is', '$1', $cleanedContent);
+    // Remove empty paragraph tags
+    $cleanedContent = preg_replace('/<p[^>]*>\s*(?:&nbsp;|\s|<br\s*\/?>)*\s*<\/p>/i', '', $cleanedContent);
+    // Fix relative links by prepending a slash if they don't start with a protocol, slash, hash, mailto, etc.
+    $cleanedContent = preg_replace('/href=(["\'])(?![a-z]+:\/\/|\/|#|mailto:|tel:|javascript:)([^"\']+)\1/i', 'href=$1/$2$1', $cleanedContent);
+@endphp
+{!! $cleanedContent !!}
 
 </div>
 
