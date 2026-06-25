@@ -118,8 +118,8 @@ new #[Layout('layouts.admin')] class extends Component {
                                             target: this.$refs.editor,
                                             height: 400,
                                             menubar: false,
-                                            plugins: 'advlist autolink lists link image charmap preview anchor searchreplace visualblocks code fullscreen insertdatetime media table code help wordcount',
-                                            toolbar: 'undo redo | blocks | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | code help',
+                                            plugins: 'advlist autolink lists link image charmap preview anchor searchreplace visualblocks code fullscreen insertdatetime media table help wordcount',
+                                            toolbar: 'undo redo | blocks | bold italic underline | link image media table | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | code fullscreen preview help',
                                             relative_urls: false,
                                             remove_script_host: true,
                                             setup: (editor) => {
